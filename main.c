@@ -6,122 +6,124 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdarg.h>
+#include <getopt.h>
 #include "common.h"
 #include "pa1.h"
 #include "ipc.h"
 #include "io.h"
-/*
+
 local_id this_id;
 size_t COUNT_OF_PROCESSES;
-size_t custom_reader[10][10];
-size_t custom_writer[10][10];*/
+size_t reader_from_pipe[10][10];
+size_t writer_to_pipe[10][10];
 
 void both_writer(const char *, ...);
+void pipes_log_writer(const char *message, ...);
 static FILE *log;
+static  FILE *pipes;
+static const char * const pipes_log_mes_r = "Pipe from %i to %i is opened for reading\n";
+static const char * const pipes_log_mes_w = "Pipe from %i to %i is opened for writing\n";
+static const char * const pipes_log_mes_r_cl = "Pipe from %i to %i is closed for reading by %i\n";
+static const char * const pipes_log_mes_w_cl = "Pipe from %i to %i is closed for writing by %i\n";
 
-int main(int argc, char const *argv[]) {
+int main(int argc, char *argv[]) {
 
     //description
-    //todo renaming!
-
-   size_t COUNT_OF_CHILDREN;
+    int opt=0;
+    size_t COUNT_OF_CHILDREN;
 
 	//start, check key and count of children
-    if (argc == 3 && strcmp(argv[1], "-p") == 0) {
-	COUNT_OF_CHILDREN = strtol(argv[2], NULL, 10);
-
-	//TODO getopt
-
-	if (COUNT_OF_CHILDREN > 10 || COUNT_OF_CHILDREN < 1) {
-        fprintf(stderr, "Error: you should input less than 10 children!\n");
+    while ((opt=getopt(argc, argv, "p:"))!=-1){
+        switch (opt) {
+            case 'p':
+                COUNT_OF_CHILDREN = strtol(optarg,NULL,10);
+                if (COUNT_OF_CHILDREN > 10 || COUNT_OF_CHILDREN < 1) {
+                    fprintf(stderr, "Error: you should input more than 0 and less than 10 children!\n");
+                    return 1;
+                }
+                break;
+            default:
+                fprintf(stderr, "Error: you should use key like a '-p NUMBER_OF_CHILDREN!'\n");
+                return 1;
+                break;
+        }
+    }
+    if (COUNT_OF_CHILDREN==0){
+        fprintf(stderr, "Error: you should use key like a '-p NUMBER_OF_CHILDREN!'\n");
         return 1;
     }
-    }
-	else
-	{
-		fprintf(stderr, "Error: you should use key like a '-p NUMBER_OF_CHILDREN!'\n");
-        	return 1;
-	}
+	
+	//opening pipe file
+    pipes = fopen(pipes_log, "w");
 
-    //TODO, do we need it here?
+    //creating descriptors to send and read from i to j
 
-    //creating descriptors to send from i to j
     for (int i=0; i<COUNT_OF_CHILDREN+1;i++){
         for (int j=0; j<COUNT_OF_CHILDREN+1;j++){
             if (i!=j) {
                 int fields[2];
-                pipe(fields); //TODO ?
-                custom_reader[i][j] = fields[0];
-                custom_writer[i][j] = fields[1];
+                pipe(fields);
+                reader_from_pipe[i][j] = fields[0];
+                writer_to_pipe[i][j] = fields[1];
+                pipes_log_writer(pipes_log_mes_w, i, j);
+                pipes_log_writer(pipes_log_mes_r, i, j);
             }
         }
     }
-    //opening log files
+    //opening log file
     log = fopen(events_log, "w");
 
-    pid_t processes_pids[COUNT_OF_CHILDREN];
-    processes_pids[PARENT_ID] = getpid();
+
+    //create array with pidts and save parent's pid
+    pid_t proc_pidts[COUNT_OF_CHILDREN];
+    proc_pidts[PARENT_ID] = getpid();
     //creating children processes
     for (int i=1; i<=COUNT_OF_CHILDREN; i++){
-        int child_pid=fork();
-        if (child_pid==0) { //means child
+        int this_child_pidt=fork();
+        if (this_child_pidt==0) { //means child
             this_id = i;
             break;
         }
         else { //means parent process
             this_id = PARENT_ID;
-            processes_pids[i]=child_pid;
+            proc_pidts[i]=this_child_pidt;
         }
     }
 
     COUNT_OF_PROCESSES = COUNT_OF_CHILDREN + 1;
 
-    //todo replace here creating descriptors without deleting, or maybe delete it at all?
-    for (size_t i=0; i < COUNT_OF_PROCESSES; i++){
-        for (size_t j=0; j < COUNT_OF_PROCESSES; j++){
-            //todo changed here
-            if(!(i==this_id && j==this_id)){
-                if (i != this_id && j != this_id){
-                    close(custom_reader[i][j]);
-                    close(custom_writer[i][j]);
-                }
-                if (i == this_id && j != this_id) {
-                    close(custom_reader[i][j]);
-                }
-                if (i!= this_id && j== this_id){
-                    close(custom_writer[i][j]);
-                }
+    //close descriptors, which don't used by this process, cause in other case waitpid in the end doesn't work
+    for (int i=0; i<COUNT_OF_CHILDREN+1;i++){
+        for (int j=0; j<COUNT_OF_CHILDREN+1;j++){
+            if (i!=this_id && i!=j) {
+                close(writer_to_pipe[i][j]);
+                pipes_log_writer(pipes_log_mes_w_cl, i, j, this_id);
+            }
+            if (j!=this_id && i!=j) {
+                    close(reader_from_pipe[i][j]);
+                    pipes_log_writer(pipes_log_mes_r_cl, i, j, this_id);
             }
         }
+
     }
 
-    //to send messages to all by this children
+
+    //to send messages to all by this children about starting
     if (this_id != PARENT_ID) {
-        Message message = {
-                .s_header =
-                        {
-                        .s_magic = MESSAGE_MAGIC,
-                        .s_type = STARTED,
-                                },
-                        };
+        Message message = { .s_header = { .s_magic = MESSAGE_MAGIC, .s_type = STARTED, }, };
         sprintf(message.s_payload, log_started_fmt, this_id, getpid(), getppid());
         message.s_header.s_payload_len = strlen(message.s_payload);
-        //todo cikle?
+        //todo cycle?
         send_multicast(NULL, &message);
-
-       both_writer(log_started_fmt, this_id, getpid(), getppid());
+        both_writer(log_started_fmt, this_id, getpid(), getppid());
     }
 
 
     //await to receive all started messages
-    //todo another counter maybe
+    //todo another counter maybe?
     for (size_t i=1; i<= COUNT_OF_CHILDREN; i++){
         Message msg;
         if (i!= this_id) receive(NULL,i,&msg);
-        //if (i == this_id) {
-        //    continue;
-        //}
-        //receive(NULL, i, &msg);
     }
     both_writer(log_received_all_started_fmt, this_id);
 
@@ -137,8 +139,6 @@ int main(int argc, char const *argv[]) {
     //await to receive all done messages
     for (int i = 1; i<=COUNT_OF_CHILDREN; i++){
         Message message;
-        //if (this_id == i) continue;
-        //receive(NULL, i, &message);
         if (i != this_id) receive(NULL, i, &message);
     }
     both_writer(log_received_all_done_fmt, this_id);
@@ -146,21 +146,29 @@ int main(int argc, char const *argv[]) {
     //to end this awful things, await ends of processes
     if (this_id == PARENT_ID){
         for(int i=1; i<COUNT_OF_PROCESSES; i++){
-            waitpid(processes_pids[i], NULL, 0);
+            waitpid(proc_pidts[i], NULL, 0);
         }
     }
     fclose(log);
+    fclose(pipes);
     return 0;
 }
 
 void both_writer(const char *message, ...){
-    va_list va;
-    va_start (va, message);
-    vprintf(message, va);
-    va_end(va);
-
-    va_start(va,message);
-    vfprintf(log, message, va);
-    va_end(va);
+//write to console
+    va_list list;
+    va_start (list, message);
+    vprintf(message, list);
+    va_end(list);
+//write to event log file
+    va_start(list,message);
+    vfprintf(log, message, list);
+    va_end(list);
 }
 
+void pipes_log_writer(const char *message, ...){
+    va_list list;
+    va_start(list,message);
+    vfprintf(pipes, message, list);
+    va_end(list);
+}

@@ -8,17 +8,13 @@
 
 /mnt/c/Users/anna/desktop/tests/lab1/common.h
 
-/mnt/c/Users/anna/desktop/tests/lab1/io.h
-ipc.h
-/mnt/c/Users/anna/desktop/tests/lab1/ipc.h
-
 /mnt/c/Users/anna/desktop/tests/lab1/ipc.c
+stdio.h
+/mnt/c/Users/anna/desktop/tests/lab1/stdio.h
 ipc.h
 /mnt/c/Users/anna/desktop/tests/lab1/ipc.h
 unistd.h
 -
-stdio.h
-/mnt/c/Users/anna/desktop/tests/lab1/stdio.h
 
 /mnt/c/Users/anna/desktop/tests/lab1/ipc.h
 stddef.h
@@ -29,15 +25,9 @@ stdint.h
 /mnt/c/Users/anna/desktop/tests/lab1/main.c
 signal.h
 -
-stdlib.h
--
-string.h
--
-sys/types.h
--
-sys/wait.h
--
 unistd.h
+-
+stdlib.h
 -
 stdio.h
 -
@@ -45,14 +35,18 @@ stdarg.h
 -
 getopt.h
 -
+string.h
+-
+sys/types.h
+-
+sys/wait.h
+-
 common.h
 /mnt/c/Users/anna/desktop/tests/lab1/common.h
 pa1.h
 /mnt/c/Users/anna/desktop/tests/lab1/pa1.h
 ipc.h
 /mnt/c/Users/anna/desktop/tests/lab1/ipc.h
-io.h
-/mnt/c/Users/anna/desktop/tests/lab1/io.h
 
 /mnt/c/Users/anna/desktop/tests/lab1/pa1.h
 

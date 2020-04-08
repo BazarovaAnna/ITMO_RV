@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <getopt.h>
+
 #include "common.h"
 #include "pa1.h"
 #include "ipc.h"
@@ -19,6 +20,7 @@ size_t writer_to_pipe[10][10];
 
 void both_writer(const char *, ...);
 void pipes_log_writer(const char *message, ...);
+
 static FILE *log;
 static  FILE *pipes;
 static const char * const pipes_log_mes_r = "Pipe from %i to %i is opened for reading\n";

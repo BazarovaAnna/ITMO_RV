@@ -1,0 +1,1 @@
+/usr/bin/cc  -std=c99 -Wall -Werror -pedantic  -rdynamic CMakeFiles/peer.dir/main.c.o CMakeFiles/peer.dir/ipc.c.o  -o peer 

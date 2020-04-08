@@ -1,0 +1,5 @@
+Process 1 (pid  6082, parent  6081) has STARTED
+Process 2 (pid  6083, parent  6081) has STARTED
+Process 4 (pid  6085, parent  6081) has STARTED
+Process 3 (pid  6084, parent  6081) has STARTED
+Process 5 (pid  6086, parent  6081) has STARTED

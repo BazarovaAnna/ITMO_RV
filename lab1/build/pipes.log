@@ -2,35 +2,895 @@ Pipe from 0 to 1 is opened for writing
 Pipe from 0 to 1 is opened for reading
 Pipe from 0 to 2 is opened for writing
 Pipe from 0 to 2 is opened for reading
+Pipe from 0 to 3 is opened for writing
+Pipe from 0 to 3 is opened for reading
+Pipe from 0 to 4 is opened for writing
+Pipe from 0 to 4 is opened for reading
+Pipe from 0 to 5 is opened for writing
+Pipe from 0 to 5 is opened for reading
+Pipe from 0 to 6 is opened for writing
+Pipe from 0 to 6 is opened for reading
+Pipe from 0 to 7 is opened for writing
+Pipe from 0 to 7 is opened for reading
 Pipe from 1 to 0 is opened for writing
 Pipe from 1 to 0 is opened for reading
 Pipe from 1 to 2 is opened for writing
 Pipe from 1 to 2 is opened for reading
+Pipe from 1 to 3 is opened for writing
+Pipe from 1 to 3 is opened for reading
+Pipe from 1 to 4 is opened for writing
+Pipe from 1 to 4 is opened for reading
+Pipe from 1 to 5 is opened for writing
+Pipe from 1 to 5 is opened for reading
+Pipe from 1 to 6 is opened for writing
+Pipe from 1 to 6 is opened for reading
+Pipe from 1 to 7 is opened for writing
+Pipe from 1 to 7 is opened for reading
 Pipe from 2 to 0 is opened for writing
 Pipe from 2 to 0 is opened for reading
 Pipe from 2 to 1 is opened for writing
 Pipe from 2 to 1 is opened for reading
+Pipe from 2 to 3 is opened for writing
+Pipe from 2 to 3 is opened for reading
+Pipe from 2 to 4 is opened for writing
+Pipe from 2 to 4 is opened for reading
+Pipe from 2 to 5 is opened for writing
+Pipe from 2 to 5 is opened for reading
+Pipe from 2 to 6 is opened for writing
+Pipe from 2 to 6 is opened for reading
+Pipe from 2 to 7 is opened for writing
+Pipe from 2 to 7 is opened for reading
+Pipe from 3 to 0 is opened for writing
+Pipe from 3 to 0 is opened for reading
+Pipe from 3 to 1 is opened for writing
+Pipe from 3 to 1 is opened for reading
+Pipe from 3 to 2 is opened for writing
+Pipe from 3 to 2 is opened for reading
+Pipe from 3 to 4 is opened for writing
+Pipe from 3 to 4 is opened for reading
+Pipe from 3 to 5 is opened for writing
+Pipe from 3 to 5 is opened for reading
+Pipe from 3 to 6 is opened for writing
+Pipe from 3 to 6 is opened for reading
+Pipe from 3 to 7 is opened for writing
+Pipe from 3 to 7 is opened for reading
+Pipe from 4 to 0 is opened for writing
+Pipe from 4 to 0 is opened for reading
+Pipe from 4 to 1 is opened for writing
+Pipe from 4 to 1 is opened for reading
+Pipe from 4 to 2 is opened for writing
+Pipe from 4 to 2 is opened for reading
+Pipe from 4 to 3 is opened for writing
+Pipe from 4 to 3 is opened for reading
+Pipe from 4 to 5 is opened for writing
+Pipe from 4 to 5 is opened for reading
+Pipe from 4 to 6 is opened for writing
+Pipe from 4 to 6 is opened for reading
+Pipe from 4 to 7 is opened for writing
+Pipe from 4 to 7 is opened for reading
+Pipe from 5 to 0 is opened for writing
+Pipe from 5 to 0 is opened for reading
+Pipe from 5 to 1 is opened for writing
+Pipe from 5 to 1 is opened for reading
+Pipe from 5 to 2 is opened for writing
+Pipe from 5 to 2 is opened for reading
+Pipe from 5 to 3 is opened for writing
+Pipe from 5 to 3 is opened for reading
+Pipe from 5 to 4 is opened for writing
+Pipe from 5 to 4 is opened for reading
+Pipe from 5 to 6 is opened for writing
+Pipe from 5 to 6 is opened for reading
+Pipe from 5 to 7 is opened for writing
+Pipe from 5 to 7 is opened for reading
+Pipe from 6 to 0 is opened for writing
+Pipe from 6 to 0 is opened for reading
+Pipe from 6 to 1 is opened for writing
+Pipe from 6 to 1 is opened for reading
+Pipe from 6 to 2 is opened for writing
+Pipe from 6 to 2 is opened for reading
+Pipe from 6 to 3 is opened for writing
+Pipe from 6 to 3 is opened for reading
+Pipe from 6 to 4 is opened for writing
+Pipe from 6 to 4 is opened for reading
+Pipe from 6 to 5 is opened for writing
+Pipe from 6 to 5 is opened for reading
+Pipe from 6 to 7 is opened for writing
+Pipe from 6 to 7 is opened for reading
+Pipe from 7 to 0 is opened for writing
+Pipe from 7 to 0 is opened for reading
+Pipe from 7 to 1 is opened for writing
+Pipe from 7 to 1 is opened for reading
+Pipe from 7 to 2 is opened for writing
+Pipe from 7 to 2 is opened for reading
+Pipe from 7 to 3 is opened for writing
+Pipe from 7 to 3 is opened for reading
+Pipe from 7 to 4 is opened for writing
+Pipe from 7 to 4 is opened for reading
+Pipe from 7 to 5 is opened for writing
+Pipe from 7 to 5 is opened for reading
+Pipe from 7 to 6 is opened for writing
+Pipe from 7 to 6 is opened for reading
 Pipe from 0 to 1 is closed for writing by 1
 Pipe from 0 to 2 is closed for writing by 1
 Pipe from 0 to 2 is closed for reading by 1
+Pipe from 0 to 3 is closed for writing by 1
+Pipe from 0 to 3 is closed for reading by 1
+Pipe from 0 to 4 is closed for writing by 1
+Pipe from 0 to 4 is closed for reading by 1
+Pipe from 0 to 5 is closed for writing by 1
+Pipe from 0 to 5 is closed for reading by 1
+Pipe from 0 to 6 is closed for writing by 1
+Pipe from 0 to 6 is closed for reading by 1
+Pipe from 0 to 7 is closed for writing by 1
+Pipe from 0 to 7 is closed for reading by 1
 Pipe from 1 to 0 is closed for reading by 1
 Pipe from 1 to 2 is closed for reading by 1
+Pipe from 1 to 3 is closed for reading by 1
+Pipe from 1 to 4 is closed for reading by 1
+Pipe from 1 to 5 is closed for reading by 1
+Pipe from 1 to 6 is closed for reading by 1
+Pipe from 1 to 7 is closed for reading by 1
 Pipe from 2 to 0 is closed for writing by 1
 Pipe from 2 to 0 is closed for reading by 1
 Pipe from 2 to 1 is closed for writing by 1
-Pipe from 0 to 1 is closed for writing by 2
+Pipe from 2 to 3 is closed for writing by 1
+Pipe from 2 to 3 is closed for reading by 1
+Pipe from 2 to 4 is closed for writing by 1
+Pipe from 2 to 4 is closed for reading by 1
+Pipe from 2 to 5 is closed for writing by 1
+Pipe from 2 to 5 is closed for reading by 1
+Pipe from 2 to 6 is closed for writing by 1
+Pipe from 2 to 6 is closed for reading by 1
+Pipe from 2 to 7 is closed for writing by 1
+Pipe from 2 to 7 is closed for reading by 1
+Pipe from 3 to 0 is closed for writing by 1
+Pipe from 3 to 0 is closed for reading by 1
+Pipe from 3 to 1 is closed for writing by 1
+Pipe from 3 to 2 is closed for writing by 1
+Pipe from 3 to 2 is closed for reading by 1
+Pipe from 3 to 4 is closed for writing by 1
+Pipe from 3 to 4 is closed for reading by 1
+Pipe from 3 to 5 is closed for writing by 1
+Pipe from 3 to 5 is closed for reading by 1
+Pipe from 3 to 6 is closed for writing by 1
+Pipe from 3 to 6 is closed for reading by 1
+Pipe from 3 to 7 is closed for writing by 1
+Pipe from 3 to 7 is closed for reading by 1
+Pipe from 4 to 0 is closed for writing by 1
+Pipe from 4 to 0 is closed for reading by 1
+Pipe from 4 to 1 is closed for writing by 1
+Pipe from 4 to 2 is closed for writing by 1
+Pipe from 4 to 2 is closed for reading by 1
+Pipe from 4 to 3 is closed for writing by 1
+Pipe from 4 to 3 is closed for reading by 1
+Pipe from 4 to 5 is closed for writing by 1
+Pipe from 4 to 5 is closed for reading by 1
+Pipe from 4 to 6 is closed for writing by 1
+Pipe from 4 to 6 is closed for reading by 1
+Pipe from 4 to 7 is closed for writing by 1
+Pipe from 4 to 7 is closed for reading by 1
+Pipe from 5 to 0 is closed for writing by 1
+Pipe from 5 to 0 is closed for reading by 1
+Pipe from 5 to 1 is closed for writing by 1
+Pipe from 5 to 2 is closed for writing by 1
+Pipe from 5 to 2 is closed for reading by 1
+Pipe from 5 to 3 is closed for writing by 1
+Pipe from 5 to 3 is closed for reading by 1
+Pipe from 5 to 4 is closed for writing by 1
+Pipe from 5 to 4 is closed for reading by 1
+Pipe from 5 to 6 is closed for writing by 1
+Pipe from 5 to 6 is closed for reading by 1
+Pipe from 5 to 7 is closed for writing by 1
+Pipe from 5 to 7 is closed for reading by 1
+Pipe from 6 to 0 is closed for writing by 1
+Pipe from 6 to 0 is closed for reading by 1
+Pipe from 6 to 1 is closed for writing by 1
+Pipe from 6 to 2 is closed for writing by 1
+Pipe from 6 to 2 is closed for reading by 1
+Pipe from 6 to 3 is closed for writing by 1
+Pipe from 6 to 3 is closed for reading by 1
+Pipe from 6 to 4 is closed for writing by 1
+Pipe from 6 to 4 is closed for reading by 1
+Pipe from 6 to 5 is closed for writing by 1
+Pipe from 6 to 5 is closed for reading by 1
+Pipe from 6 to 7 is closed for writing by 1
+Pipe from 6 to 7 is closed for reading by 1
+Pipe from 7 to 0 is closed for writing by 1
+Pipe from 7 to 0 is closed for reading by 1
+Pipe from 7 to 1 is closed for writing by 1
+Pipe from 7 to 2 is closed for writing by 1
+Pipe from 7 to 2 is closed for reading by 1
+Pipe from 7 to 3 is closed for writing by 1
+Pipe from 7 to 3 is closed for reading by 1
+Pipe from 7 to 4 is closed for writing by 1
+PipePipe from 0 to 1 is closed for writing by 2
 Pipe from 0 to 1 is closed for reading by 2
 Pipe from 0 to 2 is closed for writing by 2
+Pipe from 0 to 3 is closed for writing by 2
+Pipe from 0 to 3 is closed for reading by 2
+Pipe from 0 to 4 is closed for writing by 2
+Pipe from 0 to 4 is closed for reading by 2
+Pipe from 0 to 5 is closed for writing by 2
+Pipe from 0 to 5 is closed for reading by 2
+Pipe from 0 to 6 is closed for writing by 2
+Pipe from 0 to 6 is closed for reading by 2
+Pipe from 0 to 7 is closed for writing by 2
+Pipe from 0 to 7 is closed for reading by 2
 Pipe from 1 to 0 is closed for writing by 2
 Pipe from 1 to 0 is closed for reading by 2
 Pipe from 1 to 2 is closed for writing by 2
+Pipe from 1 to 3 is closed for writing by 2
+Pipe from 1 to 3 is closed for reading by 2
+Pipe from 1 to 4 is closed for writing by 2
+Pipe from 1 to 4 is closed for reading by 2
+Pipe from 1 to 5 is closed for writing by 2
+Pipe from 1 to 5 is closed for reading by 2
+Pipe from 1 to 6 is closed for writing by 2
+Pipe from 1 to 6 is closed for reading by 2
+Pipe from 1 to 7 is closed for writing by 2
+Pipe from 1 to 7 is closed for reading by 2
 Pipe from 2 to 0 is closed for reading by 2
 Pipe from 2 to 1 is closed for reading by 2
-Pipe from 0 to 1 is closed for reading by 0
+Pipe from 2 to 3 is closed for reading by 2
+Pipe from 2 to 4 is closed for reading by 2
+Pipe from 2 to 5 is closed for reading by 2
+Pipe from 2 to 6 is closed for reading by 2
+Pipe from 2 to 7 is closed for reading by 2
+Pipe from 3 to 0 is closed for writing by 2
+Pipe from 3 to 0 is closed for reading by 2
+Pipe from 3 to 1 is closed for writing by 2
+Pipe from 3 to 1 is closed for reading by 2
+Pipe from 3 to 2 is closed for writing by 2
+Pipe from 3 to 4 is closed for writing by 2
+Pipe from 3 to 4 is closed for reading by 2
+Pipe from 3 to 5 is closed for writing by 2
+Pipe from 3 to 5 is closed for reading by 2
+Pipe from 3 to 6 is closed for writing by 2
+Pipe from 3 to 6 is closed for reading by 2
+Pipe from 3 to 7 is closed for writing by 2
+Pipe from 3 to 7 is closed for reading by 2
+Pipe from 4 to 0 is closed for writing by 2
+Pipe from 4 to 0 is closed for reading by 2
+Pipe from 4 to 1 is closed for writing by 2
+Pipe from 4 to 1 is closed for reading by 2
+Pipe from 4 to 2 is closed for writing by 2
+Pipe from 4 to 3 is closed for writing by 2
+Pipe from 4 to 3 is closed for reading by 2
+Pipe from 4 to 5 is closed for writing by 2
+Pipe from 4 to 5 is closed for reading by 2
+Pipe from 4 to 6 is closed for writing by 2
+Pipe from 4 to 6 is closed for reading by 2
+Pipe from 4 to 7 is closed for writing by 2
+Pipe from 4 to 7 is closed for reading by 2
+Pipe from 5 to 0 is closed for writing by 2
+Pipe from 5 to 0 is closed for reading by 2
+Pipe from 5 to 1 is closed for writing by 2
+Pipe from 5 to 1 is closed for reading by 2
+Pipe from 5 to 2 is closed for writing by 2
+Pipe from 5 to 3 is closed for writing by 2
+Pipe from 5 to 3 is closed for reading by 2
+Pipe from 5 to 4 is closed for writing by 2
+Pipe from 5 to 4 is closed for reading by 2
+Pipe from 5 to 6 is closed for writing by 2
+Pipe from 5 to 6 is closed for reading by 2
+Pipe from 5 to 7 is closed for writing by 2
+Pipe from 5 to 7 is closed for reading by 2
+Pipe from 6 to 0 is closed for writing by 2
+Pipe from 6 to 0 is closed for reading by 2
+Pipe from 6 to 1 is closed for writing by 2
+Pipe from 6 to 1 is closed for reading by 2
+Pipe from 6 to 2 is closed for writing by 2
+Pipe from 6 to 3 is closed for writing by 2
+Pipe from 6 to 3 is closed for reading by 2
+Pipe from 6 to 4 is closed for writing by 2
+Pipe from 6 to 4 is closed for reading by 2
+Pipe from 6 to 5 is closed for writing by 2
+Pipe from 6 to 5 is closed for reading by 2
+Pipe from 6 to 7 is closed for writing by 2
+Pipe from 6 to 7 is closed for reading by 2
+Pipe from 7 to 0 is closed for writing by 2
+Pipe from 7 to 0 is closed for reading by 2
+Pipe from 7 to 1 is closed for writing by 2
+Pipe from 7 to 1 is closed for reading by 2
+Pipe from 7 to 2 is closed for writing by 2
+Pipe from 7 to 3 is closed for writing by 2
+Pipe from 7 to 3 is closed for reading by 2
+Pipe from 7 to 4 is closed for writing by 2
+PipePipe from 0 to 1 is closed for writing by 3
+Pipe from 0 to 1 is closed for reading by 3
+Pipe from 0 to 2 is closed for writing by 3
+Pipe from 0 to 2 is closed for reading by 3
+Pipe from 0 to 3 is closed for writing by 3
+Pipe from 0 to 4 is closed for writing by 3
+Pipe from 0 to 4 is closed for reading by 3
+Pipe from 0 to 5 is closed for writing by 3
+Pipe from 0 to 5 is closed for reading by 3
+Pipe from 0 to 6 is closed for writing by 3
+Pipe from 0 to 6 is closed for reading by 3
+Pipe from 0 to 7 is closed for writing by 3
+Pipe from 0 to 7 is closed for reading by 3
+Pipe from 1 to 0 is closed for writing by 3
+Pipe from 1 to 0 is closed for reading by 3
+Pipe from 1 to 2 is closed for writing by 3
+Pipe from 1 to 2 is closed for reading by 3
+Pipe from 1 to 3 is closed for writing by 3
+Pipe from 1 to 4 is closed for writing by 3
+Pipe from 1 to 4 is closed for reading by 3
+Pipe from 1 to 5 is closed for writing by 3
+Pipe from 1 to 5 is closed for reading by 3
+Pipe from 1 to 6 is closed for writing by 3
+Pipe from 1 to 6 is closed for reading by 3
+Pipe from 1 to 7 is closed for writing by 3
+Pipe from 1 to 7 is closed for reading by 3
+Pipe from 2 to 0 is closed for writing by 3
+Pipe from 2 to 0 is closed for reading by 3
+Pipe from 2 to 1 is closed for writing by 3
+Pipe from 2 to 1 is closed for reading by 3
+Pipe from 2 to 3 is closed for writing by 3
+Pipe from 2 to 4 is closed for writing by 3
+Pipe from 2 to 4 is closed for reading by 3
+Pipe from 2 to 5 is closed for writing by 3
+Pipe from 2 to 5 is closed for reading by 3
+Pipe from 2 to 6 is closed for writing by 3
+Pipe from 2 to 6 is closed for reading by 3
+Pipe from 2 to 7 is closed for writing by 3
+Pipe from 2 to 7 is closed for reading by 3
+Pipe from 3 to 0 is closed for reading by 3
+Pipe from 3 to 1 is closed for reading by 3
+Pipe from 3 to 2 is closed for reading by 3
+Pipe from 3 to 4 is closed for reading by 3
+Pipe from 3 to 5 is closed for reading by 3
+Pipe from 3 to 6 is closed for reading by 3
+Pipe from 3 to 7 is closed for reading by 3
+Pipe from 4 to 0 is closed for writing by 3
+Pipe from 4 to 0 is closed for reading by 3
+Pipe from 4 to 1 is closed for writing by 3
+Pipe from 4 to 1 is closed for reading by 3
+Pipe from 4 to 2 is closed for writing by 3
+Pipe from 4 to 2 is closed for reading by 3
+Pipe from 4 to 3 is closed for writing by 3
+Pipe from 4 to 5 is closed for writing by 3
+Pipe from 4 to 5 is closed for reading by 3
+Pipe from 4 to 6 is closed for writing by 3
+Pipe from 4 to 6 is closed for reading by 3
+Pipe from 4 to 7 is closed for writing by 3
+Pipe from 4 to 7 is closed for reading by 3
+Pipe from 5 to 0 is closed for writing by 3
+Pipe from 5 to 0 is closed for reading by 3
+Pipe from 5 to 1 is closed for writing by 3
+Pipe from 5 to 1 is closed for reading by 3
+Pipe from 5 to 2 is closed for writing by 3
+Pipe from 5 to 2 is closed for reading by 3
+Pipe from 5 to 3 is closed for writing by 3
+Pipe from 5 to 4 is closed for writing by 3
+Pipe from 5 to 4 is closed for reading by 3
+Pipe from 5 to 6 is closed for writing by 3
+Pipe from 5 to 6 is closed for reading by 3
+Pipe from 5 to 7 is closed for writing by 3
+Pipe from 5 to 7 is closed for reading by 3
+Pipe from 6 to 0 is closed for writing by 3
+Pipe from 6 to 0 is closed for reading by 3
+Pipe from 6 to 1 is closed for writing by 3
+Pipe from 6 to 1 is closed for reading by 3
+Pipe from 6 to 2 is closed for writing by 3
+Pipe from 6 to 2 is closed for reading by 3
+Pipe from 6 to 3 is closed for writing by 3
+Pipe from 6 to 4 is closed for writing by 3
+Pipe from 6 to 4 is closed for reading by 3
+Pipe from 6 to 5 is closed for writing by 3
+Pipe from 6 to 5 is closed for reading by 3
+Pipe from 6 to 7 is closed for writing by 3
+Pipe from 6 to 7 is closed for reading by 3
+Pipe from 7 to 0 is closed for writing by 3
+Pipe from 7 to 0 is closed for reading by 3
+Pipe from 7 to 1 is closed for writing by 3
+Pipe from 7 to 1 is closed for reading by 3
+Pipe from 7 to 2 is closed for writing by 3
+Pipe from 7 to 2 is closed for reading by 3
+Pipe from 7 to 3 is closed for writing by 3
+Pipe from 7 to 4 is closed for writing by 3
+PipePipe from 0 to 1 is closed for writing by 4
+Pipe from 0 to 1 is closed for reading by 4
+Pipe from 0 to 2 is closed for writing by 4
+Pipe from 0 to 2 is closed for reading by 4
+Pipe from 0 to 3 is closed for writing by 4
+Pipe from 0 to 3 is closed for reading by 4
+Pipe from 0 to 4 is closed for writing by 4
+Pipe from 0 to 5 is closed for writing by 4
+Pipe from 0 to 5 is closed for reading by 4
+Pipe from 0 to 6 is closed for writing by 4
+Pipe from 0 to 6 is closed for reading by 4
+Pipe from 0 to 7 is closed for writing by 4
+Pipe from 0 to 7 is closed for reading by 4
+Pipe from 1 to 0 is closed for writing by 4
+Pipe from 1 to 0 is closed for reading by 4
+Pipe from 1 to 2 is closed for writing by 4
+Pipe from 1 to 2 is closed for reading by 4
+Pipe from 1 to 3 is closed for writing by 4
+Pipe from 1 to 3 is closed for reading by 4
+Pipe from 1 to 4 is closed for writing by 4
+Pipe from 1 to 5 is closed for writing by 4
+Pipe from 1 to 5 is closed for reading by 4
+Pipe from 1 to 6 is closed for writing by 4
+Pipe from 1 to 6 is closed for reading by 4
+Pipe from 1 to 7 is closed for writing by 4
+Pipe from 1 to 7 is closed for reading by 4
+Pipe from 2 to 0 is closed for writing by 4
+Pipe from 2 to 0 is closed for reading by 4
+Pipe from 2 to 1 is closed for writing by 4
+Pipe from 2 to 1 is closed for reading by 4
+Pipe from 2 to 3 is closed for writing by 4
+Pipe from 2 to 3 is closed for reading by 4
+Pipe from 2 to 4 is closed for writing by 4
+Pipe from 2 to 5 is closed for writing by 4
+Pipe from 2 to 5 is closed for reading by 4
+Pipe from 2 to 6 is closed for writing by 4
+Pipe from 2 to 6 is closed for reading by 4
+Pipe from 2 to 7 is closed for writing by 4
+Pipe from 2 to 7 is closed for reading by 4
+Pipe from 3 to 0 is closed for writing by 4
+Pipe from 3 to 0 is closed for reading by 4
+Pipe from 3 to 1 is closed for writing by 4
+Pipe from 3 to 1 is closed for reading by 4
+Pipe from 3 to 2 is closed for writing by 4
+Pipe from 3 to 2 is closed for reading by 4
+Pipe from 3 to 4 is closed for writing by 4
+Pipe from 3 to 5 is closed for writing by 4
+Pipe from 3 to 5 is closed for reading by 4
+Pipe from 3 to 6 is closed for writing by 4
+Pipe from 3 to 6 is closed for reading by 4
+Pipe from 3 to 7 is closed for writing by 4
+Pipe from 3 to 7 is closed for reading by 4
+Pipe from 4 to 0 is closed for reading by 4
+Pipe from 4 to 1 is closed for reading by 4
+Pipe from 4 to 2 is closed for reading by 4
+Pipe from 4 to 3 is closed for reading by 4
+Pipe from 4 to 5 is closed for reading by 4
+Pipe from 4 to 6 is closed for reading by 4
+Pipe from 4 to 7 is closed for reading by 4
+Pipe from 5 to 0 is closed for writing by 4
+Pipe from 5 to 0 is closed for reading by 4
+Pipe from 5 to 1 is closed for writing by 4
+Pipe from 5 to 1 is closed for reading by 4
+Pipe from 5 to 2 is closed for writing by 4
+Pipe from 5 to 2 is closed for reading by 4
+Pipe from 5 to 3 is closed for writing by 4
+Pipe from 5 to 3 is closed for reading by 4
+Pipe from 5 to 4 is closed for writing by 4
+Pipe from 5 to 6 is closed for writing by 4
+Pipe from 5 to 6 is closed for reading by 4
+Pipe from 5 to 7 is closed for writing by 4
+Pipe from 5 to 7 is closed for reading by 4
+Pipe from 6 to 0 is closed for writing by 4
+Pipe from 6 to 0 is closed for reading by 4
+Pipe from 6 to 1 is closed for writing by 4
+Pipe from 6 to 1 is closed for reading by 4
+Pipe from 6 to 2 is closed for writing by 4
+Pipe from 6 to 2 is closed for reading by 4
+Pipe from 6 to 3 is closed for writing by 4
+Pipe from 6 to 3 is closed for reading by 4
+Pipe from 6 to 4 is closed for writing by 4
+Pipe from 6 to 5 is closed for writing by 4
+Pipe from 6 to 5 is closed for reading by 4
+Pipe from 6 to 7 is closed for writing by 4
+Pipe from 6 to 7 is closed for reading by 4
+Pipe from 7 to 0 is closed for writing by 4
+Pipe from 7 to 0 is closed for reading by 4
+Pipe from 7 to 1 is closed for writing by 4
+Pipe from 7 to 1 is closed for reading by 4
+Pipe from 7 to 2 is closed for writing by 4
+Pipe from 7 to 2 is closed for reading by 4
+Pipe from 7 to 3 is closed for writing by 4
+Pipe from 7 to 3 is closed for reading by 4
+PipePipe from 0 to 1 is closed for writing by 5
+Pipe from 0 to 1 is closed for reading by 5
+Pipe from 0 to 2 is closed for writing by 5
+Pipe from 0 to 2 is closed for reading by 5
+Pipe from 0 to 3 is closed for writing by 5
+Pipe from 0 to 3 is closed for reading by 5
+Pipe from 0 to 4 is closed for writing by 5
+Pipe from 0 to 4 is closed for reading by 5
+Pipe from 0 to 5 is closed for writing by 5
+Pipe from 0 to 6 is closed for writing by 5
+Pipe from 0 to 6 is closed for reading by 5
+Pipe from 0 to 7 is closed for writing by 5
+Pipe from 0 to 7 is closed for reading by 5
+Pipe from 1 to 0 is closed for writing by 5
+Pipe from 1 to 0 is closed for reading by 5
+Pipe from 1 to 2 is closed for writing by 5
+Pipe from 1 to 2 is closed for reading by 5
+Pipe from 1 to 3 is closed for writing by 5
+Pipe from 1 to 3 is closed for reading by 5
+Pipe from 1 to 4 is closed for writing by 5
+Pipe from 1 to 4 is closed for reading by 5
+Pipe from 1 to 5 is closed for writing by 5
+Pipe from 1 to 6 is closed for writing by 5
+Pipe from 1 to 6 is closed for reading by 5
+Pipe from 1 to 7 is closed for writing by 5
+Pipe from 1 to 7 is closed for reading by 5
+Pipe from 2 to 0 is closed for writing by 5
+Pipe from 2 to 0 is closed for reading by 5
+Pipe from 2 to 1 is closed for writing by 5
+Pipe from 2 to 1 is closed for reading by 5
+Pipe from 2 to 3 is closed for writing by 5
+Pipe from 2 to 3 is closed for reading by 5
+Pipe from 2 to 4 is closed for writing by 5
+Pipe from 2 to 4 is closed for reading by 5
+Pipe from 2 to 5 is closed for writing by 5
+Pipe from 2 to 6 is closed for writing by 5
+Pipe from 2 to 6 is closed for reading by 5
+Pipe from 2 to 7 is closed for writing by 5
+Pipe from 2 to 7 is closed for reading by 5
+Pipe from 3 to 0 is closed for writing by 5
+Pipe from 3 to 0 is closed for reading by 5
+Pipe from 3 to 1 is closed for writing by 5
+Pipe from 3 to 1 is closed for reading by 5
+Pipe from 3 to 2 is closed for writing by 5
+Pipe from 3 to 2 is closed for reading by 5
+Pipe from 3 to 4 is closed for writing by 5
+Pipe from 3 to 4 is closed for reading by 5
+Pipe from 3 to 5 is closed for writing by 5
+Pipe from 3 to 6 is closed for writing by 5
+Pipe from 3 to 6 is closed for reading by 5
+Pipe from 3 to 7 is closed for writing by 5
+Pipe from 3 to 7 is closed for reading by 5
+Pipe from 4 to 0 is closed for writing by 5
+Pipe from 4 to 0 is closed for reading by 5
+Pipe from 4 to 1 is closed for writing by 5
+Pipe from 4 to 1 is closed for reading by 5
+Pipe from 4 to 2 is closed for writing by 5
+Pipe from 4 to 2 is closed for reading by 5
+Pipe from 4 to 3 is closed for writing by 5
+Pipe from 4 to 3 is closed for reading by 5
+Pipe from 4 to 5 is closed for writing by 5
+Pipe from 4 to 6 is closed for writing by 5
+Pipe from 4 to 6 is closed for reading by 5
+Pipe from 4 to 7 is closed for writing by 5
+Pipe from 4 to 7 is closed for reading by 5
+Pipe from 5 to 0 is closed for reading by 5
+Pipe from 5 to 1 is closed for reading by 5
+Pipe from 5 to 2 is closed for reading by 5
+Pipe from 5 to 3 is closed for reading by 5
+Pipe from 5 to 4 is closed for reading by 5
+Pipe from 5 to 6 is closed for reading by 5
+Pipe from 5 to 7 is closed for reading by 5
+Pipe from 6 to 0 is closed for writing by 5
+Pipe from 6 to 0 is closed for reading by 5
+Pipe from 6 to 1 is closed for writing by 5
+Pipe from 6 to 1 is closed for reading by 5
+Pipe from 6 to 2 is closed for writing by 5
+Pipe from 6 to 2 is closed for reading by 5
+Pipe from 6 to 3 is closed for writing by 5
+Pipe from 6 to 3 is closed for reading by 5
+Pipe from 6 to 4 is closed for writing by 5
+Pipe from 6 to 4 is closed for reading by 5
+Pipe from 6 to 5 is closed for writing by 5
+Pipe from 6 to 7 is closed for writing by 5
+Pipe from 6 to 7 is closed for reading by 5
+Pipe from 7 to 0 is closed for writing by 5
+Pipe from 7 to 0 is closed for reading by 5
+Pipe from 7 to 1 is closed for writing by 5
+Pipe from 7 to 1 is closed for reading by 5
+Pipe from 7 to 2 is closed for writing by 5
+Pipe from 7 to 2 is closed for reading by 5
+Pipe from 7 to 3 is closed for writing by 5
+Pipe from 7 to 3 is closed for reading by 5
+PipePipe from 0 to 1 is closed for writing by 6
+Pipe from 0 to 1 is closed for reading by 6
+Pipe from 0 to 2 is closed for writing by 6
+Pipe from 0 to 2 is closed for reading by 6
+Pipe from 0 to 3 is closed for writing by 6
+Pipe from 0 to 3 is closed for reading by 6
+Pipe from 0 to 4 is closed for writing by 6
+Pipe from 0 to 4 is closed for reading by 6
+Pipe from 0 to 5 is closed for writing by 6
+Pipe from 0 to 5 is closed for reading by 6
+Pipe from 0 to 6 is closed for writing by 6
+Pipe from 0 to 7 is closed for writing by 6
+Pipe from 0 to 7 is closed for reading by 6
+Pipe from 1 to 0 is closed for writing by 6
+Pipe from 1 to 0 is closed for reading by 6
+Pipe from 1 to 2 is closed for writing by 6
+Pipe from 1 to 2 is closed for reading by 6
+Pipe from 1 to 3 is closed for writing by 6
+Pipe from 1 to 3 is closed for reading by 6
+Pipe from 1 to 4 is closed for writing by 6
+Pipe from 1 to 4 is closed for reading by 6
+Pipe from 1 to 5 is closed for writing by 6
+Pipe from 1 to 5 is closed for reading by 6
+Pipe from 1 to 6 is closed for writing by 6
+Pipe from 1 to 7 is closed for writing by 6
+Pipe from 1 to 7 is closed for reading by 6
+Pipe from 2 to 0 is closed for writing by 6
+Pipe from 2 to 0 is closed for reading by 6
+Pipe from 2 to 1 is closed for writing by 6
+Pipe from 2 to 1 is closed for reading by 6
+Pipe from 2 to 3 is closed for writing by 6
+Pipe from 2 to 3 is closed for reading by 6
+Pipe from 2 to 4 is closed for writing by 6
+Pipe from 2 to 4 is closed for reading by 6
+Pipe from 2 to 5 is closed for writing by 6
+Pipe from 2 to 5 is closed for reading by 6
+Pipe from 2 to 6 is closed for writing by 6
+Pipe from 2 to 7 is closed for writing by 6
+Pipe from 2 to 7 is closed for reading by 6
+Pipe from 3 to 0 is closed for writing by 6
+Pipe from 3 to 0 is closed for reading by 6
+Pipe from 3 to 1 is closed for writing by 6
+Pipe from 3 to 1 is closed for reading by 6
+Pipe from 3 to 2 is closed for writing by 6
+Pipe from 3 to 2 is closed for reading by 6
+Pipe from 3 to 4 is closed for writing by 6
+Pipe from 3 to 4 is closed for reading by 6
+Pipe from 3 to 5 is closed for writing by 6
+Pipe from 3 to 5 is closed for reading by 6
+Pipe from 3 to 6 is closed for writing by 6
+Pipe from 3 to 7 is closed for writing by 6
+Pipe from 3 to 7 is closed for reading by 6
+Pipe from 4 to 0 is closed for writing by 6
+Pipe from 4 to 0 is closed for reading by 6
+Pipe from 4 to 1 is closed for writing by 6
+Pipe from 4 to 1 is closed for reading by 6
+Pipe from 4 to 2 is closed for writing by 6
+Pipe from 4 to 2 is closed for reading by 6
+Pipe from 4 to 3 is closed for writing by 6
+Pipe from 4 to 3 is closed for reading by 6
+Pipe from 4 to 5 is closed for writing by 6
+Pipe from 4 to 5 is closed for reading by 6
+Pipe from 4 to 6 is closed for writing by 6
+Pipe from 4 to 7 is closed for writing by 6
+Pipe from 4 to 7 is closed for reading by 6
+Pipe from 5 to 0 is closed for writing by 6
+Pipe from 5 to 0 is closed for reading by 6
+Pipe from 5 to 1 is closed for writing by 6
+Pipe from 5 to 1 is closed for reading by 6
+Pipe from 5 to 2 is closed for writing by 6
+Pipe from 5 to 2 is closed for reading by 6
+Pipe from 5 to 3 is closed for writing by 6
+Pipe from 5 to 3 is closed for reading by 6
+Pipe from 5 to 4 is closed for writing by 6
+Pipe from 5 to 4 is closed for reading by 6
+Pipe from 5 to 6 is closed for writing by 6
+Pipe from 5 to 7 is closed for writing by 6
+Pipe from 5 to 7 is closed for reading by 6
+Pipe from 6 to 0 is closed for reading by 6
+Pipe from 6 to 1 is closed for reading by 6
+Pipe from 6 to 2 is closed for reading by 6
+Pipe from 6 to 3 is closed for reading by 6
+Pipe from 6 to 4 is closed for reading by 6
+Pipe from 6 to 5 is closed for reading by 6
+Pipe from 6 to 7 is closed for reading by 6
+Pipe from 7 to 0 is closed for writing by 6
+Pipe from 7 to 0 is closed for reading by 6
+Pipe from 7 to 1 is closed for writing by 6
+Pipe from 7 to 1 is closed for reading by 6
+Pipe from 7 to 2 is closed for writing by 6
+Pipe from 7 to 2 is closed for reading by 6
+Pipe from 7 to 3 is closed for writing by 6
+Pipe from 7 to 3 is closed for reading by 6
+PipePipe from 0 to 1 is closed for reading by 0
 Pipe from 0 to 2 is closed for reading by 0
+Pipe from 0 to 3 is closed for reading by 0
+Pipe from 0 to 4 is closed for reading by 0
+Pipe from 0 to 5 is closed for reading by 0
+Pipe from 0 to 6 is closed for reading by 0
+Pipe from 0 to 7 is closed for reading by 0
 Pipe from 1 to 0 is closed for writing by 0
 Pipe from 1 to 2 is closed for writing by 0
 Pipe from 1 to 2 is closed for reading by 0
+Pipe from 1 to 3 is closed for writing by 0
+Pipe from 1 to 3 is closed for reading by 0
+Pipe from 1 to 4 is closed for writing by 0
+Pipe from 1 to 4 is closed for reading by 0
+Pipe from 1 to 5 is closed for writing by 0
+Pipe from 1 to 5 is closed for reading by 0
+Pipe from 1 to 6 is closed for writing by 0
+Pipe from 1 to 6 is closed for reading by 0
+Pipe from 1 to 7 is closed for writing by 0
+Pipe from 1 to 7 is closed for reading by 0
 Pipe from 2 to 0 is closed for writing by 0
 Pipe from 2 to 1 is closed for writing by 0
 Pipe from 2 to 1 is closed for reading by 0
+Pipe from 2 to 3 is closed for writing by 0
+Pipe from 2 to 3 is closed for reading by 0
+Pipe from 2 to 4 is closed for writing by 0
+Pipe from 2 to 4 is closed for reading by 0
+Pipe from 2 to 5 is closed for writing by 0
+Pipe from 2 to 5 is closed for reading by 0
+Pipe from 2 to 6 is closed for writing by 0
+Pipe from 2 to 6 is closed for reading by 0
+Pipe from 2 to 7 is closed for writing by 0
+Pipe from 2 to 7 is closed for reading by 0
+Pipe from 3 to 0 is closed for writing by 0
+Pipe from 3 to 1 is closed for writing bPipe from 0 to 1 is closed for writing by 7
+Pipe from 0 to 1 is closed for reading by 7
+Pipe from 0 to 2 is closed for writing by 7
+Pipe from 0 to 2 is closed for reading by 7
+Pipe from 0 to 3 is closed for writing by 7
+Pipe from 0 to 3 is closed for reading by 7
+Pipe from 0 to 4 is closed for writing by 7
+Pipe from 0 to 4 is closed for reading by 7
+Pipe from 0 to 5 is closed for writing by 7
+Pipe from 0 to 5 is closed for reading by 7
+Pipe from 0 to 6 is closed for writing by 7
+Pipe from 0 to 6 is closed fy 0
+Pipe from 3 to 1 is closed for reading by 0
+Pipe from 3 to 2 is closed for writing by 0
+Pipe from 3 to 2 is closed for reading by 0
+Pipe from 3 to 4 is closed for writing by 0
+Pipe from 3 to 4 is closed for reading by 0
+Pipe from 3 to 5 is closed for writing by 0
+Pipe from 3 to 5 is closed for reading by 0
+Pipe from 3 to 6 is closed for writing by 0
+Pipe from 3 to 6 is closed for reading by 0
+Pipe from 3 to 7 is closed for writing by 0
+Pipe from 3 to 7 is closed for reading by 0
+Pipe from 4 to 0 is closor reading by 7
+Pipe from 0 to 7 is closed for writing by 7
+Pipe from 1 to 0 is closed for writing by 7
+Pipe from 1 to 0 is closed for reading by 7
+Pipe from 1 to 2 is closed for writing by 7
+Pipe from 1 to 2 is closed for reading by 7
+Pipe from 1 to 3 is closed for writing by 7
+Pipe from 1 to 3 is closed for reading by 7
+Pipe from 1 to 4 is closed for writing by 7
+Pipe from 1 to 4 is closed for reading by 7
+Pipe from 1 to 5 is closed for writing by 7
+Pipe from 1 to 5 is closed for reading by 7
+Pipe from 1 ed for writing by 0
+Pipe from 4 to 1 is closed for writing by 0
+Pipe from 4 to 1 is closed for reading by 0
+Pipe from 4 to 2 is closed for writing by 0
+Pipe from 4 to 2 is closed for reading by 0
+Pipe from 4 to 3 is closed for writing by 0
+Pipe from 4 to 3 is closed for reading by 0
+Pipe from 4 to 5 is closed for writing by 0
+Pipe from 4 to 5 is closed for reading by 0
+Pipe from 4 to 6 is closed for writing by 0
+Pipe from 4 to 6 is closed for reading by 0
+Pipe from 4 to 7 is closed for writing by 0
+Pipe froto 6 is closed for writing by 7
+Pipe from 1 to 6 is closed for reading by 7
+Pipe from 1 to 7 is closed for writing by 7
+Pipe from 2 to 0 is closed for writing by 7
+Pipe from 2 to 0 is closed for reading by 7
+Pipe from 2 to 1 is closed for writing by 7
+Pipe from 2 to 1 is closed for reading by 7
+Pipe from 2 to 3 is closed for writing by 7
+Pipe from 2 to 3 is closed for reading by 7
+Pipe from 2 to 4 is closed for writing by 7
+Pipe from 2 to 4 is closed for reading by 7
+Pipe from 2 to 5 is closed for writing bm 4 to 7 is closed for reading by 0
+Pipe from 5 to 0 is closed for writing by 0
+Pipe from 5 to 1 is closed for writing by 0
+Pipe from 5 to 1 is closed for reading by 0
+Pipe from 5 to 2 is closed for writing by 0
+Pipe from 5 to 2 is closed for reading by 0
+Pipe from 5 to 3 is closed for writing by 0
+Pipe from 5 to 3 is closed for reading by 0
+Pipe from 5 to 4 is closed for writing by 0
+Pipe from 5 to 4 is closed for reading by 0
+Pipe from 5 to 6 is closed for writing by 0
+Pipe from 5 to 6 is closed for readiy 7
+Pipe from 2 to 5 is closed for reading by 7
+Pipe from 2 to 6 is closed for writing by 7
+Pipe from 2 to 6 is closed for reading by 7
+Pipe from 2 to 7 is closed for writing by 7
+Pipe from 3 to 0 is closed for writing by 7
+Pipe from 3 to 0 is closed for reading by 7
+Pipe from 3 to 1 is closed for writing by 7
+Pipe from 3 to 1 is closed for reading by 7
+Pipe from 3 to 2 is closed for writing by 7
+Pipe from 3 to 2 is closed for reading by 7
+Pipe from 3 to 4 is closed for writing by 7
+Pipe from 3 to 4 is closng by 0
+Pipe from 5 to 7 is closed for writing by 0
+Pipe from 5 to 7 is closed for reading by 0
+Pipe from 6 to 0 is closed for writing by 0
+Pipe from 6 to 1 is closed for writing by 0
+Pipe from 6 to 1 is closed for reading by 0
+Pipe from 6 to 2 is closed for writing by 0
+Pipe from 6 to 2 is closed for reading by 0
+Pipe from 6 to 3 is closed for writing by 0
+Pipe from 6 to 3 is closed for reading by 0
+Pipe from 6 to 4 is closed for writing by 0
+Pipe from 6 to 4 is closed for reading by 0
+Pipe from 6 to 5 is ed for reading by 7
+Pipe from 3 to 5 is closed for writing by 7
+Pipe from 3 to 5 is closed for reading by 7
+Pipe from 3 to 6 is closed for writing by 7
+Pipe from 3 to 6 is closed for reading by 7
+Pipe from 3 to 7 is closed for writing by 7
+Pipe from 4 to 0 is closed for writing by 7
+Pipe from 4 to 0 is closed for reading by 7
+Pipe from 4 to 1 is closed for writing by 7
+Pipe from 4 to 1 is closed for reading by 7
+Pipe from 4 to 2 is closed for writing by 7
+Pipe from 4 to 2 is closed for reading by 7
+Pipe froclosed for writing by 0
+Pipe from 6 to 5 is closed for reading by 0
+Pipe from 6 to 7 is closed for writing by 0
+Pipe from 6 to 7 is closed for reading by 0
+Pipe from 7 to 0 is closed for writing by 0
+Pipe from 7 to 1 is closed for writing by 0
+Pipe from 7 to 1 is closed for reading by 0
+Pipe from 7 to 2 is closed for writing by 0
+Pipe from 7 to 2 is closed for reading by 0
+Pipe from 7 to 3 is closed for writing by 0
+Pipe from 7 to 3 is closed for reading by 0
+Pipe from 7 to 4 is closed for writing by 0
+Pipem 4 to 3 is closed for writing by 7
+Pipe from 4 to 3 is closed for reading by 7
+Pipe from 4 to 5 is closed for writing by 7
+Pipe from 4 to 5 is closed for reading by 7
+Pipe from 4 to 6 is closed for writing by 7
+Pipe from 4 to 6 is closed for reading by 7
+Pipe from 4 to 7 is closed for writing by 7
+Pipe from 5 to 0 is closed for writing by 7
+Pipe from 5 to 0 is closed for reading by 7
+Pipe from 5 to 1 is closed for writing by 7
+Pipe from 5 to 1 is closed for reading by 7
+Pipe from 5 to 2 is closed for writing by 7
+Pipe from 5 to 2 is closed for reading by 7
+Pipe from 5 to 3 is closed for writing by 7
+Pipe from 5 to 3 is closed for reading by 7
+Pipe from 5 to 4 is closed for writing by 7
+Pipe from 5 to 4 is closed for reading by 7
+Pipe from 5 to 6 is closed for writing by 7
+Pipe from 5 to 6 is closed for reading by 7
+Pipe from 5 to 7 is closed for writing by 7
+Pipe from 6 to 0 is closed for writing by 7
+Pipe from 6 to 0 is closed for reading by 7
+Pipe from 6 to 1 is closed for writing by 7
+Pipe from 6 to 1 is closed for reading by 7
+Pipe from 6 to 2 is closed for writing by 7
+Pipe from 6 to 2 is closed for reading by 7
+Pipe from 6 to 3 is closed for writing by 7
+Pipe from 6 to 3 is closed for reading by 7
+Pipe from 6 to 4 is closed for writing by 7
+Pipe from 6 to 4 is closed for reading by 7
+Pipe from 6 to 5 is closed for writing by 7
+Pipe from 6 to 5 is closed for reading by 7
+Pipe from 6 to 7 is closed for writing by 7
+Pipe from 7 to 0 is closed for reading by 7
+Pipe from 7 to 1 is closed for reading by 7
+Pipe from 7 to 4 is closed for reading by 1
+Pipe from 7 to 5 is closed for writing by 1
+Pipe from 7 to 5 is closed for reading by 1
+Pipe from 7 to 6 is closed for writing by 1
+Pipe from 7 to 6 is closed for reading by 1
+ from 7 to 4 is closed for reading by 2
+Pipe from 7 to 5 is closed for writing by 2
+Pipe from 7 to 5 is closed for reading by 2
+Pipe from 7 to 6 is closed for writing by 2
+Pipe from 7 to 6 is closed for reading by 2
+ from 7 to 4 is closed for reading by 3
+Pipe from 7 to 5 is closed for writing by 3
+Pipe from 7 to 5 is closed for reading by 3
+Pipe from 7 to 6 is closed for writing by 3
+Pipe from 7 to 6 is closed for reading by 3
+ from 7 to 4 is closed for writing by 4
+Pipe from 7 to 5 is closed for writing by 4
+Pipe from 7 to 5 is closed for reading by 4
+Pipe from 7 to 6 is closed for writing by 4
+Pipe from 7 to 6 is closed for reading by 4
+ from 7 to 4 is closed for writing by 5
+Pipe from 7 to 4 is closed for reading by 5
+Pipe from 7 to 5 is closed for writing by 5
+Pipe from 7 to 6 is closed for writing by 5
+Pipe from 7 to 6 is closed for reading by 5
+ from 7 to 4 is closed for writing by 6
+Pipe from 7 to 4 is closed for reading by 6
+Pipe from 7 to 5 is closed for writing by 6
+Pipe from 7 to 5 is closed for reading by 6
+Pipe from 7 to 6 is closed for writing by 6
+ from 7 to 2 is closed for reading by 7
+Pipe from 7 to 3 is closed for reading by 7
+Pipe from 7 to 4 is closed for reading by 7
+Pipe from 7 to 5 is closed for reading by 7
+Pipe from 7 to 6 is closed for reading by 7
+ from 7 to 4 is closed for reading by 0
+Pipe from 7 to 5 is closed for writing by 0
+Pipe from 7 to 5 is closed for reading by 0
+Pipe from 7 to 6 is closed for writing by 0
+Pipe from 7 to 6 is closed for reading by 0

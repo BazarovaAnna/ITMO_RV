@@ -1,5 +1,6 @@
 #include <signal.h>
 #include <unistd.h>
+#include <malloc.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdarg.h>
@@ -17,7 +18,8 @@ local_id this_id;
 size_t COUNTER_OF_PROCESSES;
 size_t reader_pipe[10][10];
 size_t writer_pipe[10][10];
-
+//size_t bank_accounts
+int* BANK_ACCOUNTS;
 void both_writer(const char *, ...);
 void pipes_log_writer(const char *message, ...);
 
@@ -44,12 +46,17 @@ int main(int argc, char *argv[]) {
                     fprintf(stderr, "Error: you should input more than 0 children!\n");
                     return 1;
                 }
-                if((argc-2)!=COUNTER_OF_CHILDREN){
+                if((argc-3)!=COUNTER_OF_CHILDREN){
 					fprintf(stderr, "Error: you should input ");
 					fprintf(stderr,"%li", COUNTER_OF_CHILDREN);
 					fprintf(stderr, " numbers!\n");
                     return 1;
 				}
+				BANK_ACCOUNTS = (int*)malloc(COUNTER_OF_CHILDREN * sizeof(long));
+				for(int i=3;i<COUNTER_OF_CHILDREN+3;i++){
+					BANK_ACCOUNTS[i-3]=strtol(argv[i],NULL,10);
+				}
+				
                 break;
             //if we have anything else: WRONG INPUT
             default:

@@ -27,6 +27,8 @@ signal.h
 -
 unistd.h
 -
+malloc.h
+-
 stdlib.h
 -
 stdio.h

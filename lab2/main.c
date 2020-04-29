@@ -15,7 +15,7 @@
 
 
 local_id this_id;
-size_t COUNTER_OF_PROCESSES;
+size_t COUNTER_OF_PROCESSES;//поправить
 size_t reader_pipe[10][10];
 size_t writer_pipe[10][10];
 //size_t bank_accounts
@@ -34,7 +34,7 @@ int main(int argc, char *argv[]) {
 
     //description (INIT)
     int opt=0;
-    size_t COUNTER_OF_CHILDREN;
+    size_t COUNTER_OF_CHILDREN;//HOW MANY ACCS
 
 	//start, check key and count of children
     while ((opt=getopt(argc, argv, "p:"))!=-1){
@@ -67,7 +67,7 @@ int main(int argc, char *argv[]) {
     }
     //IF SMTH GOES WRONG THIS if WORKS
     if (COUNTER_OF_CHILDREN==0){
-        fprintf(stderr, "Error: you should use key like a '-p NUMBER_OF_CHILDREN!'\n");
+        fprintf(stderr, "Error: you should use key like a '-p NUMBER_OF_CHILDREN CHILDREN!'\n");
         return 1;
     }
 	

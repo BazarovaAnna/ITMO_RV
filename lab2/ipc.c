@@ -39,7 +39,7 @@ int receive(void *self, local_id from, Message *message) {
     if (message->s_header.s_magic != MESSAGE_MAGIC) {
         return 1;
     }
-    read(reader_pipe[from][this_id], &message->s_payload, message->s_header.s_payload_len);
+    read(reader_pipe[from][this_id], &message->s_payload, message->s_header.s_payload_len);//убрать отдельное считывание тела
     sleep(1);
     return 0;
 }

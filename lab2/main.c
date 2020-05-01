@@ -12,16 +12,23 @@
 #include "common.h"
 #include "pa1.h"
 #include "ipc.h"
+#include "var_lib.h"
+
+//added
+#include <errno.h>
+#include <stdbool.h>
+#include "banking.h"
 
 
-local_id this_id;
-size_t COUNTER_OF_PROCESSES;//поправить
-size_t reader_pipe[10][10];
-size_t writer_pipe[10][10];
+//local_id this_id;
+//оtправлено в var_lib.h
+
 //size_t bank_accounts
-int* BANK_ACCOUNTS;
+//int* BANK_ACCOUNTS;
 void both_writer(const char *, ...);
 void pipes_log_writer(const char *message, ...);
+//added
+void init_hist(Proc *this, balance_t init_bal);
 
 static FILE *log;
 static  FILE *pipes;
@@ -31,6 +38,7 @@ static const char * const pipes_log_mes_r_cl = "Pipe from %i to %i is closed for
 static const char * const pipes_log_mes_w_cl = "Pipe from %i to %i is closed for writing by %i\n";
 
 int main(int argc, char *argv[]) {
+
 
     //description (INIT)
     int opt=0;
@@ -73,6 +81,7 @@ int main(int argc, char *argv[]) {
 	
 	//opening pipe file
     pipes = fopen(pipes_log, "w");
+	Proc *this = &me;
 
     //creating descriptors to send and read from i to j
     for (int i=0; i<=COUNTER_OF_CHILDREN;i++){
@@ -94,19 +103,23 @@ int main(int argc, char *argv[]) {
     log = fopen(events_log, "w");
 
     //create array with pidts and save parent's pid
-    pid_t proc_pidts[COUNTER_OF_CHILDREN];
+    //replaced to var_lib.h
+    //pid_t proc_pidts[COUNTER_OF_CHILDREN];
     proc_pidts[PARENT_ID] = getpid();
     
     //creating children processes
     for (int i=1; i<=COUNTER_OF_CHILDREN; i++){
         int this_child_pidt=fork();
         if (this_child_pidt==0) { //means child
-            this_id = i;
-            break;
+            //this_id = i;
+        	this->id = i;    
+		break;
         }
         else { //means parent process
-            this_id = PARENT_ID;
-            proc_pidts[i]=this_child_pidt;
+            //this_id = PARENT_ID;
+            //proc_pidts[i]=this_child_pidt;
+		this->id = PARENT_ID;
+		proc_pidts[i]=this_child_pidt;
         }
     }
 
@@ -130,6 +143,21 @@ int main(int argc, char *argv[]) {
     }
 
 
+	if (this->id != PARENT_ID){
+		CHILD_PROC_START(this, BANK_ACCOUNTS[this->id]);	
+	} else {
+		PARENT_PROC_START(this);
+	}
+
+	fclose(pipes);
+    	fclose(log);
+    
+    	return 0;
+	
+}
+
+//replaced to parent and child 
+/*
     //to send messages to all by this children about start
     if (this_id != PARENT_ID) {
         Message message = { .s_header = { .s_magic = MESSAGE_MAGIC, .s_type = STARTED, }, };
@@ -177,7 +205,7 @@ int main(int argc, char *argv[]) {
     fclose(log);
     
     return 0;
-}
+}*/
 
 void both_writer(const char *message, ...){
 	va_list list;
@@ -192,9 +220,35 @@ void both_writer(const char *message, ...){
     va_end(list);
 }
 
+void both_writer_with_messages(Message *const message, const char *frmt, ...){
+	va_list list;
+	//write to event log file
+    va_start(list,frmt);
+    vfprintf(log, frmt, list);
+    va_end(list);
+    
+    //write to console
+    va_start (list, frmt);
+    vprintf(frmt, list);
+    va_end(list);
+
+	va_start(list, frmt);
+	size_t payload_lenght = sprintf(message -> s_payload, frmt, list);
+	message->s_header.s_payload_len = payload_length;
+	va_end(list);
+}
+
 void pipes_log_writer(const char *message, ...){
     va_list list;
     va_start(list,message);
     vfprintf(pipes, message, list);
     va_end(list);
+}
+
+void init_hist(Proc *this, balance_t init_bal){
+	this->bal_hist.s_id = this->id;
+	this->bal_hist.s_history_len = 1;
+	for (timestamp_t timestamp = 1; time < MAX_T; time++){
+		this->bal_hist.s_history[timestamp] = (BalanceState) { .s_balance = init_bal, .s_balance_pending_in = 0, .s_time = timestamp, };
+	}
 }

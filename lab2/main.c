@@ -18,6 +18,8 @@
 #include <errno.h>
 #include <stdbool.h>
 #include "banking.h"
+#include "child.h"
+#include "parent.h"
 
 
 //local_id this_id;
@@ -112,13 +114,13 @@ int main(int argc, char *argv[]) {
         int this_child_pidt=fork();
         if (this_child_pidt==0) { //means child
             //this_id = i;
-        	this->id = i;    
+        	this->this_id = i;
 		break;
         }
         else { //means parent process
             //this_id = PARENT_ID;
             //proc_pidts[i]=this_child_pidt;
-		this->id = PARENT_ID;
+		this->this_id = PARENT_ID;
 		proc_pidts[i]=this_child_pidt;
         }
     }
@@ -130,21 +132,21 @@ int main(int argc, char *argv[]) {
     for (int i=0; i<COUNTER_OF_CHILDREN+1;i++){
         for (int j=0; j<COUNTER_OF_CHILDREN+1;j++){
 			//make sure everything is closed (CHECK OUT)
-            if (i!=this_id && i!=j) {
+            if (i!=this->this_id && i!=j) {
                 close(writer_pipe[i][j]);
-                pipes_log_writer(pipes_log_mes_w_cl, i, j, this_id);
+                pipes_log_writer(pipes_log_mes_w_cl, i, j, this->this_id);
             }
-            if (j!=this_id && i!=j) {
+            if (j!=this->this_id && i!=j) {
                     close(reader_pipe[i][j]);
-                    pipes_log_writer(pipes_log_mes_r_cl, i, j, this_id);
+                    pipes_log_writer(pipes_log_mes_r_cl, i, j, this->this_id);
             }
         }
 
     }
 
 
-	if (this->id != PARENT_ID){
-		CHILD_PROC_START(this, BANK_ACCOUNTS[this->id]);	
+	if (this->this_id != PARENT_ID){
+		CHILD_PROC_START(this, BANK_ACCOUNTS[this->this_id]);
 	} else {
 		PARENT_PROC_START(this);
 	}
@@ -234,7 +236,7 @@ void both_writer_with_messages(Message *const message, const char *frmt, ...){
 
 	va_start(list, frmt);
 	size_t payload_lenght = sprintf(message -> s_payload, frmt, list);
-	message->s_header.s_payload_len = payload_length;
+	message->s_header.s_payload_len = payload_lenght;
 	va_end(list);
 }
 
@@ -246,9 +248,27 @@ void pipes_log_writer(const char *message, ...){
 }
 
 void init_hist(Proc *this, balance_t init_bal){
-	this->bal_hist.s_id = this->id;
+	this->bal_hist.s_id = this->this_id;
 	this->bal_hist.s_history_len = 1;
-	for (timestamp_t timestamp = 1; time < MAX_T; time++){
+	for (timestamp_t timestamp = 1; timestamp < MAX_T; timestamp++){
 		this->bal_hist.s_history[timestamp] = (BalanceState) { .s_balance = init_bal, .s_balance_pending_in = 0, .s_time = timestamp, };
 	}
+}
+
+void transfer(void *parent_data, local_id src, local_id dst, balance_t amount) {
+    Proc *this = parent_data;
+
+    // to sent TRANSFER to receiver
+    Message message;
+    {
+        message.s_header = (MessageHeader) { .s_local_time = get_physical_time(), .s_magic =MESSAGE_MAGIC, .s_type=TRANSFER, .s_payload_len = sizeof(TransferOrder), };
+        TransferOrder order = { .s_src = src, .s_dst = dst, .s_amount = amount, };
+        memcpy(&message.s_payload, &order, sizeof(TransferOrder));
+        send(parent_data, src, &message);
+    }
+
+    // to await ACK answer like a proof
+    //todo check header?
+    receive(parent_data, dst, &message);
+
 }

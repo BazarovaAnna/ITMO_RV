@@ -1,3 +1,4 @@
+#include <fcntl.h>
 #include "banking.h"
 #include "ipc.h"
 #include "process.h"

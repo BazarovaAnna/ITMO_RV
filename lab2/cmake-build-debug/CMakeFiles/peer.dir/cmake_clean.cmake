@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/peer.dir/main.c.o"
+  "CMakeFiles/peer.dir/bank_robbery.c.o"
+  "CMakeFiles/peer.dir/child.c.o"
   "CMakeFiles/peer.dir/ipc.c.o"
+  "CMakeFiles/peer.dir/main.c.o"
+  "CMakeFiles/peer.dir/parent.c.o"
+  "CMakeFiles/peer.dir/logwriter.c.o"
   "peer.pdb"
   "peer"
 )

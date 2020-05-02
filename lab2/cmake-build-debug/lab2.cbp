@@ -86,6 +86,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/stepan/Загрузки/distributed/dis2/RV/lab2/bank_robbery.c">
+			<Option target="peer"/>
+		</Unit>
+		<Unit filename="/home/stepan/Загрузки/distributed/dis2/RV/lab2/banking.h">
+			<Option target="peer"/>
+		</Unit>
+		<Unit filename="/home/stepan/Загрузки/distributed/dis2/RV/lab2/child.c">
+			<Option target="peer"/>
+		</Unit>
+		<Unit filename="/home/stepan/Загрузки/distributed/dis2/RV/lab2/child.h">
+			<Option target="peer"/>
+		</Unit>
 		<Unit filename="/home/stepan/Загрузки/distributed/dis2/RV/lab2/common.h">
 			<Option target="peer"/>
 		</Unit>
@@ -95,10 +107,25 @@
 		<Unit filename="/home/stepan/Загрузки/distributed/dis2/RV/lab2/ipc.h">
 			<Option target="peer"/>
 		</Unit>
+		<Unit filename="/home/stepan/Загрузки/distributed/dis2/RV/lab2/logwriter.c">
+			<Option target="peer"/>
+		</Unit>
+		<Unit filename="/home/stepan/Загрузки/distributed/dis2/RV/lab2/logwriter.h">
+			<Option target="peer"/>
+		</Unit>
 		<Unit filename="/home/stepan/Загрузки/distributed/dis2/RV/lab2/main.c">
 			<Option target="peer"/>
 		</Unit>
-		<Unit filename="/home/stepan/Загрузки/distributed/dis2/RV/lab2/pa1.h">
+		<Unit filename="/home/stepan/Загрузки/distributed/dis2/RV/lab2/pa2345.h">
+			<Option target="peer"/>
+		</Unit>
+		<Unit filename="/home/stepan/Загрузки/distributed/dis2/RV/lab2/parent.c">
+			<Option target="peer"/>
+		</Unit>
+		<Unit filename="/home/stepan/Загрузки/distributed/dis2/RV/lab2/parent.h">
+			<Option target="peer"/>
+		</Unit>
+		<Unit filename="/home/stepan/Загрузки/distributed/dis2/RV/lab2/var_lib.h">
 			<Option target="peer"/>
 		</Unit>
 		<Unit filename="/home/stepan/Загрузки/distributed/dis2/RV/lab2/CMakeLists.txt">

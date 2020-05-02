@@ -57,22 +57,35 @@ include CMakeFiles/peer.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/peer.dir/flags.make
 
-CMakeFiles/peer.dir/main.c.o: CMakeFiles/peer.dir/flags.make
-CMakeFiles/peer.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Загрузки/distributed/dis2/RV/lab2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/peer.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/peer.dir/main.c.o   -c /home/stepan/Загрузки/distributed/dis2/RV/lab2/main.c
+CMakeFiles/peer.dir/bank_robbery.c.o: CMakeFiles/peer.dir/flags.make
+CMakeFiles/peer.dir/bank_robbery.c.o: ../bank_robbery.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Загрузки/distributed/dis2/RV/lab2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/peer.dir/bank_robbery.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/peer.dir/bank_robbery.c.o   -c /home/stepan/Загрузки/distributed/dis2/RV/lab2/bank_robbery.c
 
-CMakeFiles/peer.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/peer.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/stepan/Загрузки/distributed/dis2/RV/lab2/main.c > CMakeFiles/peer.dir/main.c.i
+CMakeFiles/peer.dir/bank_robbery.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/peer.dir/bank_robbery.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/stepan/Загрузки/distributed/dis2/RV/lab2/bank_robbery.c > CMakeFiles/peer.dir/bank_robbery.c.i
 
-CMakeFiles/peer.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/peer.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/stepan/Загрузки/distributed/dis2/RV/lab2/main.c -o CMakeFiles/peer.dir/main.c.s
+CMakeFiles/peer.dir/bank_robbery.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/peer.dir/bank_robbery.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/stepan/Загрузки/distributed/dis2/RV/lab2/bank_robbery.c -o CMakeFiles/peer.dir/bank_robbery.c.s
+
+CMakeFiles/peer.dir/child.c.o: CMakeFiles/peer.dir/flags.make
+CMakeFiles/peer.dir/child.c.o: ../child.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Загрузки/distributed/dis2/RV/lab2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/peer.dir/child.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/peer.dir/child.c.o   -c /home/stepan/Загрузки/distributed/dis2/RV/lab2/child.c
+
+CMakeFiles/peer.dir/child.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/peer.dir/child.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/stepan/Загрузки/distributed/dis2/RV/lab2/child.c > CMakeFiles/peer.dir/child.c.i
+
+CMakeFiles/peer.dir/child.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/peer.dir/child.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/stepan/Загрузки/distributed/dis2/RV/lab2/child.c -o CMakeFiles/peer.dir/child.c.s
 
 CMakeFiles/peer.dir/ipc.c.o: CMakeFiles/peer.dir/flags.make
 CMakeFiles/peer.dir/ipc.c.o: ../ipc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Загрузки/distributed/dis2/RV/lab2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/peer.dir/ipc.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Загрузки/distributed/dis2/RV/lab2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/peer.dir/ipc.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/peer.dir/ipc.c.o   -c /home/stepan/Загрузки/distributed/dis2/RV/lab2/ipc.c
 
 CMakeFiles/peer.dir/ipc.c.i: cmake_force
@@ -83,19 +96,66 @@ CMakeFiles/peer.dir/ipc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/peer.dir/ipc.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/stepan/Загрузки/distributed/dis2/RV/lab2/ipc.c -o CMakeFiles/peer.dir/ipc.c.s
 
+CMakeFiles/peer.dir/main.c.o: CMakeFiles/peer.dir/flags.make
+CMakeFiles/peer.dir/main.c.o: ../main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Загрузки/distributed/dis2/RV/lab2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/peer.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/peer.dir/main.c.o   -c /home/stepan/Загрузки/distributed/dis2/RV/lab2/main.c
+
+CMakeFiles/peer.dir/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/peer.dir/main.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/stepan/Загрузки/distributed/dis2/RV/lab2/main.c > CMakeFiles/peer.dir/main.c.i
+
+CMakeFiles/peer.dir/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/peer.dir/main.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/stepan/Загрузки/distributed/dis2/RV/lab2/main.c -o CMakeFiles/peer.dir/main.c.s
+
+CMakeFiles/peer.dir/parent.c.o: CMakeFiles/peer.dir/flags.make
+CMakeFiles/peer.dir/parent.c.o: ../parent.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Загрузки/distributed/dis2/RV/lab2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/peer.dir/parent.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/peer.dir/parent.c.o   -c /home/stepan/Загрузки/distributed/dis2/RV/lab2/parent.c
+
+CMakeFiles/peer.dir/parent.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/peer.dir/parent.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/stepan/Загрузки/distributed/dis2/RV/lab2/parent.c > CMakeFiles/peer.dir/parent.c.i
+
+CMakeFiles/peer.dir/parent.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/peer.dir/parent.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/stepan/Загрузки/distributed/dis2/RV/lab2/parent.c -o CMakeFiles/peer.dir/parent.c.s
+
+CMakeFiles/peer.dir/logwriter.c.o: CMakeFiles/peer.dir/flags.make
+CMakeFiles/peer.dir/logwriter.c.o: ../logwriter.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stepan/Загрузки/distributed/dis2/RV/lab2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/peer.dir/logwriter.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/peer.dir/logwriter.c.o   -c /home/stepan/Загрузки/distributed/dis2/RV/lab2/logwriter.c
+
+CMakeFiles/peer.dir/logwriter.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/peer.dir/logwriter.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/stepan/Загрузки/distributed/dis2/RV/lab2/logwriter.c > CMakeFiles/peer.dir/logwriter.c.i
+
+CMakeFiles/peer.dir/logwriter.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/peer.dir/logwriter.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/stepan/Загрузки/distributed/dis2/RV/lab2/logwriter.c -o CMakeFiles/peer.dir/logwriter.c.s
+
 # Object files for target peer
 peer_OBJECTS = \
+"CMakeFiles/peer.dir/bank_robbery.c.o" \
+"CMakeFiles/peer.dir/child.c.o" \
+"CMakeFiles/peer.dir/ipc.c.o" \
 "CMakeFiles/peer.dir/main.c.o" \
-"CMakeFiles/peer.dir/ipc.c.o"
+"CMakeFiles/peer.dir/parent.c.o" \
+"CMakeFiles/peer.dir/logwriter.c.o"
 
 # External object files for target peer
 peer_EXTERNAL_OBJECTS =
 
-peer: CMakeFiles/peer.dir/main.c.o
+peer: CMakeFiles/peer.dir/bank_robbery.c.o
+peer: CMakeFiles/peer.dir/child.c.o
 peer: CMakeFiles/peer.dir/ipc.c.o
+peer: CMakeFiles/peer.dir/main.c.o
+peer: CMakeFiles/peer.dir/parent.c.o
+peer: CMakeFiles/peer.dir/logwriter.c.o
 peer: CMakeFiles/peer.dir/build.make
 peer: CMakeFiles/peer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/stepan/Загрузки/distributed/dis2/RV/lab2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable peer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/stepan/Загрузки/distributed/dis2/RV/lab2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable peer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/peer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

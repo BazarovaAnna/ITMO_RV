@@ -123,6 +123,60 @@ peer/fast:
 	$(MAKE) -f CMakeFiles/peer.dir/build.make CMakeFiles/peer.dir/build
 .PHONY : peer/fast
 
+bank_robbery.o: bank_robbery.c.o
+
+.PHONY : bank_robbery.o
+
+# target to build an object file
+bank_robbery.c.o:
+	$(MAKE) -f CMakeFiles/peer.dir/build.make CMakeFiles/peer.dir/bank_robbery.c.o
+.PHONY : bank_robbery.c.o
+
+bank_robbery.i: bank_robbery.c.i
+
+.PHONY : bank_robbery.i
+
+# target to preprocess a source file
+bank_robbery.c.i:
+	$(MAKE) -f CMakeFiles/peer.dir/build.make CMakeFiles/peer.dir/bank_robbery.c.i
+.PHONY : bank_robbery.c.i
+
+bank_robbery.s: bank_robbery.c.s
+
+.PHONY : bank_robbery.s
+
+# target to generate assembly for a file
+bank_robbery.c.s:
+	$(MAKE) -f CMakeFiles/peer.dir/build.make CMakeFiles/peer.dir/bank_robbery.c.s
+.PHONY : bank_robbery.c.s
+
+child.o: child.c.o
+
+.PHONY : child.o
+
+# target to build an object file
+child.c.o:
+	$(MAKE) -f CMakeFiles/peer.dir/build.make CMakeFiles/peer.dir/child.c.o
+.PHONY : child.c.o
+
+child.i: child.c.i
+
+.PHONY : child.i
+
+# target to preprocess a source file
+child.c.i:
+	$(MAKE) -f CMakeFiles/peer.dir/build.make CMakeFiles/peer.dir/child.c.i
+.PHONY : child.c.i
+
+child.s: child.c.s
+
+.PHONY : child.s
+
+# target to generate assembly for a file
+child.c.s:
+	$(MAKE) -f CMakeFiles/peer.dir/build.make CMakeFiles/peer.dir/child.c.s
+.PHONY : child.c.s
+
 ipc.o: ipc.c.o
 
 .PHONY : ipc.o
@@ -149,6 +203,33 @@ ipc.s: ipc.c.s
 ipc.c.s:
 	$(MAKE) -f CMakeFiles/peer.dir/build.make CMakeFiles/peer.dir/ipc.c.s
 .PHONY : ipc.c.s
+
+logwriter.o: logwriter.c.o
+
+.PHONY : logwriter.o
+
+# target to build an object file
+logwriter.c.o:
+	$(MAKE) -f CMakeFiles/peer.dir/build.make CMakeFiles/peer.dir/logwriter.c.o
+.PHONY : logwriter.c.o
+
+logwriter.i: logwriter.c.i
+
+.PHONY : logwriter.i
+
+# target to preprocess a source file
+logwriter.c.i:
+	$(MAKE) -f CMakeFiles/peer.dir/build.make CMakeFiles/peer.dir/logwriter.c.i
+.PHONY : logwriter.c.i
+
+logwriter.s: logwriter.c.s
+
+.PHONY : logwriter.s
+
+# target to generate assembly for a file
+logwriter.c.s:
+	$(MAKE) -f CMakeFiles/peer.dir/build.make CMakeFiles/peer.dir/logwriter.c.s
+.PHONY : logwriter.c.s
 
 main.o: main.c.o
 
@@ -177,6 +258,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/peer.dir/build.make CMakeFiles/peer.dir/main.c.s
 .PHONY : main.c.s
 
+parent.o: parent.c.o
+
+.PHONY : parent.o
+
+# target to build an object file
+parent.c.o:
+	$(MAKE) -f CMakeFiles/peer.dir/build.make CMakeFiles/peer.dir/parent.c.o
+.PHONY : parent.c.o
+
+parent.i: parent.c.i
+
+.PHONY : parent.i
+
+# target to preprocess a source file
+parent.c.i:
+	$(MAKE) -f CMakeFiles/peer.dir/build.make CMakeFiles/peer.dir/parent.c.i
+.PHONY : parent.c.i
+
+parent.s: parent.c.s
+
+.PHONY : parent.s
+
+# target to generate assembly for a file
+parent.c.s:
+	$(MAKE) -f CMakeFiles/peer.dir/build.make CMakeFiles/peer.dir/parent.c.s
+.PHONY : parent.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,12 +294,24 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... peer"
+	@echo "... bank_robbery.o"
+	@echo "... bank_robbery.i"
+	@echo "... bank_robbery.s"
+	@echo "... child.o"
+	@echo "... child.i"
+	@echo "... child.s"
 	@echo "... ipc.o"
 	@echo "... ipc.i"
 	@echo "... ipc.s"
+	@echo "... logwriter.o"
+	@echo "... logwriter.i"
+	@echo "... logwriter.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... parent.o"
+	@echo "... parent.i"
+	@echo "... parent.s"
 .PHONY : help
 
 

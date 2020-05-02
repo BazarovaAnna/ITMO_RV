@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/anna/desktop/tests/lab2
+CMAKE_SOURCE_DIR = /home/stepan/Загрузки/distributed/dis2/RV/lab2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/anna/desktop/tests/lab2/build
+CMAKE_BINARY_DIR = /home/stepan/Загрузки/distributed/dis2/RV/lab2/build
 
 #=============================================================================
 # Target rules for target CMakeFiles/peer.dir
@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /mnt/c/Users/anna/desktop/tests/lab2/build
 CMakeFiles/peer.dir/all:
 	$(MAKE) -f CMakeFiles/peer.dir/build.make CMakeFiles/peer.dir/depend
 	$(MAKE) -f CMakeFiles/peer.dir/build.make CMakeFiles/peer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/anna/desktop/tests/lab2/build/CMakeFiles --progress-num=1,2,3 "Built target peer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/stepan/Загрузки/distributed/dis2/RV/lab2/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target peer"
 .PHONY : CMakeFiles/peer.dir/all
 
 # Include target in all.
@@ -76,9 +76,9 @@ all: CMakeFiles/peer.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/peer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/anna/desktop/tests/lab2/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/stepan/Загрузки/distributed/dis2/RV/lab2/build/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/peer.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/anna/desktop/tests/lab2/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/stepan/Загрузки/distributed/dis2/RV/lab2/build/CMakeFiles 0
 .PHONY : CMakeFiles/peer.dir/rule
 
 # Convenience name for target.

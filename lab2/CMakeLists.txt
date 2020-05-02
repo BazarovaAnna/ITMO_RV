@@ -4,9 +4,16 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99 -Wall -Werror -pedantic")
 
 add_executable(peer
-    main.c
-    ipc.c
+    banking.h
+    bank_robbery.c
+    child.c
+    child.h
     common.h
+    ipc.c
     ipc.h
-    pa1.h
-)
+    main.c
+    pa2345.h
+    parent.c
+    parent.h
+    var_lib.h
+        logwriter.c logwriter.h)

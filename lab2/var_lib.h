@@ -1,7 +1,11 @@
+#ifndef __IFMO_DISTRIBUTED_CLASS_PA2_ALLEGORY__VAR__LIB__H
+#define __IFMO_DISTRIBUTED_CLASS_PA2_ALLEGORY__VAR__LIB__H
+
+
 #include <fcntl.h>
 #include "banking.h"
 #include "ipc.h"
-#include "process.h"
+
 
 
 typedef struct{
@@ -20,3 +24,4 @@ size_t reader_pipe[10][10];
 size_t writer_pipe[10][10];
 size_t COUNTER_OF_PROCESSES;
 //local_id this_id
+#endif

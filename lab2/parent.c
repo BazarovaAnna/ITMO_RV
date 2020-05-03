@@ -10,7 +10,8 @@
 #include <signal.h>
 #include <errno.h>
 #include <stdio.h>
-#include <zconf.h>
+
+#include <stdarg.h>
 #include "ipc.h"
 #include "banking.h"
 #include "var_lib.h"
@@ -24,7 +25,7 @@ void PARENT_PROC_START(Proc *this){
    // log = fopen(events_log, "w");
     for (size_t i=1; i<= COUNTER_OF_PROCESSES - 1; i++){
         Message msg;
-        if (i!= this->this_id) receive(NULL,i,&msg);
+        if (i!= this->this_id) receive(this,i,&msg);
     }
     both_writer(log_received_all_started_fmt, this->this_id);
 
@@ -35,7 +36,7 @@ void PARENT_PROC_START(Proc *this){
 
 	for (int i = 1; i<=COUNTER_OF_PROCESSES - 1; i++){
         Message message;
-        if (i != this->this_id) receive(NULL, i, &message);
+        if (i != this->this_id) receive(this, i, &message);
     }
     //write to log & comm line
     both_writer(log_received_all_done_fmt, this->this_id);

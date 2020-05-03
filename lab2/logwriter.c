@@ -2,7 +2,8 @@
 // Created by stepan on 03.05.20.
 //
 
-#include <zconf.h>
+
+#include <stdarg.h>
 #include <stdio.h>
 #include "logwriter.h"
 #include "common.h"

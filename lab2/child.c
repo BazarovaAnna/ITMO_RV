@@ -11,7 +11,7 @@
 #include <sys/wait.h>
 #include <unistd.h>
 #include <stdint.h>
-#include <zconf.h>
+#include <stdarg.h>
 #include "banking.h"
 #include "ipc.h"
 #include "pa2345.h"
@@ -30,7 +30,7 @@ void CHILD_PROC_START(Proc *this, balance_t init_bal) {
 
 	this->bal_hist.s_id = this->this_id;
 	this->bal_hist.s_history_len = 1;
-	for (timestamp_t timestamp = 1; timestamp < MAX_T; timestamp++){
+	for (timestamp_t timestamp = 0; timestamp <= MAX_T; ++timestamp){
 		this->bal_hist.s_history[timestamp] = (BalanceState) { .s_balance = init_bal, .s_balance_pending_in = 0, .s_time = timestamp, };
 	}
 

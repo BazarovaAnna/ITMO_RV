@@ -6,5 +6,5 @@ C_FLAGS =  -std=c99 -Wall -Werror -pedantic -g
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/stepan/Загрузки/distributed/dis2/RV/lab2 
+C_INCLUDES = -I/home/stepan/Загрузки/distributed/dis2/RV/lab2/pa2 
 

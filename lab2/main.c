@@ -10,7 +10,6 @@
 #include <sys/wait.h>
 
 #include "common.h"
-#include "pa1.h"
 #include "ipc.h"
 #include "var_lib.h"
 
@@ -44,7 +43,7 @@ int main(int argc, char *argv[]) {
     //description (INIT)
     int opt=0;
     size_t COUNTER_OF_CHILDREN;//HOW MANY ACCS
-
+    Proc *this = &me;
 	//start, check key and count of children
     while ((opt=getopt(argc, argv, "p:"))!=-1){
         switch (opt) {
@@ -61,7 +60,7 @@ int main(int argc, char *argv[]) {
 					fprintf(stderr, " numbers!\n");
                     return 1;
 				}
-				BANK_ACCOUNTS = (int*)malloc(COUNTER_OF_CHILDREN * sizeof(long));
+				//BANK_ACCOUNTS = (int*)malloc(COUNTER_OF_CHILDREN * sizeof(long));
 				for(int i=3;i<COUNTER_OF_CHILDREN+3;i++){
 					BANK_ACCOUNTS[i-3]=strtol(argv[i],NULL,10);
 				}
@@ -79,10 +78,35 @@ int main(int argc, char *argv[]) {
         fprintf(stderr, "Error: you should use key like a '-p NUMBER_OF_CHILDREN CHILDREN!'\n");
         return 1;
     }
-	
+
+  /*  if (argc >= 3 && strcmp(argv[1], "-p") == 0) {
+        COUNTER_OF_CHILDREN = strtol(argv[2], NULL, 10);
+        COUNTER_OF_PROCESSES = COUNTER_OF_CHILDREN + 1;
+
+        if (COUNTER_OF_CHILDREN >= 10) {
+            fprintf(stderr, "ERROR: Too many children requested.\n");
+            return 1;
+        }
+
+        if (argc != 3 + COUNTER_OF_CHILDREN) {
+            fprintf(stderr, "ERROR: Expected %ld balances after `%s %s'\n",
+                    COUNTER_OF_CHILDREN, argv[1], argv[2]);
+            return 1;
+        }
+
+        //for (size_t i = 1; i <= COUNTER_OF_CHILDREN; i++) {
+        //    BANK_ACCOUNTS[i] = strtol(argv[2 + i], NULL, 10);
+        //}
+        for(int i=3;i<COUNTER_OF_CHILDREN+3;i++){
+            BANK_ACCOUNTS[i-3]=strtol(argv[i],NULL,10);
+        }
+    } else {
+        fprintf(stderr, "ERROR: Key '-p NUMBER_OF_CHILDREN' is mandatory\n");
+        return 1;
+    }*/
 	//opening pipe file
     pipes = fopen(pipes_log, "w");
-	Proc *this = &me;
+
 
     //creating descriptors to send and read from i to j
     for (int i=0; i<=COUNTER_OF_CHILDREN;i++){
@@ -101,7 +125,7 @@ int main(int argc, char *argv[]) {
     //don't need this anymore
     fclose(pipes);
     //opening log file
-    log = fopen(events_log, "w");
+    log = fopen(events_log, "a");
 
     //create array with pidts and save parent's pid
     //replaced to var_lib.h
@@ -142,15 +166,17 @@ int main(int argc, char *argv[]) {
         }
 
     }
-    fclose(log);
+    //fclose(log);
 
 	if (this->this_id != PARENT_ID){
+	    pipes_log_writer("Child %i started \n", this->this_id);
+	    fclose(pipes);
 		CHILD_PROC_START(this, BANK_ACCOUNTS[this->this_id]);
 	} else {
 		PARENT_PROC_START(this);
 	}
 
-	fclose(pipes);
+	fclose(log);
 
     
     	return 0;

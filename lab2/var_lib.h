@@ -17,7 +17,8 @@ typedef struct{
 Proc me;
 pid_t proc_pidts[10];
 //balance_t initial_balances[10];
-int* BANK_ACCOUNTS;
+//int*
+balance_t BANK_ACCOUNTS[10];
 
 //was
 size_t reader_pipe[10][10];

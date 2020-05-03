@@ -19,6 +19,7 @@
 #include "banking.h"
 #include "child.h"
 #include "parent.h"
+#include "logwriter.h"
 
 
 //local_id this_id;
@@ -30,7 +31,7 @@ void pipes_log_writer(const char *message, ...);
 //added
 void init_hist(Proc *this, balance_t init_bal);
 
-static FILE *log;
+//static FILE *log;
 static  FILE *pipes;
 static const char * const pipes_log_mes_r = "Pipe from %i to %i is opened for reading\n";
 static const char * const pipes_log_mes_w = "Pipe from %i to %i is opened for writing\n";
@@ -114,6 +115,12 @@ int main(int argc, char *argv[]) {
             if (i!=j) {//can't be child for itself
                 int fields[2];
                 pipe(fields);
+
+                for (int q = 0; q < 2; ++q) {
+                    unsigned int flags = fcntl(fields[i], F_GETFL, 0);
+                    fcntl(fields[q], F_SETFL, flags | O_NONBLOCK);
+                }
+
                 reader_pipe[i][j] = fields[0];
                 writer_pipe[i][j] = fields[1];
                 //write to log file
@@ -125,8 +132,8 @@ int main(int argc, char *argv[]) {
     //don't need this anymore
     fclose(pipes);
     //opening log file
-    log = fopen(events_log, "a");
-
+    //log = fopen(events_log, "a");
+    log_open();
     //create array with pidts and save parent's pid
     //replaced to var_lib.h
     //pid_t proc_pidts[COUNTER_OF_CHILDREN];
@@ -176,8 +183,8 @@ int main(int argc, char *argv[]) {
 		PARENT_PROC_START(this);
 	}
 
-	fclose(log);
-
+	//fclose(log);
+    log_close();
     
     	return 0;
 	

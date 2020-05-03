@@ -19,6 +19,7 @@
 #include "banking.h"
 #include "child.h"
 #include "parent.h"
+#include "logwriter.h"
 
 
 //local_id this_id;
@@ -30,7 +31,7 @@ void pipes_log_writer(const char *message, ...);
 //added
 void init_hist(Proc *this, balance_t init_bal);
 
-static FILE *log;
+//static FILE *log;
 static  FILE *pipes;
 static const char * const pipes_log_mes_r = "Pipe from %i to %i is opened for reading\n";
 static const char * const pipes_log_mes_w = "Pipe from %i to %i is opened for writing\n";
@@ -41,11 +42,11 @@ int main(int argc, char *argv[]) {
 
 
     //description (INIT)
-    int opt=0;
+    //int opt=0;
     size_t COUNTER_OF_CHILDREN;//HOW MANY ACCS
     Proc *this = &me;
 	//start, check key and count of children
-    while ((opt=getopt(argc, argv, "p:"))!=-1){
+    /*while ((opt=getopt(argc, argv, "p:"))!=-1){
         switch (opt) {
 			//if the key is p - OK
             case 'p':
@@ -77,9 +78,9 @@ int main(int argc, char *argv[]) {
     if (COUNTER_OF_CHILDREN==0){
         fprintf(stderr, "Error: you should use key like a '-p NUMBER_OF_CHILDREN CHILDREN!'\n");
         return 1;
-    }
+    }*/
 
-  /*  if (argc >= 3 && strcmp(argv[1], "-p") == 0) {
+  if (argc >= 3 && strcmp(argv[1], "-p") == 0) {
         COUNTER_OF_CHILDREN = strtol(argv[2], NULL, 10);
         COUNTER_OF_PROCESSES = COUNTER_OF_CHILDREN + 1;
 
@@ -94,16 +95,16 @@ int main(int argc, char *argv[]) {
             return 1;
         }
 
-        //for (size_t i = 1; i <= COUNTER_OF_CHILDREN; i++) {
-        //    BANK_ACCOUNTS[i] = strtol(argv[2 + i], NULL, 10);
-        //}
-        for(int i=3;i<COUNTER_OF_CHILDREN+3;i++){
-            BANK_ACCOUNTS[i-3]=strtol(argv[i],NULL,10);
+        for (size_t i = 1; i <= COUNTER_OF_CHILDREN; i++) {
+            BANK_ACCOUNTS[i] = strtol(argv[2 + i], NULL, 10);
         }
+        /*for(int i=3;i<COUNTER_OF_CHILDREN+3;i++){
+            BANK_ACCOUNTS[i-3]=strtol(argv[i],NULL,10);
+        }*/
     } else {
         fprintf(stderr, "ERROR: Key '-p NUMBER_OF_CHILDREN' is mandatory\n");
         return 1;
-    }*/
+    }
 	//opening pipe file
     pipes = fopen(pipes_log, "w");
 
@@ -114,6 +115,12 @@ int main(int argc, char *argv[]) {
             if (i!=j) {//can't be child for itself
                 int fields[2];
                 pipe(fields);
+
+                for (int q = 0; q < 2; ++q) {
+                    unsigned int flags = fcntl(fields[i], F_GETFL, 0);
+                    fcntl(fields[q], F_SETFL, flags | O_NONBLOCK);
+                }
+
                 reader_pipe[i][j] = fields[0];
                 writer_pipe[i][j] = fields[1];
                 //write to log file
@@ -125,8 +132,8 @@ int main(int argc, char *argv[]) {
     //don't need this anymore
     fclose(pipes);
     //opening log file
-    log = fopen(events_log, "a");
-
+    //log = fopen(events_log, "a");
+    log_open();
     //create array with pidts and save parent's pid
     //replaced to var_lib.h
     //pid_t proc_pidts[COUNTER_OF_CHILDREN];
@@ -176,8 +183,8 @@ int main(int argc, char *argv[]) {
 		PARENT_PROC_START(this);
 	}
 
-	fclose(log);
-
+	//fclose(log);
+    log_close();
     
     	return 0;
 	

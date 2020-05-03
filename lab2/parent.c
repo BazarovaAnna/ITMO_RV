@@ -25,9 +25,9 @@ void PARENT_PROC_START(Proc *this){
    // log = fopen(events_log, "w");
     for (size_t i=1; i<= COUNTER_OF_PROCESSES - 1; i++){
         Message msg;
-        if (i!= this->this_id) receive(this,i,&msg);
+        if (i!= this->this_id) receive(&me,i,&msg);
     }
-    both_writer(log_received_all_started_fmt, this->this_id);
+    both_writer(log_received_all_started_fmt, get_physical_time(), this->this_id);
 
 	bank_robbery(this, COUNTER_OF_PROCESSES - 1 );
 	
@@ -35,19 +35,19 @@ void PARENT_PROC_START(Proc *this){
 	send_multicast(&me, &message);
 
 	for (int i = 1; i<=COUNTER_OF_PROCESSES - 1; i++){
-        Message message;
-        if (i != this->this_id) receive(this, i, &message);
+        Message msg;
+        if (i != this->this_id) receive(&me, i, &msg);
     }
     //write to log & comm line
-    both_writer(log_received_all_done_fmt, this->this_id);
+    both_writer(log_received_all_done_fmt, get_physical_time(), this->this_id);
 	
 	this->all_hist.s_history_len = COUNTER_OF_PROCESSES - 1;
 	for (int i = 1; i <= COUNTER_OF_PROCESSES - 1; i++) {
-		Message message;
-		receive(&me, i, &message);
-		int16_t message_type = message.s_header.s_type;
+		Message mess;
+		receive(&me, i, &mess);
+		int16_t message_type = mess.s_header.s_type;
 		if (message_type == BALANCE_HISTORY) {
-		BalanceHistory *children_hist = (BalanceHistory *) &message.s_payload;
+		BalanceHistory *children_hist = (BalanceHistory *) &mess.s_payload;
 		this->all_hist.s_history[i-1] = *children_hist;		
 		}
 	

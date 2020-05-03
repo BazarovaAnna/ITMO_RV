@@ -13,7 +13,7 @@ static FILE *log;
 void both_writer(const char *message, ...){
     va_list list;
 
-    log = fopen(events_log, "w");
+    log = fopen(events_log, "a");
     //write to event log file
     va_start(list,message);
     vfprintf(log, message, list);
@@ -27,7 +27,7 @@ void both_writer(const char *message, ...){
 }
 void both_writer_with_messages(Message *const message, const char *frmt, ...){
     va_list list;
-    log = fopen(events_log, "w");
+    log = fopen(events_log, "a");
     //write to event log file
     va_start(list,frmt);
     vfprintf(log, frmt, list);

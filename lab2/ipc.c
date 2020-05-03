@@ -26,7 +26,7 @@ int send_multicast(void *self, const Message *message) {
 	Proc *this = self;    
 	for (local_id lid=0; lid < COUNTER_OF_PROCESSES; lid++) {
         if (lid != this->this_id) {
-            int transact = send(self,lid,message);
+            int transact = send(this,lid,message);
             if (transact > 0) return transact;
         }
     }
@@ -38,12 +38,12 @@ int receive(void *self, local_id from, Message *message) {
     if(from >= COUNTER_OF_PROCESSES) {
         return 1;
     }
-    read(reader_pipe[from][this->this_id], &message/*->s_header*/, sizeof(MessageHeader)+message->s_header.s_payload_len);
-    sleep(1);
+    read(reader_pipe[from][this->this_id], &message->s_header, sizeof(MessageHeader));
+    //sleep(1);
     if (message->s_header.s_magic != MESSAGE_MAGIC) {
         return 1;
     }
-    //read(reader_pipe[from][this->id], &message->s_payload, message->s_header.s_payload_len);//убрать отдельное считывание тела
+    read(reader_pipe[from][this->this_id], &message->s_payload, message->s_header.s_payload_len);//убрать отдельное считывание тела
     //sleep(1);
     return 0;
 }
@@ -53,7 +53,7 @@ int receive_any(void *self, Message *message) {
     int to = this->this_id;
     while (true) {
         //todo refactor
-        if ( to + 1 == this->this_id) to++;
+        if ( ++to  == this->this_id) to++;
         if (to >= COUNTER_OF_PROCESSES) {
             to -= COUNTER_OF_PROCESSES;
         }

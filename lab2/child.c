@@ -46,14 +46,14 @@ void CHILD_PROC_START(Proc *this, balance_t init_bal) {
 	//todo by both writer + here message
 
 
-	for (int i = 1; i <= COUNTER_OF_PROCESSES; i++) {
-		//Message message;
+	for (int i = 1; i <= COUNTER_OF_PROCESSES-1; i++) {
+		Message mes;
 		if (i == this->this_id) {
 			continue;
 		}
-		receive(&me, i, &message);
+		receive(&me, i, &mes);
 	}
-	both_writer(log_received_all_started_fmt, this->this_id);
+	both_writer(log_received_all_started_fmt, get_physical_time(), this->this_id);
 
 
 	//todo refactor futher
@@ -63,13 +63,13 @@ void CHILD_PROC_START(Proc *this, balance_t init_bal) {
 
 	while (loop) {
 		//await stop or transfer
-		//const Message *message;
-		receive_any(this, &message);
-		MessageType message_type = message.s_header.s_type;
+		Message mess;
+		receive_any(this, &mess);
+		MessageType message_type = mess.s_header.s_type;
 
 		if (message_type == TRANSFER) {
 			//todo
-			TransferOrder *transf_ord = (TransferOrder *) message.s_payload;
+			TransferOrder *transf_ord = (TransferOrder *) mess.s_payload;
 			timestamp_t time_of_transfer = get_physical_time();
 			BalanceHistory *bal_history = &this->bal_hist;
 			balance_t diff = 0;
@@ -78,7 +78,7 @@ void CHILD_PROC_START(Proc *this, balance_t init_bal) {
 				// sending transfer
 				diff = -transf_ord->s_amount;
 				// send TRANSFER to receiver
-				send(&me, transf_ord->s_dst, &message);
+				send(&me, transf_ord->s_dst, &mess);
 				both_writer(log_transfer_out_fmt, get_physical_time(), this->this_id, transf_ord->s_amount, transf_ord->s_dst);
 
 			} else if (transf_ord->s_dst == this->this_id) {
@@ -112,7 +112,7 @@ void CHILD_PROC_START(Proc *this, balance_t init_bal) {
 	Message somemsg = { .s_header = { .s_magic = MESSAGE_MAGIC, .s_type=DONE,}, };
 	//timestamp_t
 	timestamp = get_physical_time();
-	both_writer_with_messages(&somemsg, log_done_fmt, timestamp, this->this_id, getpid(), getppid(), this->bal_hist.s_history[timestamp].s_balance);
+	both_writer_with_messages(&somemsg, log_done_fmt, timestamp, this->this_id, this->bal_hist.s_history[timestamp].s_balance);
 	//sprintf(message.s_payload, log_done_fmt, this_id);
 	//todo, do we need it?
 	somemsg.s_header.s_payload_len = strlen(somemsg.s_payload);
@@ -120,12 +120,12 @@ void CHILD_PROC_START(Proc *this, balance_t init_bal) {
 
 
 	while (not_ready > 0) {
-		//Message message;
-		receive_any(this, &message);
-		MessageType message_type = message.s_header.s_type;
+		Message newmsg;
+		receive_any(this, &newmsg);
+		MessageType message_type = newmsg.s_header.s_type;
 
 		if (message_type == TRANSFER) {
-            process_transfer_order(this, &message);
+            process_transfer_order(this, &newmsg);
 			//todo
 			/*TransferOrder *transf_ord = (TransferOrder *) &(message->s_payload);
 			timestamp_t time_of_transfer = get_physical_time();
@@ -162,7 +162,7 @@ void CHILD_PROC_START(Proc *this, balance_t init_bal) {
 
 	}
 
-	both_writer(log_received_all_done_fmt, this->this_id);
+	both_writer(log_received_all_done_fmt, get_physical_time(), this->this_id);
 
 	// 0 < ++
 	//for (int i = 1; i <= this->bal_hist.s_history_len; i++) {

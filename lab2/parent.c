@@ -30,21 +30,15 @@ void PARENT_PROC_START(Proc *this){
 
 	bank_robbery(this, COUNTER_OF_PROCESSES - 1 );
 	
-	Message message = { 
-		.s_header = { 
-			.s_magic = MESSAGE_MAGIC, 
-			.s_type = STOP, 
-			.s_payload_len = 0, 
-			.s_local_time = get_physical_time(), 
-		}, };
+	Message message = { .s_header = { .s_magic = MESSAGE_MAGIC, .s_type = STOP, .s_payload_len = 0, .s_local_time = get_physical_time(), }, };
 	send_multicast(&me, &message);
 
 	for (int i = 1; i<=COUNTER_OF_PROCESSES - 1; i++){
         Message msg;
         if (i != this->this_id) receive(&me, i, &msg);
-    }
+    	}
     //write to log & comm line
-    both_writer(log_received_all_done_fmt, get_physical_time(), this->this_id);
+    	both_writer(log_received_all_done_fmt, get_physical_time(), this->this_id);
 	
 	this->all_hist.s_history_len = COUNTER_OF_PROCESSES - 1;
 	for (int i = 1; i <= COUNTER_OF_PROCESSES - 1; i++) {

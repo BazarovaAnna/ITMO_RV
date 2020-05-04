@@ -60,17 +60,17 @@ int receive_any(void *self, Message *message) {
     Proc *this = (Proc *) self;
     int to_whom = this->this_id;
     while (true) {
-
+	//todo why here ++to_whom? need change if we can
         if ( ++to_whom  == this->this_id) to_whom++;
         if (to_whom >= COUNTER_OF_PROCESSES) {
             to_whom -= COUNTER_OF_PROCESSES;
         }
 
-
         size_t src_file = reader_pipe[to_whom][this->this_id];
         unsigned int flags = fcntl(src_file, F_GETFL, 0);
         fcntl(src_file, F_SETFL, flags | O_NONBLOCK);
         read(src_file, &message->s_header, 1);//one byte read
+	//todo for what we doing this? Has any idea? If no - I will check futher without it
         
         fcntl(src_file, F_SETFL, flags & !O_NONBLOCK);
 

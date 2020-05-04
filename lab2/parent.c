@@ -30,7 +30,13 @@ void PARENT_PROC_START(Proc *this){
 
 	bank_robbery(this, COUNTER_OF_PROCESSES - 1 );
 	
-	Message message = { .s_header = { .s_magic = MESSAGE_MAGIC, .s_type = STOP, .s_payload_len = 0, .s_local_time = get_physical_time(), }, };
+	Message message = { 
+		.s_header = { 
+			.s_magic = MESSAGE_MAGIC, 
+			.s_type = STOP, 
+			.s_payload_len = 0, 
+			.s_local_time = get_physical_time(), 
+		}, };
 	send_multicast(&me, &message);
 
 	for (int i = 1; i<=COUNTER_OF_PROCESSES - 1; i++){
@@ -46,8 +52,8 @@ void PARENT_PROC_START(Proc *this){
 		receive(&me, i, &mess);
 		int16_t message_type = mess.s_header.s_type;
 		if (message_type == BALANCE_HISTORY) {
-		BalanceHistory *children_hist = (BalanceHistory *) &mess.s_payload;
-		this->all_hist.s_history[i-1] = *children_hist;		
+			BalanceHistory *children_hist = (BalanceHistory *) &mess.s_payload;
+			this->all_hist.s_history[i-1] = *children_hist;		
 		}
 	
 	}

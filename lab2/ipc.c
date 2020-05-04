@@ -51,7 +51,7 @@ int receive(void *self, local_id from, Message *message) {
 
     unsigned int flags1 = fcntl(src_file, F_GETFL, 0);
     fcntl(src_file, F_SETFL, flags1 & !O_NONBLOCK);
-    read(reader_pipe[from][this->this_id], &message->s_payload, message->s_header.s_payload_len);//убрать отдельное считывание тела
+    read(reader_pipe[from][this->this_id], &message->s_payload, message->s_header.s_payload_len);//убрать отдельное считывание тела?
     fcntl(src_file, F_SETFL, flags1 | O_NONBLOCK);
     return 0;
 }
@@ -60,7 +60,7 @@ int receive_any(void *self, Message *message) {
     Proc *this = (Proc *) self;
     int to_whom = this->this_id;
     while (true) {
-        //todo refactor
+
         if ( ++to_whom  == this->this_id) to_whom++;
         if (to_whom >= COUNTER_OF_PROCESSES) {
             to_whom -= COUNTER_OF_PROCESSES;

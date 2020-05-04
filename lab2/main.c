@@ -154,7 +154,11 @@ void init_hist(Proc *this, balance_t init_bal){
 	this->bal_hist.s_id = this->this_id;
 	this->bal_hist.s_history_len = 1;
 	for (timestamp_t timestamp = 1; timestamp < MAX_T; timestamp++){
-		this->bal_hist.s_history[timestamp] = (BalanceState) { .s_balance = init_bal, .s_balance_pending_in = 0, .s_time = timestamp, };
+		this->bal_hist.s_history[timestamp] = (BalanceState) { 
+			.s_balance = init_bal, 
+			.s_balance_pending_in = 0, 
+			.s_time = timestamp,
+		};
 	}
 }
 
@@ -164,8 +168,16 @@ void transfer(void *parent_data, local_id src, local_id dst, balance_t amount) {
     // to sent TRANSFER to receiver
     Message message;
     {
-        message.s_header = (MessageHeader) { .s_local_time = get_physical_time(), .s_magic =MESSAGE_MAGIC, .s_type=TRANSFER, .s_payload_len = sizeof(TransferOrder), };
-        TransferOrder order = { .s_src = src, .s_dst = dst, .s_amount = amount, };
+        message.s_header = (MessageHeader) { 
+			.s_local_time = get_physical_time(), 
+			.s_magic =MESSAGE_MAGIC, .s_type=TRANSFER, 
+			.s_payload_len = sizeof(TransferOrder), 
+		};
+        TransferOrder order = { 
+			.s_src = src, 
+			.s_dst = dst, 
+			.s_amount = amount, 
+		};
         memcpy(&message.s_payload, &order, sizeof(TransferOrder));
         send(this, src, &message);
     }

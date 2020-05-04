@@ -12,8 +12,8 @@
 #include <unistd.h>
 #include <stdint.h>
 #include <stdarg.h>
-#include "banking.h"
 #include "ipc.h"
+#include "banking.h"
 #include "pa2345.h"
 #include "child.h"
 #include "var_lib.h"

@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/bank_robbery.c
+/mnt/c/Users/anna/desktop/tests/lab2/bank_robbery.c
 banking.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/banking.h
+/mnt/c/Users/anna/desktop/tests/lab2/banking.h
 
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/banking.h
+/mnt/c/Users/anna/desktop/tests/lab2/banking.h
 ipc.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/ipc.h
+/mnt/c/Users/anna/desktop/tests/lab2/ipc.h
 
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/child.c
+/mnt/c/Users/anna/desktop/tests/lab2/child.c
 errno.h
 -
 signal.h
@@ -35,64 +35,68 @@ unistd.h
 -
 stdint.h
 -
-zconf.h
+stdarg.h
 -
+ipc.h
+/mnt/c/Users/anna/desktop/tests/lab2/ipc.h
 banking.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/banking.h
-ipc.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/ipc.h
+/mnt/c/Users/anna/desktop/tests/lab2/banking.h
 pa2345.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/pa2345.h
+/mnt/c/Users/anna/desktop/tests/lab2/pa2345.h
 child.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/child.h
+/mnt/c/Users/anna/desktop/tests/lab2/child.h
 var_lib.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/var_lib.h
+/mnt/c/Users/anna/desktop/tests/lab2/var_lib.h
 parent.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/parent.h
+/mnt/c/Users/anna/desktop/tests/lab2/parent.h
 logwriter.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/logwriter.h
+/mnt/c/Users/anna/desktop/tests/lab2/logwriter.h
 
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/child.h
+/mnt/c/Users/anna/desktop/tests/lab2/child.h
 var_lib.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/var_lib.h
+/mnt/c/Users/anna/desktop/tests/lab2/var_lib.h
 
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/common.h
+/mnt/c/Users/anna/desktop/tests/lab2/common.h
 
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/ipc.c
-stdio.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/stdio.h
+/mnt/c/Users/anna/desktop/tests/lab2/ipc.c
 ipc.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/ipc.h
+/mnt/c/Users/anna/desktop/tests/lab2/ipc.h
 unistd.h
 -
 stdbool.h
 -
+fcntl.h
+-
+stdio.h
+-
 var_lib.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/var_lib.h
+/mnt/c/Users/anna/desktop/tests/lab2/var_lib.h
+time.h
+-
 
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/ipc.h
+/mnt/c/Users/anna/desktop/tests/lab2/ipc.h
 stddef.h
 -
 stdint.h
 -
 
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/logwriter.c
-zconf.h
+/mnt/c/Users/anna/desktop/tests/lab2/logwriter.c
+stdarg.h
 -
 stdio.h
 -
 logwriter.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/logwriter.h
+/mnt/c/Users/anna/desktop/tests/lab2/logwriter.h
 common.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/common.h
+/mnt/c/Users/anna/desktop/tests/lab2/common.h
 ipc.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/ipc.h
+/mnt/c/Users/anna/desktop/tests/lab2/ipc.h
 
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/logwriter.h
+/mnt/c/Users/anna/desktop/tests/lab2/logwriter.h
 ipc.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/ipc.h
+/mnt/c/Users/anna/desktop/tests/lab2/ipc.h
 
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/main.c
+/mnt/c/Users/anna/desktop/tests/lab2/main.c
 signal.h
 -
 unistd.h
@@ -114,33 +118,31 @@ sys/types.h
 sys/wait.h
 -
 common.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/common.h
-pa1.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/pa1.h
+/mnt/c/Users/anna/desktop/tests/lab2/common.h
 ipc.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/ipc.h
+/mnt/c/Users/anna/desktop/tests/lab2/ipc.h
 var_lib.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/var_lib.h
+/mnt/c/Users/anna/desktop/tests/lab2/var_lib.h
 errno.h
 -
 stdbool.h
 -
 banking.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/banking.h
+/mnt/c/Users/anna/desktop/tests/lab2/banking.h
 child.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/child.h
+/mnt/c/Users/anna/desktop/tests/lab2/child.h
 parent.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/parent.h
+/mnt/c/Users/anna/desktop/tests/lab2/parent.h
+logwriter.h
+/mnt/c/Users/anna/desktop/tests/lab2/logwriter.h
 
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/pa1.h
-
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/pa2345.h
+/mnt/c/Users/anna/desktop/tests/lab2/pa2345.h
 common.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/common.h
+/mnt/c/Users/anna/desktop/tests/lab2/common.h
 ipc.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/ipc.h
+/mnt/c/Users/anna/desktop/tests/lab2/ipc.h
 
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/parent.c
+/mnt/c/Users/anna/desktop/tests/lab2/parent.c
 unistd.h
 -
 sys/wait.h
@@ -159,30 +161,30 @@ errno.h
 -
 stdio.h
 -
-zconf.h
+stdarg.h
 -
 ipc.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/ipc.h
+/mnt/c/Users/anna/desktop/tests/lab2/ipc.h
 banking.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/banking.h
+/mnt/c/Users/anna/desktop/tests/lab2/banking.h
 var_lib.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/var_lib.h
+/mnt/c/Users/anna/desktop/tests/lab2/var_lib.h
 parent.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/parent.h
+/mnt/c/Users/anna/desktop/tests/lab2/parent.h
 pa2345.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/pa2345.h
+/mnt/c/Users/anna/desktop/tests/lab2/pa2345.h
 logwriter.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/logwriter.h
+/mnt/c/Users/anna/desktop/tests/lab2/logwriter.h
 
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/parent.h
+/mnt/c/Users/anna/desktop/tests/lab2/parent.h
 var_lib.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/var_lib.h
+/mnt/c/Users/anna/desktop/tests/lab2/var_lib.h
 
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/var_lib.h
+/mnt/c/Users/anna/desktop/tests/lab2/var_lib.h
 fcntl.h
 -
 banking.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/banking.h
+/mnt/c/Users/anna/desktop/tests/lab2/banking.h
 ipc.h
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/ipc.h
+/mnt/c/Users/anna/desktop/tests/lab2/ipc.h
 

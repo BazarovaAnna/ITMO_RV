@@ -29,8 +29,8 @@ CMakeFiles/peer.dir/main.c.o: ../banking.h
 CMakeFiles/peer.dir/main.c.o: ../child.h
 CMakeFiles/peer.dir/main.c.o: ../common.h
 CMakeFiles/peer.dir/main.c.o: ../ipc.h
+CMakeFiles/peer.dir/main.c.o: ../logwriter.h
 CMakeFiles/peer.dir/main.c.o: ../main.c
-CMakeFiles/peer.dir/main.c.o: ../pa1.h
 CMakeFiles/peer.dir/main.c.o: ../parent.h
 CMakeFiles/peer.dir/main.c.o: ../var_lib.h
 

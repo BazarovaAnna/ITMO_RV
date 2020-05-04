@@ -1,3 +1,3 @@
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/build/CMakeFiles/rebuild_cache.dir
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/build/CMakeFiles/peer.dir
-/home/stepan/Загрузки/distributed/dis2/RV/lab2/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/anna/desktop/tests/lab2/build/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/anna/desktop/tests/lab2/build/CMakeFiles/peer.dir
+/mnt/c/Users/anna/desktop/tests/lab2/build/CMakeFiles/edit_cache.dir

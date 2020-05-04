@@ -29,10 +29,17 @@ void CHILD_PROC_START(Proc *this, balance_t init_bal) {
 		this->bal_hist.s_history[timestamp] = (BalanceState) { .s_balance = init_bal, .s_balance_pending_in = 0, .s_time = timestamp, };
 	}
 
-	Message message = { .s_header = { .s_magic = MESSAGE_MAGIC, .s_type = STARTED, }, };
+	Message message = { 
+		.s_header = { 
+			.s_magic = MESSAGE_MAGIC, 
+			.s_type = STARTED, 
+		}, };
+		
 	timestamp_t timestamp = get_physical_time();
     message.s_header.s_payload_len = strlen(message.s_payload);
-    both_writer_with_messages(&message, log_started_fmt, timestamp, this->this_id, getpid(), getppid(), this->bal_hist.s_history[timestamp].s_balance);
+    both_writer_with_messages(&message, log_started_fmt, timestamp, 
+		this->this_id, getpid(), getppid(), 
+		this->bal_hist.s_history[timestamp].s_balance);
 	//todo, do we need it - yes
 
 	send_multicast(&me, &message);

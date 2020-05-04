@@ -1,8 +1,3 @@
-//
-// Created by stepan on 03.05.20.
-//
-
-
 #include <stdarg.h>
 #include <stdio.h>
 #include "logwriter.h"

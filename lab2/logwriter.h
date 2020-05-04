@@ -1,7 +1,3 @@
-//
-// Created by stepan on 03.05.20.
-//
-
 #include "ipc.h"
 
 #ifndef LAB2_LOGWRITER_H

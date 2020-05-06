@@ -1,5 +1,5 @@
-#ifndef LAB2_CHILD_H
-#define LAB2_CHILD_H
+#ifndef LAB3_CHILD_H
+#define LAB3_CHILD_H
 
 #include <errno.h>
 #include <signal.h>
@@ -26,23 +26,23 @@ void CHILD_PROC_START(Proc *this, balance_t init_bal) {
 	this->bal_hist.s_id = this->this_id;
 	this->bal_hist.s_history_len = 1;
 	for (timestamp_t timestamp = 0; timestamp <= MAX_T; ++timestamp){
-		this->bal_hist.s_history[timestamp] = (BalanceState) { 
-			.s_balance = init_bal, 
-			.s_balance_pending_in = 0, 
-			.s_time = timestamp, 
+		this->bal_hist.s_history[timestamp] = (BalanceState) {
+			.s_balance = init_bal,
+			.s_balance_pending_in = 0,
+			.s_time = timestamp,
 		};
 	}
 
-	Message message = { 
-		.s_header = { 
-			.s_magic = MESSAGE_MAGIC, 
-			.s_type = STARTED, 
+	Message message = {
+		.s_header = {
+			.s_magic = MESSAGE_MAGIC,
+			.s_type = STARTED,
 		}, };
-		
+
 	timestamp_t timestamp = get_physical_time();
     message.s_header.s_payload_len = strlen(message.s_payload);
-    both_writer_with_messages(&message, log_started_fmt, timestamp, 
-		this->this_id, getpid(), getppid(), 
+    both_writer_with_messages(&message, log_started_fmt, timestamp,
+		this->this_id, getpid(), getppid(),
 		this->bal_hist.s_history[timestamp].s_balance);
 	//todo, do we need it - yes
 
@@ -57,25 +57,25 @@ void CHILD_PROC_START(Proc *this, balance_t init_bal) {
 		}
 		receive(&me, i, &msg);
 	}
-	both_writer(log_received_all_started_fmt, 
+	both_writer(log_received_all_started_fmt,
 		get_physical_time(), this->this_id);
 
 	size_t Im_Not_Ready = COUNTER_OF_PROCESSES - 2;
 	bool flag = true;
-	
+
 	while (flag) {
 		//await, stop or transfer
 		Message mesg;
-		
+
 		receive_any(this, &mesg);
-		
+
 		MessageType message_type = mesg.s_header.s_type;
 
 		if (message_type == TRANSFER) {
-			
+
 			TransferOrder *transf_ord = (TransferOrder *) mesg.s_payload;
 			timestamp_t time_transf = get_physical_time();
-			
+
 			BalanceHistory *bal_hist = &this->bal_hist;
 			balance_t res = 0;
 
@@ -84,7 +84,7 @@ void CHILD_PROC_START(Proc *this, balance_t init_bal) {
 				res = -transf_ord->s_amount;
 				// send TRANSFER to receiver
 				send(&me, transf_ord->s_dst, &mesg);
-				both_writer(log_transfer_out_fmt, get_physical_time(), 
+				both_writer(log_transfer_out_fmt, get_physical_time(),
 					this->this_id, transf_ord->s_amount, transf_ord->s_dst);
 
 			} else if (transf_ord->s_dst == this->this_id) {
@@ -92,14 +92,14 @@ void CHILD_PROC_START(Proc *this, balance_t init_bal) {
 				res = +transf_ord->s_amount;
 				// answer ACK to parent
 				Message ack;
-				ack.s_header = (MessageHeader) { 
-					.s_magic = MESSAGE_MAGIC, 
-					.s_type = ACK, 
-					.s_local_time = time_transf, 
-					.s_payload_len = 0, 
+				ack.s_header = (MessageHeader) {
+					.s_magic = MESSAGE_MAGIC,
+					.s_type = ACK,
+					.s_local_time = time_transf,
+					.s_payload_len = 0,
 				};
 				send(&me, PARENT_ID, &ack);
-				both_writer(log_transfer_in_fmt, get_physical_time(), 
+				both_writer(log_transfer_in_fmt, get_physical_time(),
 					this->this_id, transf_ord->s_amount, transf_ord->s_src);
 			}
 			if (time_transf >= bal_hist->s_history_len) {
@@ -120,29 +120,29 @@ void CHILD_PROC_START(Proc *this, balance_t init_bal) {
 	}
 
 	//Message
-	Message somemsg = { 
-		.s_header = { 
-			.s_magic = MESSAGE_MAGIC, 
+	Message somemsg = {
+		.s_header = {
+			.s_magic = MESSAGE_MAGIC,
 			.s_type=DONE,
 		}, };
 	//timestamp_t
 	timestamp = get_physical_time();
-	both_writer_with_messages(&somemsg, log_done_fmt, timestamp, 
+	both_writer_with_messages(&somemsg, log_done_fmt, timestamp,
 		this->this_id, this->bal_hist.s_history[timestamp].s_balance);
 
 	somemsg.s_header.s_payload_len = strlen(somemsg.s_payload);
 	send_multicast(&me, &somemsg);
 
 	while (Im_Not_Ready > 0) {
-		
+
 		Message newmsg;
 		receive_any(this, &newmsg);
-		
+
 		MessageType message_type = newmsg.s_header.s_type;
 
 		if (message_type == TRANSFER) {
             process_transfer_order(this, &newmsg);
-		
+
 		}
 		if (message_type == DONE) {
 			Im_Not_Ready--;
@@ -150,58 +150,58 @@ void CHILD_PROC_START(Proc *this, balance_t init_bal) {
 
 	}
 
-	both_writer(log_received_all_done_fmt, 
+	both_writer(log_received_all_done_fmt,
 		get_physical_time(), this->this_id);
 
 	this->bal_hist.s_history_len = get_physical_time() + 1;
 	int hist_size = sizeof(local_id) + sizeof(uint8_t) +
 					this->bal_hist.s_history_len * sizeof(BalanceState);
 
-    Message res = { 
-		.s_header = { 
-			.s_magic = MESSAGE_MAGIC, 
-			.s_type = BALANCE_HISTORY, 
-			.s_local_time = get_physical_time(), 
-			.s_payload_len = hist_size, 
+    Message res = {
+		.s_header = {
+			.s_magic = MESSAGE_MAGIC,
+			.s_type = BALANCE_HISTORY,
+			.s_local_time = get_physical_time(),
+			.s_payload_len = hist_size,
 		} };
 	memcpy(&res.s_payload, &this->bal_hist, hist_size);
 	send(this, PARENT_ID, &res);
 }
 
 void process_transfer_order(Proc *this, Message *message) {
-	
+
     TransferOrder *transf_ord = (TransferOrder *) &(message->s_payload);
     timestamp_t time_transf = get_physical_time();
     BalanceHistory *bal_hist = &this->bal_hist;
     balance_t res = 0;
 
     if (transf_ord->s_src == this->this_id) {
-		
+
         // sending transfer
         res = -transf_ord->s_amount;
-        
+
         // send TRANSFER to receiver
         send(&me, transf_ord->s_dst, message);
-        
-        both_writer(log_transfer_out_fmt, get_physical_time(), 
+
+        both_writer(log_transfer_out_fmt, get_physical_time(),
 			this->this_id, transf_ord->s_amount, transf_ord->s_dst);
 
     } else if (transf_ord->s_dst == this->this_id) {
-		
+
         // receiving transfer
         res = +transf_ord->s_amount;
-        
+
         // answer ACK to parent
         Message ack;
-        ack.s_header = (MessageHeader) { 
-			.s_magic = MESSAGE_MAGIC, 
-			.s_type = ACK, 
-			.s_local_time = time_transf, 
-			.s_payload_len = 0, 
+        ack.s_header = (MessageHeader) {
+			.s_magic = MESSAGE_MAGIC,
+			.s_type = ACK,
+			.s_local_time = time_transf,
+			.s_payload_len = 0,
 		};
         send(&me, PARENT_ID, &ack);
-        
-        both_writer(log_transfer_in_fmt, get_physical_time(), 
+
+        both_writer(log_transfer_in_fmt, get_physical_time(),
 			this->this_id, transf_ord->s_amount, transf_ord->s_src);
     }
     if (time_transf >= bal_hist->s_history_len) {

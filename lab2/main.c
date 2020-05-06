@@ -57,7 +57,7 @@ int main(int argc, char *argv[]) {
                     return 1;
 				}
 				//BANK_ACCOUNTS = (int*)malloc(COUNTER_OF_CHILDREN * sizeof(long));
-				for(int i=1;i<COUNTER_OF_CHILDREN;i++){
+				for(int i=1;i<=COUNTER_OF_CHILDREN;i++){
 					BANK_ACCOUNTS[i]=strtol(argv[i+2],NULL,10);
 				}
 				

@@ -69,10 +69,28 @@ int receive_any(void *self, Message *message) {
         size_t src_file = reader_pipe[to_whom][this->this_id];
         unsigned int flags = fcntl(src_file, F_GETFL, 0);
         fcntl(src_file, F_SETFL, flags | O_NONBLOCK);
-        read(src_file, &message->s_header, 1);//one byte read
-	//todo for what we doing this? Has any idea? If no - I will check futher without it *IT WAS IN COMPLECT WITH STRANGE SWITCH CASE MIGHT BE UNNESESSARY
-        
-        fcntl(src_file, F_SETFL, flags & !O_NONBLOCK);
+        int num_bytes_read = read(src_file, &message->s_header, 1); 
+        switch (num_bytes_read) { 
+            case -1: 
+                // Would block, go to next 
+                //nanosleep((const struct timespec[]) {{0, 1000L}}, NULL); 
+                //sleep(1); 
+                continue; 
+                break; 
+            case 0: { 
+                // EOF reached 
+                //nanosleep((const struct timespec[]) {{0, 1000L}}, NULL); 
+                //sleep(1); 
+                continue; 
+                break; 
+            } 
+            default: 
+                // One byte read, continue reading 
+                break; 
+
+        } 
+
+        fcntl(src_file, F_SETFL, flags & !O_NONBLOCK); 
 
         read(src_file, ((char *) &message->s_header) + 1, sizeof(MessageHeader) - 1);
         read(src_file, message->s_payload, message->s_header.s_payload_len);

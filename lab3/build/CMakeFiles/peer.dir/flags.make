@@ -6,5 +6,5 @@ C_FLAGS =  -L/mnt/c/Users/anna/desktop/tests/lab2/lib64 -Wl,-rpath=/mnt/c/Users/
 
 C_DEFINES = 
 
-C_INCLUDES = -I/mnt/c/Users/anna/desktop/tests/lab2 
+C_INCLUDES = -I/mnt/c/Users/anna/desktop/tests/lab3 
 

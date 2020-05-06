@@ -23,6 +23,7 @@
 
 void pipes_log_writer(const char *message, ...);
 //added
+void init_hist(Proc *this, balance_t init_bal);
 
 //static FILE *log; OLD
 static  FILE *pipes;
@@ -36,45 +37,30 @@ int main(int argc, char *argv[]) {
     //description (INIT)
     size_t COUNTER_OF_CHILDREN;//HOW MANY ACCS
     Proc *this = &me;
-
-	//todo, it's your code further, I think that it's work, but for several reasons I used another earlier *WHICH REASONS??
-	//add started
-	int opt=0;
 	//start, check key and count of children
-    	while ((opt=getopt(argc, argv, "p:"))!=-1){
-        switch (opt) {
-			//if the key is p - OK
-            case 'p':
-                COUNTER_OF_CHILDREN = strtol(optarg,NULL,10);
-                if (COUNTER_OF_CHILDREN < 1) {
-                    fprintf(stderr, "Error: you should input more than 0 children!\n");
-                    return 1;
-                }
-                if((argc-3)!=COUNTER_OF_CHILDREN){
-					fprintf(stderr, "Error: you should input ");
-					fprintf(stderr,"%li", COUNTER_OF_CHILDREN);
-					fprintf(stderr, " numbers!\n");
-                    return 1;
-				}
-				//BANK_ACCOUNTS = (int*)malloc(COUNTER_OF_CHILDREN * sizeof(long));
-				for(int i=1;i<COUNTER_OF_CHILDREN;i++){
-					BANK_ACCOUNTS[i]=strtol(argv[i+2],NULL,10);
-				}
-				
-                break;
-            //if we have anything else: WRONG INPUT
-            default:
-                fprintf(stderr, "Error: you should use key like a '-p NUMBER_OF_CHILDREN'!\n");
-                return 1;
-                break;
+	if (argc >= 3 && strcmp(argv[1], "-p") == 0) {
+        COUNTER_OF_CHILDREN = strtol(argv[2], NULL, 10);//now it's not global
+        COUNTER_OF_PROCESSES = COUNTER_OF_CHILDREN + 1;
+
+        if (COUNTER_OF_CHILDREN >= 10) {
+            fprintf(stderr, "ERROR: Too many children requested.\n");
+            return 1;
         }
-    	}
-    	//IF SMTH GOES WRONG THIS if WORKS
-    	if (COUNTER_OF_CHILDREN==0){
-        fprintf(stderr, "Error: you should use key like a '-p NUMBER_OF_CHILDREN CHILDREN!'\n");
+
+        if (argc != 3 + COUNTER_OF_CHILDREN) {
+            fprintf(stderr, "ERROR: Expected %ld balances after `%s %s'\n",
+                    COUNTER_OF_CHILDREN, argv[1], argv[2]);
+            return 1;
+        }
+
+        for (size_t i = 1; i <= COUNTER_OF_CHILDREN; i++) {
+            BANK_ACCOUNTS[i] = strtol(argv[2 + i], NULL, 10);
+        }
+
+    } else {
+        fprintf(stderr, "ERROR: Key '-p NUMBER_OF_CHILDREN' is mandatory\n");
         return 1;
-    	}
-	//add ended
+    }
 	//opening pipe file
     pipes = fopen(pipes_log, "w");
 
@@ -119,7 +105,7 @@ int main(int argc, char *argv[]) {
         else { //means parent process
             //this_id = PARENT_ID;
             //proc_pidts[i]=this_child_pidt;
-			this->this_id = 0;
+			this->this_id = PARENT_ID;
 			proc_pidts[i]=this_child_pidt;
         }
     }
@@ -167,18 +153,31 @@ void pipes_log_writer(const char *message, ...){
 void init_hist(Proc *this, balance_t init_bal){
 	this->bal_hist.s_id = this->this_id;
 	this->bal_hist.s_history_len = 1;
-	for (timestamp_t timestamp = 1; timestamp < 255; timestamp++){
-		this->bal_hist.s_history[timestamp] = (BalanceState) { .s_balance = init_bal, .s_balance_pending_in = 0, .s_time = timestamp,};
+	for (timestamp_t timestamp = 1; timestamp < MAX_T; timestamp++){
+		this->bal_hist.s_history[timestamp] = (BalanceState) { 
+			.s_balance = init_bal, 
+			.s_balance_pending_in = 0, 
+			.s_time = timestamp,
+		};
 	}
 }
 
 void transfer(void *parent_data, local_id src, local_id dst, balance_t amount) {
     Proc *this = parent_data;
+
     // to sent TRANSFER to receiver
     Message message;
     {
-        message.s_header = (MessageHeader) { .s_local_time = get_physical_time(), .s_magic =MESSAGE_MAGIC, .s_type=TRANSFER, .s_payload_len = sizeof(TransferOrder), };
-        TransferOrder order = { .s_src = src, .s_dst = dst, .s_amount = amount, };
+        message.s_header = (MessageHeader) { 
+			.s_local_time = get_physical_time(), 
+			.s_magic =MESSAGE_MAGIC, .s_type=TRANSFER, 
+			.s_payload_len = sizeof(TransferOrder), 
+		};
+        TransferOrder order = { 
+			.s_src = src, 
+			.s_dst = dst, 
+			.s_amount = amount, 
+		};
         memcpy(&message.s_payload, &order, sizeof(TransferOrder));
         send(this, src, &message);
     }

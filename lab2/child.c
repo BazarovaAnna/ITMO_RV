@@ -29,14 +29,13 @@ void CHILD_PROC_START(Proc *this, balance_t init_bal) {
 	}
 	Message message = { .s_header = { .s_magic = MESSAGE_MAGIC, .s_type = STARTED, }, };
 	timestamp_t timestamp = get_physical_time();
-    	message.s_header.s_payload_len = strlen(message.s_payload);
+    message.s_header.s_payload_len = strlen(message.s_payload);
+	
 	//!!  todo not both_writer_with_message, but both_writer + here message отдельно?
-    	both_writer_with_messages(&message, log_started_fmt, timestamp, this->this_id, getpid(), getppid(), this->bal_hist.s_history[timestamp].s_balance);
+    both_writer_with_messages(&message, log_started_fmt, timestamp, this->this_id, getpid(), getppid(), this->bal_hist.s_history[timestamp].s_balance);
 	//todo, do we need it - yes
 
 	send_multicast(&me, &message);
-
-	
 
 	for (int i = 1; i <= COUNTER_OF_PROCESSES-1; i++) {
 		Message msg;
@@ -111,7 +110,7 @@ void CHILD_PROC_START(Proc *this, balance_t init_bal) {
 		MessageType message_type = newmsg.s_header.s_type;
 
 		if (message_type == TRANSFER) {
-            		TransferOrder *transf_ord = (TransferOrder *) newmsg.s_payload;
+            TransferOrder *transf_ord = (TransferOrder *) newmsg.s_payload;
 			timestamp_t time_transf = get_physical_time();
 			
 			BalanceHistory *bal_hist = &this->bal_hist;
@@ -132,6 +131,7 @@ void CHILD_PROC_START(Proc *this, balance_t init_bal) {
 				ack.s_header = (MessageHeader) { .s_magic = MESSAGE_MAGIC, .s_type = ACK, .s_local_time = time_transf, .s_payload_len = 0, };
 				send(&me, PARENT_ID, &ack);
 				both_writer(log_transfer_in_fmt, get_physical_time(), this->this_id, transf_ord->s_amount, transf_ord->s_src);
+			}
 		}
 		if (message_type == DONE) {
 			Im_Not_Ready--;

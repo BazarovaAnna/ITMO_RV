@@ -132,6 +132,12 @@ void CHILD_PROC_START(Proc *this, balance_t init_bal) {
 				send(&me, PARENT_ID, &ack);
 				both_writer(log_transfer_in_fmt, get_physical_time(), this->this_id, transf_ord->s_amount, transf_ord->s_src);
 			}
+			if (time_transf >= bal_hist->s_history_len) {
+				bal_hist->s_history_len = time_transf + 1;
+			}
+			for (timestamp_t time = time_transf; time <= 255; time++) {
+				bal_hist->s_history[time].s_balance += res;
+			}
 		}
 		if (message_type == DONE) {
 			Im_Not_Ready--;

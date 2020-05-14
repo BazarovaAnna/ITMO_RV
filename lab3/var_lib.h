@@ -9,6 +9,7 @@ typedef struct{
 	BalanceHistory bal_hist;
 	local_id this_id;
 	AllHistory all_hist;
+	timestamp_t lamp_time;
 } Proc;
 
 //added

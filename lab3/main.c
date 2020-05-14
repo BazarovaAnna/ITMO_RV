@@ -23,8 +23,6 @@
 
 void pipes_log_writer(const char *message, ...);
 //added
-void init_hist(Proc *this, balance_t init_bal);
-
 //static FILE *log; OLD
 static  FILE *pipes;
 static const char * const pipes_log_mes_r = "Pipe from %i to %i is opened for reading\n";
@@ -38,7 +36,7 @@ int main(int argc, char *argv[]) {
     size_t COUNTER_OF_CHILDREN;//HOW MANY ACCS
     Proc *this = &me;
 	//start, check key and count of children
-	if (argc >= 3 && strcmp(argv[1], "-p") == 0) {
+	/*if (argc >= 3 && strcmp(argv[1], "-p") == 0) {
         COUNTER_OF_CHILDREN = strtol(argv[2], NULL, 10);//now it's not global
         COUNTER_OF_PROCESSES = COUNTER_OF_CHILDREN + 1;
 
@@ -59,6 +57,41 @@ int main(int argc, char *argv[]) {
 
     } else {
         fprintf(stderr, "ERROR: Key '-p NUMBER_OF_CHILDREN' is mandatory\n");
+        return 1;
+    }*/
+    int opt=0;
+    //start, check key and count of children
+    while ((opt=getopt(argc, argv, "p:"))!=-1){
+        switch (opt) {
+            //if the key is p - OK
+            case 'p':
+                COUNTER_OF_CHILDREN = strtol(optarg,NULL,10);
+                if (COUNTER_OF_CHILDREN < 1) {
+                    fprintf(stderr, "Error: you should input more than 0 children!\n");
+                    return 1;
+                }
+                if((argc-3)!=COUNTER_OF_CHILDREN){
+                    fprintf(stderr, "Error: you should input ");
+                    fprintf(stderr,"%li", COUNTER_OF_CHILDREN);
+                    fprintf(stderr, " numbers!\n");
+                    return 1;
+                }
+                //BANK_ACCOUNTS = (int*)malloc(COUNTER_OF_CHILDREN * sizeof(long));
+                for(int i=1;i<=COUNTER_OF_CHILDREN;i++){
+                    BANK_ACCOUNTS[i]=strtol(argv[i+2],NULL,10);
+                }
+
+                break;
+                //if we have anything else: WRONG INPUT
+            default:
+                fprintf(stderr, "Error: you should use key like a '-p NUMBER_OF_CHILDREN'!\n");
+                return 1;
+                break;
+        }
+    }
+    //IF SMTH GOES WRONG THIS if WORKS
+    if (COUNTER_OF_CHILDREN==0){
+        fprintf(stderr, "Error: you should use key like a '-p NUMBER_OF_CHILDREN CHILDREN!'\n");
         return 1;
     }
 	//opening pipe file
@@ -84,6 +117,7 @@ int main(int argc, char *argv[]) {
             }
         }
     }
+    this->lamp_time =0;
     //don't need this anymore
     fclose(pipes);
     //opening log file
@@ -138,7 +172,6 @@ int main(int argc, char *argv[]) {
 	}
 
     log_close();
-    
     	return 0;
 	
 }
@@ -150,27 +183,17 @@ void pipes_log_writer(const char *message, ...){
     va_end(list);
 }
 
-void init_hist(Proc *this, balance_t init_bal){
-	this->bal_hist.s_id = this->this_id;
-	this->bal_hist.s_history_len = 1;
-	for (timestamp_t timestamp = 1; timestamp < MAX_T; timestamp++){
-		this->bal_hist.s_history[timestamp] = (BalanceState) { 
-			.s_balance = init_bal, 
-			.s_balance_pending_in = 0, 
-			.s_time = timestamp,
-		};
-	}
-}
-
 void transfer(void *parent_data, local_id src, local_id dst, balance_t amount) {
     Proc *this = parent_data;
 
     // to sent TRANSFER to receiver
     Message message;
     {
+        this->lamp_time++;
         message.s_header = (MessageHeader) { 
-			.s_local_time = get_physical_time(), 
-			.s_magic =MESSAGE_MAGIC, .s_type=TRANSFER, 
+			.s_local_time = get_lamport_time(),
+			.s_magic =MESSAGE_MAGIC,
+			.s_type=TRANSFER,
 			.s_payload_len = sizeof(TransferOrder), 
 		};
         TransferOrder order = { 
@@ -185,5 +208,14 @@ void transfer(void *parent_data, local_id src, local_id dst, balance_t amount) {
     // to await ACK answer like a proof
     //todo check header - no need
     receive(this, dst, &message);
+    if (message.s_header.s_type==ACK) {
+        if (this->lamp_time < message.s_header.s_local_time) this->lamp_time=message.s_header.s_local_time;
+        this->lamp_time++;
+    }
 
 }
+
+timestamp_t get_lamport_time(){
+    return me.lamp_time;
+}
+

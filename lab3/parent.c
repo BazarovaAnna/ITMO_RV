@@ -1,5 +1,3 @@
-#ifndef LAB2_PARENT_H
-#define LAB2_PARENT_H
 
 #include <unistd.h>
 #include <sys/wait.h>
@@ -24,27 +22,38 @@ void PARENT_PROC_START(Proc *this){
    // log = fopen(events_log, "w"); OLD
     for (size_t i=1; i<= COUNTER_OF_PROCESSES - 1; i++){
         Message msg;
-        if (i!= this->this_id) receive(&me,i,&msg);
+        if (i!= this->this_id)
+		{
+        	receive(&me,i,&msg);
+        	if (this->lamp_time < msg.s_header.s_local_time) this->lamp_time=msg.s_header.s_local_time;
+			this->lamp_time++;
+		}
     }
-    both_writer(log_received_all_started_fmt, get_physical_time(), this->this_id);
+    both_writer(log_received_all_started_fmt, get_lamport_time(), this->this_id);
 
 	bank_robbery(this, COUNTER_OF_PROCESSES - 1 );
-	
+
+	this->lamp_time++;
 	Message message = { 
 		.s_header = { 
 			.s_magic = MESSAGE_MAGIC, 
 			.s_type = STOP, 
 			.s_payload_len = 0, 
-			.s_local_time = get_physical_time(), 
+			.s_local_time = get_lamport_time(),
 		}, };
 	send_multicast(&me, &message);
 
 	for (int i = 1; i<=COUNTER_OF_PROCESSES - 1; i++){
         Message msg;
-        if (i != this->this_id) receive(&me, i, &msg);
+        if (i != this->this_id) {
+        	receive(&me, i, &msg);
+        	if (this->lamp_time < msg.s_header.s_local_time) this->lamp_time=msg.s_header.s_local_time;
+			this->lamp_time++;
+        }
+
     }
     //write to log & comm line
-    both_writer(log_received_all_done_fmt, get_physical_time(), this->this_id);
+    both_writer(log_received_all_done_fmt, get_lamport_time(), this->this_id);
 	
 	this->all_hist.s_history_len = COUNTER_OF_PROCESSES - 1;
 	for (int i = 1; i <= COUNTER_OF_PROCESSES - 1; i++) {
@@ -53,7 +62,9 @@ void PARENT_PROC_START(Proc *this){
 		int16_t message_type = mess.s_header.s_type;
 		if (message_type == BALANCE_HISTORY) {
 			BalanceHistory *children_hist = (BalanceHistory *) &mess.s_payload;
-			this->all_hist.s_history[i-1] = *children_hist;		
+			this->all_hist.s_history[i-1] = *children_hist;
+			if (this->lamp_time < mess.s_header.s_local_time) this->lamp_time=mess.s_header.s_local_time;
+			this->lamp_time++;
 		}
 	
 	}
@@ -65,4 +76,4 @@ void PARENT_PROC_START(Proc *this){
 
 }
 
-#endif
+

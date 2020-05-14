@@ -16,8 +16,11 @@ int send(void *self, local_id dst, const Message *message) {
     if (message->s_header.s_magic != MESSAGE_MAGIC) {
         return 1;
     }
-    write(writer_pipe[this->this_id][dst], &message->s_header, sizeof(MessageHeader));
-    write(writer_pipe[this->this_id][dst], &message->s_payload, message->s_header.s_payload_len);
+    this->lamp_time++;
+    //int len = message->s_header.s_payload_len + sizeof(MessageHeader);
+    //write(writer_pipe[this->this_id][dst], &message->s_header, sizeof(MessageHeader));
+    //write(writer_pipe[this->this_id][dst], &message->s_payload, message->s_header.s_payload_len);
+    write(writer_pipe[this->this_id][dst], message, message->s_header.s_payload_len + sizeof(MessageHeader));
     return 0;
 }
 
@@ -39,21 +42,20 @@ int receive(void *self, local_id from, Message *message) {
     }
 
     size_t src_file = reader_pipe[from][this->this_id];
+
     unsigned int flags = fcntl(src_file, F_GETFL, 0);
     fcntl(src_file, F_SETFL, flags & !O_NONBLOCK);
-
-
     read(src_file, &message->s_header, sizeof(MessageHeader));
     fcntl(src_file, F_SETFL, flags | O_NONBLOCK);
     if (message->s_header.s_magic != MESSAGE_MAGIC) {
         return 1;
     }
-
     unsigned int flags1 = fcntl(src_file, F_GETFL, 0);
     fcntl(src_file, F_SETFL, flags1 & !O_NONBLOCK);
-    read(reader_pipe[from][this->this_id], &message->s_payload, message->s_header.s_payload_len);//убрать отдельное считывание тела?
+    read(reader_pipe[from][this->this_id], &message->s_payload, message->s_header.s_payload_len);
     fcntl(src_file, F_SETFL, flags1 | O_NONBLOCK);
     return 0;
+
 }
 
 int receive_any(void *self, Message *message) {
@@ -65,18 +67,48 @@ int receive_any(void *self, Message *message) {
         if (to_whom >= COUNTER_OF_PROCESSES) {
             to_whom -= COUNTER_OF_PROCESSES;
         }
+        //Внимание, вопрос. Почему это работает в обычном ресиве, но не работает тут?
+        //Пытался заменить этим кодом тот, но вылетает таймаут.
+        /*
+        size_t src_file = reader_pipe[to_whom][this->this_id];
 
+        unsigned int flags = fcntl(src_file, F_GETFL, 0);
+        fcntl(src_file, F_SETFL, flags & !O_NONBLOCK);
+
+
+        read(src_file, &message->s_header, sizeof(MessageHeader));
+        fcntl(src_file, F_SETFL, flags | O_NONBLOCK);
+        if (message->s_header.s_magic != MESSAGE_MAGIC) {
+            return 1;
+        }
+
+        unsigned int flags1 = fcntl(src_file, F_GETFL, 0);
+        fcntl(src_file, F_SETFL, flags1 & !O_NONBLOCK);
+        read(reader_pipe[to_whom][this->this_id], &message->s_payload, message->s_header.s_payload_len);//убрать отдельное считывание тела?
+        fcntl(src_file, F_SETFL, flags1 | O_NONBLOCK);
+        */
 
         size_t src_file = reader_pipe[to_whom][this->this_id];
         unsigned int flags = fcntl(src_file, F_GETFL, 0);
         fcntl(src_file, F_SETFL, flags | O_NONBLOCK);
-        read(src_file, &message->s_header, 1);//one byte read
-        
+        int num_bytes_read = read(src_file, &message->s_header, sizeof(MessageHeader));
+        switch (num_bytes_read) { 
+            case -1: 
+                // block
+                continue; 
+                break; 
+            case 0: { 
+                // EOF
+                continue; 
+                break; 
+            } 
+            default: 
+                // One byte read, continue reading 
+                break; 
+
+        } 
         fcntl(src_file, F_SETFL, flags & !O_NONBLOCK);
-
-        read(src_file, ((char *) &message->s_header) + 1, sizeof(MessageHeader) - 1);
         read(src_file, message->s_payload, message->s_header.s_payload_len);
-
         fcntl(src_file, F_SETFL, flags | O_NONBLOCK);
 
         return 0;

@@ -88,7 +88,7 @@ void CHILD_PROC_START(Proc *this, balance_t init_bal) {
 				if (this->lamp_time < time_transf) this->lamp_time=time_transf;
 				this->lamp_time++;
 				timestamp_t send_time = get_lamport_time();
-				for (timestamp_t i = 0; i<=255; i++){
+				for (timestamp_t i = send_time; i<=255; i++){//TODONOW так поменять?
 					bal_hist->s_history[i].s_balance -= transf_ord->s_amount;
 				}
 				//res = -transf_ord->s_amount;

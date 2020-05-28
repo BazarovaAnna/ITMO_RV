@@ -15,4 +15,4 @@ timestamp_t get_lamport_time(void);
  */
 void increase_lamport_time(void);
 
-#endif /* __LAMPORT_TIME_H__ */
+#endif

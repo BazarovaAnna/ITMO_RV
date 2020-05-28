@@ -1,4 +1,3 @@
-#define _DEFAULT_SOURCE
 #include <alloca.h>
 #include <stdbool.h>
 #include <string.h>

@@ -1,66 +1,59 @@
-#define _DEFAULT_SOURCE
-#include <errno.h>
-#include <unistd.h>
 #include <stdbool.h>
+#include <unistd.h>
+#include <errno.h>
 
-#include "io.h"
 #include "ipc.h"
+#include "io.h"
 #include "child.h"
 
-int
-send(void *self, local_id dst, const Message *msg) {
-    proc_t *p   = (proc_t*)self;
-    local_id src  = p->self_id;
+int send(void *self, local_id dest, const Message *message) {
+    proc_t *p =(proc_t*)self;
+    local_id sorc = p->self_id;
 
-    if (src == dst)
-        return -1;
+    if (sorc == dest) return -1;
 
-    int    fd   = p->io->fds[src][dst][WRITE_FD];
-    write(fd, &msg->s_header, sizeof(MessageHeader));
-    if (msg->s_header.s_payload_len)
-        write(fd, msg->s_payload, msg->s_header.s_payload_len);
+    int fd = p->io->fds[sorc][dest][WRITE_FD];//TODO AFTER IO
+    write(fd, &message->s_header, sizeof(MessageHeader));//TODO AFTER IO
+    
+    if (message->s_header.s_payload_len) write(fd, message->s_payload, message->s_header.s_payload_len);
     return 0;
 }
 
-int
-send_multicast(void *self, const Message *msg) {
-    proc_t   *p   = (proc_t*)self;
-    local_id   pnum = p->io->procnum;
+int send_multicast(void *self, const Message *message) {
+    proc_t *p =(proc_t*)self;
+    local_id pnum = p->io->procnum;//TODO AFTER IO
 
-    for (local_id i = 0; i <= pnum; i++) {
-        send(self, i, msg);
+    for (local_id i = 0; i <= pnum; i++) {//TODO AFTER IO
+        send(self, i, message);
     }
     return 0;
 }
 
-int
-receive(void *self, local_id from, Message *msg) {
-    proc_t *p   = (proc_t*)self;
+int receive(void *self, local_id from, Message *message) {
+    proc_t *p = (proc_t*)self;//TODO CHECK SELF
     local_id to = p->self_id;
-    if (to == from)
-        return -1;
-    int    fd   = p->io->fds[from][to][READ_FD];
+    
+    if (to == from) return -1;
+    
+    int fd = p->io->fds[from][to][READ_FD];//TODO AFTER IO
 
-    char *buf = (char*)msg;
-    ssize_t r = read(fd, buf, sizeof(MessageHeader));
+    char *buff = (char*)message;
+    ssize_t r = read(fd, buff, sizeof(MessageHeader));//TODO AFTER IO
     ssize_t r2 = 0;
-    if (r > 0 && msg->s_header.s_payload_len) {
-        while ((r2 = read(fd, buf + sizeof(MessageHeader), msg->s_header.s_payload_len)) < 0){}
+    if (r > 0 && message->s_header.s_payload_len) {
+        while ((r2 = read(fd, buff + sizeof(MessageHeader), message->s_header.s_payload_len)) < 0){}
     }
-    return r > 0 ? (r2 >= 0 ? 0 : -1) : - 1;
+    return r > 0 ? (r2 >= 0 ? 0 : -1) : - 1;//TODO REMAKE
 }
 
-/** Receive message from the process.
- * 
- * @return  ID of sender process or -1.
- */
-int
-receive_any(void *self, Message *msg) {
+//Receive message from the process.
+//return  ID of sender process or -1.
+int receive_any(void *self, Message *message) {
     proc_t *p = (proc_t*)self;
-    local_id pnum = p->io->procnum;
+    local_id pnum = p->io->procnum;//TODO AFTER IO
 
-    for (local_id i = 0; i <= pnum; i++) {
-        if (receive(self, i, msg) == 0)
+    for (local_id i = 0; i <= pnum; i++) {//TODO AFTER IO
+        if (receive(self, i, message) == 0)
             return i;
     }
     return -1;   

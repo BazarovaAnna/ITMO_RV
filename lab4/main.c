@@ -74,7 +74,7 @@ create_pipes(IO *io) {
             if (pipe2(io->fds[i][j], O_NONBLOCK | O_DIRECT) < 0) {
                perror("pipe");
                return -1;
-            }
+            }//FIXED
         }
     }
     return 0;

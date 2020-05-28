@@ -50,9 +50,9 @@ int receive(void *self, local_id from, Message *message) {
 //return  ID of sender process or -1.
 int receive_any(void *self, Message *message) {
     proc_t *process = (proc_t*)self;
-    local_id pnum = process->io->procnum;//TODO AFTER IO
+    local_id pnum = process->io->procnum;
 
-    for (local_id i = 0; i <= pnum; i++) {//TODO AFTER IO
+    for (local_id i = 0; i <= pnum; i++) {
         if (receive(self, i, message) == 0)
             return i;
     }

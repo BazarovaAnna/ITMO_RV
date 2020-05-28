@@ -35,7 +35,7 @@ int request_cs(const void * self) {
         set_lamport_time(message.s_header.s_local_time);
         switch (message.s_header.s_type) {
             case CS_REQUEST: {
-                fprintf(stderr, "%d: process %d got request from %d\n", get_lamport_time(), process->self_id, id);
+                //fprintf(stderr, "%d: process %d got request from %d\n", get_lamport_time(), process->self_id, id);
                 
                 insert_into_queue(process->queue, make_node(id, message.s_header.s_local_time));
                 increase_lamport_time();
@@ -45,22 +45,22 @@ int request_cs(const void * self) {
                 break;
             }
             case CS_REPLY: {
-                fprintf(stderr, "%d: process %d got replay from %d\n", get_lamport_time(), process->self_id, id);
+                //fprintf(stderr, "%d: process %d got replay from %d\n", get_lamport_time(), process->self_id, id);
                 wait_reply--;
                 break;
             }
             case CS_RELEASE: {
-                fprintf(stderr, "%d: process %d got release from %d\n", get_lamport_time(), process->self_id, id);
+                //fprintf(stderr, "%d: process %d got release from %d\n", get_lamport_time(), process->self_id, id);
                 del_first_of_queue(process->queue);
                 break;
             }
             case DONE: {
-                fprintf(stderr, "%d: process %d got DONE from %d\n", get_lamport_time(), process->self_id, id);
+                //fprintf(stderr, "%d: process %d got DONE from %d\n", get_lamport_time(), process->self_id, id);
                 process->running_processes--;
                 break;
             }
             default: {
-                fprintf(stderr, "%d: process %d got unknown type: %d\n", get_lamport_time(), process->self_id, message.s_header.s_type);
+                //fprintf(stderr, "%d: process %d got unknown type: %d\n", get_lamport_time(), process->self_id, message.s_header.s_type);
             }
 
         }

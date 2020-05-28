@@ -1,6 +1,8 @@
-#include <sys/stat.h>
-#include <fcntl.h>
+#define _GNU_SOURCE 
+#include <fcntl.h> /* Определение констант O_* */
 #include <unistd.h>
+#include <sys/stat.h>
+
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <getopt.h>
@@ -69,10 +71,10 @@ create_pipes(IO *io) {
             }
             fprintf(io->pipes_log_stream, "Created pipe number %d.\n", count++);
 
-            /*if (pipe(io->fds[i][j], O_NONBLOCK | __O_DIRECT) < 0) {
+            if (pipe2(io->fds[i][j], O_NONBLOCK | O_DIRECT) < 0) {
                perror("pipe");
                return -1;
-            }*///TODO NEED A FIX
+            }
         }
     }
     return 0;

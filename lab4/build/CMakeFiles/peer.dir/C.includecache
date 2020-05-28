@@ -99,11 +99,11 @@ banking.h
 /mnt/c/Users/anna/desktop/tests/lab4/banking.h
 
 /mnt/c/Users/anna/desktop/tests/lab4/main.c
-sys/stat.h
--
 fcntl.h
 -
 unistd.h
+-
+sys/stat.h
 -
 sys/types.h
 -

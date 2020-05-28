@@ -69,10 +69,10 @@ create_pipes(IO *io) {
             }
             fprintf(io->pipes_log_stream, "Created pipe number %d.\n", count++);
 
-            if (pipe2(io->fds[i][j], O_NONBLOCK | O_DIRECT) < 0) {
+            /*if (pipe(io->fds[i][j], O_NONBLOCK | __O_DIRECT) < 0) {
                perror("pipe");
                return -1;
-            }
+            }*///TODO NEED A FIX
         }
     }
     return 0;

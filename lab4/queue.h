@@ -1,5 +1,7 @@
-#ifndef __IFMO_DISTCOMP_QUEUE_H__
-#define __IFMO_DISTCOMP_QUEUE_H__
+#ifndef __QUEUE__
+#define __QUEUE__
+
+#include "ipc.h"
 
 typedef struct _node_t {
     struct _node_t *next;
@@ -8,20 +10,20 @@ typedef struct _node_t {
 } node_t;
 
 typedef struct _queue_t {
-    node_t *head;
+    node_t *start;
     size_t len;
 } queue_t;
 
-node_t *node_create(local_id id, timestamp_t time);
+node_t *make_node(local_id id, timestamp_t time);
+queue_t *make_queue(void);
 
-queue_t *queue_create(void);
+void del_queue(queue_t *queue);
 
-void queue_destroy(queue_t *q);
+node_t *first_of_queue(queue_t *queue);
 
-node_t *queue_first(queue_t *q);
-void queue_delete_first(queue_t *q);
-void queue_insert(queue_t *q, node_t *n);
-void queue_print(queue_t *q, int id);
+void del_first_of_queue(queue_t *queue);
+void insert_into_queue(queue_t *queue, node_t *node);
+void print_queue(queue_t *queue, int id);
 
 
-#endif /* __IFMO_DISTCOMP_QUEUE_H__ */
+#endif

@@ -1,5 +1,5 @@
-#ifndef __IFMO_DISTRIBUTED_CLASS_IO__H
-#define __IFMO_DISTRIBUTED_CLASS_IO__H
+#ifndef __IO__
+#define __IO__
 
 #include <stdio.h>
 #include "ipc.h"
@@ -23,4 +23,4 @@ typedef struct {
     int mutexl;
 } IO;
 
-#endif /* __IFMO_DISTRIBUTED_CLASS_IO__H */
+#endif 

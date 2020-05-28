@@ -1,5 +1,6 @@
-#ifndef __IFMO_DISTRIBUTED_CLASS_PA1_CHILD_H__
-#define __IFMO_DISTRIBUTED_CLASS_PA1_CHILD_H__
+
+#ifndef __CHILD__
+#define __CHILD__
 
 #include <stdio.h>
 #include "ipc.h"
@@ -25,6 +26,5 @@ int child(IO *io, local_id id);
  * @param id    ID of the child process.
  * 
  */ 
-void
-close_unsed_fds(IO *io, local_id id);
-#endif /* __IFMO_DISTRIBUTED_CLASS_PA1_CHILD_H__ */
+void close_unsed_fds(IO *io, local_id id);
+#endif 

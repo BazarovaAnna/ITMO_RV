@@ -1,112 +1,91 @@
-#include <stdio.h>
-#include <errno.h>
 #include <unistd.h>
+#include <errno.h>
+#include <stdio.h>
 #include <stdlib.h>
 
-#include "ipc.h"
 #include "queue.h"
+#include "ipc.h"
 
-node_t *
-node_create(local_id id, timestamp_t time) {
+node_t * make_node(local_id id, timestamp_t time) {
+	
     node_t *node = (node_t*)malloc(sizeof(node_t));
     if (node == NULL) {
-        perror("malloc");
+        perror("malloc");//wut is dis
         exit(-1);
     }
-    node->next = NULL;
-    node->id = id;
-    node->time = time;
+    //назначаем поля ноды
+    node->next = NULL;//наша нода -последняя
+    node->id = id;//тот самый айдишник
+    node->time = time;//указанное время
     return node;
 }
 
-queue_t *
-queue_create(void) {
-    queue_t *q = (queue_t*)malloc(sizeof(queue_t));
-    if (q == NULL) {
-        perror("malloc");
+queue_t * make_queue(void) {
+	
+    queue_t *queue = (queue_t*)malloc(sizeof(queue_t));
+    if (queue == NULL) {
+        perror("malloc");//ошибка с выделением памяти
         exit(-1);
     }
-    q->len = 0;
-    q->head = NULL;
-    return q;
+    
+    queue->len = 0;//длина 0 потому что очередь пустая
+    queue->start = NULL;//в ней ничего не лежит
+    return queue;
 }
 
-void
-queue_destroy(queue_t *q) {
+void del_queue(queue_t *queue) {
+	
     node_t *node;
-    while (q->head) {
-        node = q->head->next;
-        free(q->head);
-        q->head = node;
-    }
-    free(q);
+    while (queue->start) {
+        node = queue->start->next;
+        free(queue->start);
+        queue->start = node;
+    }//проходим по всем нодам и освобождаем их, передвигая начало очереди дальше
+    free(queue);//все ноды оосвобождены, очередь пустая, очищаем и ее
 }
 
-void
-queue_insert(queue_t *q, node_t *n) {
+void insert_into_queue(queue_t *queue, node_t *node) {
     /* Search for the place to insert. */
-    node_t *cur  = NULL;
-    node_t *prev = NULL;
-    size_t len = q->len;
-    if (q->head == NULL) {
-        q->head = n;
+    node_t *current  = NULL;
+    node_t *previous = NULL;
+    size_t len = queue->len;
+    if (queue->start == NULL) {
+        queue->start = node;
         return;
     }
 
-    for (cur = q->head; cur; prev = cur, cur = cur->next) {
-        if (cur->time > n->time || (cur->time == n->time && cur->id > n->id)) {        
-            n->next = cur;
-            if (prev) 
-                prev->next = n;
-            else if (cur == q->head)
-                q->head = n;
+    for (current = queue->start; current; previous = current, current = current->next) {
+        if (current->time > node->time || (current->time == node->time && current->id > node->id)) {        
+            node->next = current;
+            if (previous) 
+                previous->next = node;
+            else if (current == queue->start)
+                queue->start = node;
 
-            q->len++;
+            queue->len++;
             break;
         }
     }
-    if (len == q->len) {
-        prev->next = n;
-    }
-}
-
-node_t *
-queue_first(queue_t *q) {
-    return q->head;
-}
-
-void
-queue_delete_first(queue_t *q) {
-    node_t *next = q->head->next;
-    free(q->head);
-    q->head = next;
-}
-
-void
-queue_print(queue_t *q, int id) {
-    node_t *t = q->head;
-    for (int i = 0; t; t = t->next, i++) {
-        fprintf(stderr, "Process %d #%d: ID[%d] TIME[%d]\n", id, i, t->id, t->time);
-    }
-}
-
-/*
-int
-main(int argc, char *argv[]) {
-
-    queue_t *q = queue_create();
-
-    queue_insert(q, node_create(2,1));
-    queue_insert(q, node_create(3,2));
-    queue_insert(q, node_create(4,1));
-    queue_insert(q, node_create(1,2));
-    queue_insert(q, node_create(5,1));
-    queue_insert(q, node_create(6,2));
-    queue_insert(q, node_create(0,1));
-
-    queue_print(q);
     
-    queue_destroy(q);
-    return 0;
+    if (len == queue->len) {
+        previous->next = node;
+    }
 }
-*/
+
+node_t * first_of_queue(queue_t *queue) {
+    return queue->start;
+}
+
+void del_first_of_queue(queue_t *queue) {
+    node_t *next = queue->start->next;
+    free(queue->start);
+    queue->start = next;
+}
+//выводим по очереди все процессы из очереди
+void print_queue(queue_t *queue, int id) {
+    node_t *node = queue->start;
+    for (int i = 0; node; node = node->next, i++) {
+        fprintf(stderr, "Process %d #%d: ID[%d] TIME[%d]\n", id, i, node->id, node->time);
+    }
+}
+

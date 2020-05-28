@@ -1,5 +1,5 @@
-#ifndef __LAMPORT_TIME_H__
-#define __LAMPORT_TIME_H__
+#ifndef __LAMPORT_TIME__
+#define __LAMPORT_TIME__
 
 #include "banking.h"
 

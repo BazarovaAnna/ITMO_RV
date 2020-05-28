@@ -19,22 +19,22 @@
  * @param num   Number of processes.
  * 
  */ 
-void close_unsed_fds(IO *io, local_id id) {//TODO AFTER IO
+void close_unsed_fds(IO *io, local_id id) {
 
-    for (local_id i = 0; i <= io->procnum; i++) {//TODO AFTER IO
-        for (local_id j = 0; j <= io->procnum; j++) {//TODO AFTER IO
+    for (local_id i = 0; i <= io->procnum; i++) {
+        for (local_id j = 0; j <= io->procnum; j++) {
             if (i != j) {
                 if (i == id) {
-                    close(io->fds[i][j][READ_FD]);//TODO AFTER IO
+                    close(io->fds[i][j][READ_FD]);
                     fprintf(io->pipes_log_stream, "ID %d closes read(%hhd -- %hhd)\n", id, i,j);
                 }
 
                 if (j == id) {
-                    close(io->fds[i][j][WRITE_FD]);//TODO AFTER IO
+                    close(io->fds[i][j][WRITE_FD]);
                     fprintf(io->pipes_log_stream, "ID %d closes write(%hhd -- %hhd)\n", id, i,j);
                 }
 
-                if (i != id && j != id) {//TODO AFTER IO
+                if (i != id && j != id) {
                     fprintf(io->pipes_log_stream, "ID %d closes pipe(%hhd -- %hhd)\n", id, i,j);
                     close(io->fds[i][j][WRITE_FD]);
                     close(io->fds[i][j][READ_FD]);
@@ -93,7 +93,7 @@ void work(proc_t *process) {
  * @param io    I/O metadata.
  * @param id    ID of the child process.
  */ 
-int child(IO *io, local_id id) {//TODO AFTER IO
+int child(IO *io, local_id id) {
 
     proc_t process;
     char payload[MAX_PAYLOAD_LEN];
@@ -105,7 +105,7 @@ int child(IO *io, local_id id) {//TODO AFTER IO
         .running_processes = io->procnum
     };
 
-    close_unsed_fds(io, id);//TODO AFTER IO
+    close_unsed_fds(io, id);
     
     /* Process starts. *///TODO FIX THIS
     len = sprintf(payload, log_started_fmt, get_lamport_time(), id, getpid(), getppid(), 0);

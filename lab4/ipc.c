@@ -41,7 +41,15 @@ int receive(void *self, local_id from, Message *message) {
     if (r > 0 && message->s_header.s_payload_len) {
         while ((r2 = read(fd, buff + sizeof(MessageHeader), message->s_header.s_payload_len)) < 0){}
     }
-    return r > 0 ? (r2 >= 0 ? 0 : -1) : - 1;//TODO REMAKE
+    if(r > 0){
+		if(r2 >= 0){
+			return 0;
+		}else{
+			return -1;
+		}
+	}else{
+		return - 1;
+	}
 }
 
 //Receive message from the process.

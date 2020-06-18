@@ -2,8 +2,6 @@
 #include <unistd.h>
 #include <errno.h>
 
-#include "ipc.h"
-#include "io.h"
 #include "child.h"
 
 int send(void *self, local_id dest, const Message *message) {

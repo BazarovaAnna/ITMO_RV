@@ -9,11 +9,8 @@ add_executable(peer
     child.h
     common.h
     cs.c
-    io.h
     ipc.c
     ipc.h
-    lamport_time.c
-    lamport_time.h
     main.c
     pa2345.h
     queue.c

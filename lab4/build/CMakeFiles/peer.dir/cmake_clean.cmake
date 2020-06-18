@@ -2,7 +2,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/peer.dir/child.c.o"
   "CMakeFiles/peer.dir/cs.c.o"
   "CMakeFiles/peer.dir/ipc.c.o"
-  "CMakeFiles/peer.dir/lamport_time.c.o"
   "CMakeFiles/peer.dir/main.c.o"
   "CMakeFiles/peer.dir/queue.c.o"
   "peer.pdb"

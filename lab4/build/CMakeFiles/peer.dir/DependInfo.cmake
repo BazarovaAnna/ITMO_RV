@@ -7,7 +7,6 @@ set(CMAKE_DEPENDS_CHECK_C
   "/mnt/c/Users/anna/desktop/tests/lab4/child.c" "/mnt/c/Users/anna/desktop/tests/lab4/build/CMakeFiles/peer.dir/child.c.o"
   "/mnt/c/Users/anna/desktop/tests/lab4/cs.c" "/mnt/c/Users/anna/desktop/tests/lab4/build/CMakeFiles/peer.dir/cs.c.o"
   "/mnt/c/Users/anna/desktop/tests/lab4/ipc.c" "/mnt/c/Users/anna/desktop/tests/lab4/build/CMakeFiles/peer.dir/ipc.c.o"
-  "/mnt/c/Users/anna/desktop/tests/lab4/lamport_time.c" "/mnt/c/Users/anna/desktop/tests/lab4/build/CMakeFiles/peer.dir/lamport_time.c.o"
   "/mnt/c/Users/anna/desktop/tests/lab4/main.c" "/mnt/c/Users/anna/desktop/tests/lab4/build/CMakeFiles/peer.dir/main.c.o"
   "/mnt/c/Users/anna/desktop/tests/lab4/queue.c" "/mnt/c/Users/anna/desktop/tests/lab4/build/CMakeFiles/peer.dir/queue.c.o"
   )

@@ -4,7 +4,6 @@
 #include <stdlib.h>
 
 #include "queue.h"
-#include "ipc.h"
 
 node_t * make_node(local_id id, timestamp_t time) {
 	

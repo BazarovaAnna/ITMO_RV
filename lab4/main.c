@@ -9,10 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "lamport_time.h"
 #include "common.h"
-#include "ipc.h"
-#include "pa2345.h"
 #include "child.h"
 
 /** Get attributes of the process from the command line.
@@ -88,7 +85,7 @@ wait_msg(proc_t *p, MessageType type) {
         while(receive_any((void*)p, &msg) < 0);
         if (type == msg.s_header.s_type) {
             total--;
-            set_lamport_time(msg.s_header.s_local_time);
+            set_l_t(msg.s_header.s_local_time);
         }
     }
 }
@@ -101,10 +98,10 @@ wait_all(IO *io) {
     };
 
     wait_msg(&p, STARTED);
-    fprintf(io->events_log_stream, log_received_all_started_fmt, get_lamport_time(), PARENT_ID);
+    fprintf(io->events_log_stream, log_received_all_started_fmt, get_l_t(), PARENT_ID);
 
     wait_msg(&p, DONE);
-    fprintf(io->events_log_stream, log_received_all_done_fmt, get_lamport_time(), PARENT_ID);
+    fprintf(io->events_log_stream, log_received_all_done_fmt, get_l_t(), PARENT_ID);
     while(wait(NULL) > 0);
 }
 

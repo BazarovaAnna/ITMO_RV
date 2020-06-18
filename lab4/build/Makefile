@@ -204,33 +204,6 @@ ipc.c.s:
 	$(MAKE) -f CMakeFiles/peer.dir/build.make CMakeFiles/peer.dir/ipc.c.s
 .PHONY : ipc.c.s
 
-lamport_time.o: lamport_time.c.o
-
-.PHONY : lamport_time.o
-
-# target to build an object file
-lamport_time.c.o:
-	$(MAKE) -f CMakeFiles/peer.dir/build.make CMakeFiles/peer.dir/lamport_time.c.o
-.PHONY : lamport_time.c.o
-
-lamport_time.i: lamport_time.c.i
-
-.PHONY : lamport_time.i
-
-# target to preprocess a source file
-lamport_time.c.i:
-	$(MAKE) -f CMakeFiles/peer.dir/build.make CMakeFiles/peer.dir/lamport_time.c.i
-.PHONY : lamport_time.c.i
-
-lamport_time.s: lamport_time.c.s
-
-.PHONY : lamport_time.s
-
-# target to generate assembly for a file
-lamport_time.c.s:
-	$(MAKE) -f CMakeFiles/peer.dir/build.make CMakeFiles/peer.dir/lamport_time.c.s
-.PHONY : lamport_time.c.s
-
 main.o: main.c.o
 
 .PHONY : main.o
@@ -303,9 +276,6 @@ help:
 	@echo "... ipc.o"
 	@echo "... ipc.i"
 	@echo "... ipc.s"
-	@echo "... lamport_time.o"
-	@echo "... lamport_time.i"
-	@echo "... lamport_time.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

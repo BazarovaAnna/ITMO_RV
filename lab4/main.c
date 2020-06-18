@@ -9,17 +9,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "common.h"
 #include "child.h"
 
-/** Get attributes of the process from the command line.
- * 
- * @param argc      Argument count.
- * @param argv      Argument vector.
- * @param procnum   Total count of the child processes. 
- */
-static inline int
-get_options(int argc, char *argv[], IO *io) {
+static inline int get_opt(int argc, char *argv[], IO *io) {
     int opt_index = 0;
     int c;
     static struct option opts[] = {
@@ -52,12 +44,7 @@ get_options(int argc, char *argv[], IO *io) {
     return io->procnum != 0 ? 0 : -1;
 }
 
-/** Creates pipes for IPC.
- * 
- * @param io    I/O description.
- */
-static int
-create_pipes(IO *io) {
+static int create_pipes(IO *io) {
     int count = 1;
     for (int i = 0; i <= io->procnum; i++) {
         for (int j = 0; j <= io->procnum; j++) {
@@ -77,8 +64,7 @@ create_pipes(IO *io) {
     return 0;
 }
 
-static void
-wait_msg(proc_t *p, MessageType type) {
+static void wait_msg(proc_t *p, MessageType type) {
     Message msg = { {0} };
     int total = p->io->procnum;
     while (total) {
@@ -90,8 +76,7 @@ wait_msg(proc_t *p, MessageType type) {
     }
 }
 
-static void
-wait_all(IO *io) {
+static void wait_all(IO *io) {
     proc_t p = (proc_t) {
         .io = io,
         .self_id = 0
@@ -105,23 +90,22 @@ wait_all(IO *io) {
     while(wait(NULL) > 0);
 }
 
-int
-main(int argc, char *argv[]) {
-#define TRY_FOPEN(expr)     \
-    if ((expr) == NULL) {   \
-        perror("fopen");    \
-        return -1;          \
-    }
+int main(int argc, char *argv[]) {
     
     IO io = {0};
 
-    if (get_options(argc, argv, &io) < 0)
+    if (get_opt(argc, argv, &io) < 0)
         return -1;
 
-    TRY_FOPEN(io.events_log_stream = fopen(events_log, "w+"))
+    if((io.events_log_stream = fopen(events_log, "w+"))==NULL){
+		perror("fopen");
+        return -1;
+	}
 
-    TRY_FOPEN(io.pipes_log_stream = fopen(pipes_log, "w"))
-
+    if((io.pipes_log_stream = fopen(pipes_log, "w"))==NULL){
+		perror("fopen");    
+        return -1; 
+	}
 
     if (create_pipes(&io) < 0)
         return -1;

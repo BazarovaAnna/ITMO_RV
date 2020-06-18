@@ -15,12 +15,7 @@ int request_cs(const void * self) {
     Message message;
     inc_l_t();
     
-    message.s_header = (MessageHeader) {
-        .s_magic = MESSAGE_MAGIC,
-        .s_type  = CS_REQUEST,
-        .s_local_time = get_l_t(),
-        .s_payload_len = 0
-    };
+    message.s_header = (MessageHeader) { .s_magic = MESSAGE_MAGIC,.s_type  = CS_REQUEST,.s_local_time = get_l_t(),.s_payload_len = 0 };
 
     send_multicast((void*)process, &message);
 

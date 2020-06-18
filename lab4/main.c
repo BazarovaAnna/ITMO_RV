@@ -41,7 +41,11 @@ static inline int get_opt(int argc, char *argv[], IO *io) {
                 return -1;
         }
     }
-    return io->procnum != 0 ? 0 : -1;
+    if(io->procnum == 0){
+		return 0;
+	}else{
+		return -1;
+	}
 }
 
 static int create_pipes(IO *io) {

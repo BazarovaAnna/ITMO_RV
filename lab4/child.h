@@ -2,7 +2,6 @@
 #define __CHILD__
 
 #include <stdio.h>
-#include "ipc.h"
 #include "queue.h"
 #include "banking.h"
 #include "common.h"

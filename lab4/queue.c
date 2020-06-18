@@ -9,7 +9,7 @@ node_t * make_node(local_id id, timestamp_t time) {
 	
     node_t *node = (node_t*)malloc(sizeof(node_t));
     if (node == NULL) {
-        perror("malloc");//wut is dis
+        perror("malloc");
         exit(-1);
     }
     //назначаем поля ноды

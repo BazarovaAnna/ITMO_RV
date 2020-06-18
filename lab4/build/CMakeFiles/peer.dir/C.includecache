@@ -29,8 +29,6 @@ child.h
 /mnt/c/Users/anna/desktop/tests/lab4/child.h
 stdio.h
 -
-ipc.h
-/mnt/c/Users/anna/desktop/tests/lab4/ipc.h
 queue.h
 /mnt/c/Users/anna/desktop/tests/lab4/queue.h
 banking.h
@@ -49,8 +47,6 @@ queue.h
 /mnt/c/Users/anna/desktop/tests/lab4/queue.h
 child.h
 /mnt/c/Users/anna/desktop/tests/lab4/child.h
-pa2345.h
-/mnt/c/Users/anna/desktop/tests/lab4/pa2345.h
 
 /mnt/c/Users/anna/desktop/tests/lab4/ipc.c
 stdbool.h

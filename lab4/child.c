@@ -6,8 +6,6 @@
 #include <alloca.h>
 
 #include "child.h"
-#include "common.h"
-#include "pa2345.h"
 
 static timestamp_t g_t = 0;
 

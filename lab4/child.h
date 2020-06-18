@@ -5,6 +5,8 @@
 #include "ipc.h"
 #include "queue.h"
 #include "banking.h"
+#include "common.h"
+#include "pa2345.h"
 
 #define MAX_PROC    10
 #define MAX_PIPES   110

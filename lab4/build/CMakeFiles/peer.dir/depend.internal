@@ -20,8 +20,10 @@ CMakeFiles/peer.dir/cs.c.o
 CMakeFiles/peer.dir/ipc.c.o
  /mnt/c/Users/anna/desktop/tests/lab4/banking.h
  /mnt/c/Users/anna/desktop/tests/lab4/child.h
+ /mnt/c/Users/anna/desktop/tests/lab4/common.h
  /mnt/c/Users/anna/desktop/tests/lab4/ipc.c
  /mnt/c/Users/anna/desktop/tests/lab4/ipc.h
+ /mnt/c/Users/anna/desktop/tests/lab4/pa2345.h
  /mnt/c/Users/anna/desktop/tests/lab4/queue.h
 CMakeFiles/peer.dir/main.c.o
  /mnt/c/Users/anna/desktop/tests/lab4/banking.h

@@ -19,8 +19,10 @@ CMakeFiles/peer.dir/cs.c.o: ../queue.h
 
 CMakeFiles/peer.dir/ipc.c.o: ../banking.h
 CMakeFiles/peer.dir/ipc.c.o: ../child.h
+CMakeFiles/peer.dir/ipc.c.o: ../common.h
 CMakeFiles/peer.dir/ipc.c.o: ../ipc.c
 CMakeFiles/peer.dir/ipc.c.o: ../ipc.h
+CMakeFiles/peer.dir/ipc.c.o: ../pa2345.h
 CMakeFiles/peer.dir/ipc.c.o: ../queue.h
 
 CMakeFiles/peer.dir/main.c.o: ../banking.h

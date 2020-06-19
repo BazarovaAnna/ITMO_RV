@@ -1,0 +1,1 @@
+/usr/bin/cc  -L/mnt/c/Users/anna/desktop/tests/lab2/lib64 -Wl,-rpath=/mnt/c/Users/anna/desktop/tests/lab2/lib64 -std=c99 -Wall -Werror -pedantic  -rdynamic CMakeFiles/peer.dir/bank_robbery.c.o CMakeFiles/peer.dir/child.c.o CMakeFiles/peer.dir/ipc.c.o CMakeFiles/peer.dir/main.c.o CMakeFiles/peer.dir/parent.c.o CMakeFiles/peer.dir/logwriter.c.o  -o peer -lruntime 

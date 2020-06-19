@@ -37,37 +37,6 @@ int main(int argc, char *argv[]) {
     Proc *this = &me;
 	this->mutex = 0;
 
-	//from 3, lazy to rewrite
-    /*int opt=0;
-    //start, check key and count of children
-    while ((opt=getopt(argc, argv, "p:"))!=-1){
-        switch (opt) {
-            //if the key is p - OK
-            case 'p':
-                COUNTER_OF_CHILDREN = strtol(optarg,NULL,10);
-                if (COUNTER_OF_CHILDREN < 1) {
-                    fprintf(stderr, "Error: you should input more than 0 children!\n");
-                    return 1;
-                }
-                if((argc-3)!=COUNTER_OF_CHILDREN){
-                    fprintf(stderr, "Error: you should input ");
-                    fprintf(stderr,"%li", COUNTER_OF_CHILDREN);
-                    fprintf(stderr, " numbers!\n");
-                    return 1;
-                }
-                //BANK_ACCOUNTS = (int*)malloc(COUNTER_OF_CHILDREN * sizeof(long));
-                for(int i=1;i<=COUNTER_OF_CHILDREN;i++){
-                    BANK_ACCOUNTS[i]=strtol(argv[i+2],NULL,10);
-                }
-
-                break;
-                //if we have anything else: WRONG INPUT
-            default:
-                fprintf(stderr, "Error: you should use key like a '-p NUMBER_OF_CHILDREN'!\n");
-                return 1;
-                break;
-        }
-    }*/
     int opt = 1;
     while (opt< argc){
         if (strcmp(argv[opt], "--mutex") == 0){
@@ -229,7 +198,7 @@ int request_cs(const Proc *this){
     this_queue->timestamp[this_queue->queue_size+1] = q->lamp_time;
     this_queue->id[this_queue->queue_size+1] = q->this_id;
     //todo ?
-    //this_queue->queue_size++;
+    this_queue->queue_size++;
     Message req = { .s_header = { .s_magic = MESSAGE_MAGIC, .s_type = CS_REQUEST, .s_local_time = get_lamport_time(), .s_payload_len = 0, }, .s_payload = "", };
     send_multicast(q, &req);
     int waited_msg = COUNTER_OF_PROCESSES - 2;
@@ -253,7 +222,7 @@ int request_cs(const Proc *this){
             case (CS_REQUEST):
                 this_queue->timestamp[this_queue->queue_size+1] = req.s_header.s_local_time;
                 this_queue->id[this_queue->queue_size+1] = some_id;
-                //this_queue->queue_size++;
+                this_queue->queue_size++;
                 q->lamp_time++;
                 timestamp_t loctime = q->lamp_time;
                 Message msg = { .s_header = { .s_magic = MESSAGE_MAGIC, .s_local_time  = loctime, .s_type = CS_REPLY, .s_payload_len = 0, }, .s_payload="", };

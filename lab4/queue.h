@@ -25,5 +25,4 @@ void del_first_of_queue(queue_t *queue);
 void insert_into_queue(queue_t *queue, node_t *node);
 void print_queue(queue_t *queue, int id);
 
-
 #endif

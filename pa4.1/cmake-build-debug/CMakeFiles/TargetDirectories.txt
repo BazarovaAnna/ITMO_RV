@@ -1,3 +1,0 @@
-/home/stepan/Загрузки/distributed/pa4/pa4/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/stepan/Загрузки/distributed/pa4/pa4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/stepan/Загрузки/distributed/pa4/pa4/cmake-build-debug/CMakeFiles/peer.dir

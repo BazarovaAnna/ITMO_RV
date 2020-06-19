@@ -2,6 +2,7 @@
 #define __CHILD__
 
 #include <stdio.h>
+#include "ipc.h"
 #include "queue.h"
 #include "banking.h"
 #include "common.h"
@@ -16,8 +17,8 @@
 typedef struct {
     local_id procnum;
    
-    FILE *events_log_stream;
-    FILE *pipes_log_stream;
+    FILE *ev_log_stream;
+    FILE *pip_log_stream;
 
     int fds[MAX_PROC+1][MAX_PROC+1][NUM_FD];
 

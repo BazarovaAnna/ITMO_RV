@@ -1,3 +1,0 @@
-/mnt/c/Users/anna/desktop/tests/lab4/build/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/anna/desktop/tests/lab4/build/CMakeFiles/peer.dir
-/mnt/c/Users/anna/desktop/tests/lab4/build/CMakeFiles/edit_cache.dir

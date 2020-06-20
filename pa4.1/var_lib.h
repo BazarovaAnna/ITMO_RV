@@ -5,18 +5,23 @@
 #include "banking.h"
 #include "ipc.h"
 
+#define CONVERT_SELF_TO(ref_type, var_name) ref_type* this = ((ref_type *) var_name)
+
 typedef struct {
-    local_id id[128];
-    timestamp_t timestamp[128];
-    int queue_size;
+	local_id id;
+	timestamp_t timestamp;
+} Element;
+
+typedef struct {
+	//timestamp_t timestamp[64];
+	//local_id id[64];
+    Element element[128];
+	int queue_size;
 } Queue;
 
 typedef struct{
-	//BalanceHistory bal_hist;
 	local_id this_id;
-	//AllHistory all_hist;
 	timestamp_t lamp_time;
-	int mutex;
 	int received_msg;
 	Queue queue;
 } Proc;
@@ -24,11 +29,7 @@ typedef struct{
 //added
 Proc me;
 pid_t proc_pidts[10];
-
-//todo delete
-//balance_t BANK_ACCOUNTS[10];
-
-//was
+int mutex;
 size_t reader_pipe[10][10];
 size_t writer_pipe[10][10];
 size_t COUNTER_OF_PROCESSES;

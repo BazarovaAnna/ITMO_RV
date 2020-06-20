@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/mnt/c/Users/anna/desktop/tests/pa4.1/bank_robbery.c
+/mnt/c/Users/anna/desktop/tests/lab3/bank_robbery.c
 banking.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/banking.h
+/mnt/c/Users/anna/desktop/tests/lab3/banking.h
 
-/mnt/c/Users/anna/desktop/tests/pa4.1/banking.h
+/mnt/c/Users/anna/desktop/tests/lab3/banking.h
 ipc.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/ipc.h
+/mnt/c/Users/anna/desktop/tests/lab3/ipc.h
 
-/mnt/c/Users/anna/desktop/tests/pa4.1/child.c
+/mnt/c/Users/anna/desktop/tests/lab3/child.c
 errno.h
 -
 signal.h
@@ -37,32 +37,30 @@ stdint.h
 -
 stdarg.h
 -
-alloca.h
--
 ipc.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/ipc.h
+/mnt/c/Users/anna/desktop/tests/lab3/ipc.h
 banking.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/banking.h
+/mnt/c/Users/anna/desktop/tests/lab3/banking.h
 pa2345.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/pa2345.h
+/mnt/c/Users/anna/desktop/tests/lab3/pa2345.h
 child.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/child.h
+/mnt/c/Users/anna/desktop/tests/lab3/child.h
 var_lib.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/var_lib.h
+/mnt/c/Users/anna/desktop/tests/lab3/var_lib.h
 parent.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/parent.h
+/mnt/c/Users/anna/desktop/tests/lab3/parent.h
 logwriter.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/logwriter.h
+/mnt/c/Users/anna/desktop/tests/lab3/logwriter.h
 
-/mnt/c/Users/anna/desktop/tests/pa4.1/child.h
+/mnt/c/Users/anna/desktop/tests/lab3/child.h
 var_lib.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/var_lib.h
+/mnt/c/Users/anna/desktop/tests/lab3/var_lib.h
 
-/mnt/c/Users/anna/desktop/tests/pa4.1/common.h
+/mnt/c/Users/anna/desktop/tests/lab3/common.h
 
-/mnt/c/Users/anna/desktop/tests/pa4.1/ipc.c
+/mnt/c/Users/anna/desktop/tests/lab3/ipc.c
 ipc.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/ipc.h
+/mnt/c/Users/anna/desktop/tests/lab3/ipc.h
 unistd.h
 -
 stdbool.h
@@ -72,33 +70,33 @@ fcntl.h
 stdio.h
 -
 var_lib.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/var_lib.h
+/mnt/c/Users/anna/desktop/tests/lab3/var_lib.h
 time.h
 -
 
-/mnt/c/Users/anna/desktop/tests/pa4.1/ipc.h
+/mnt/c/Users/anna/desktop/tests/lab3/ipc.h
 stddef.h
 -
 stdint.h
 -
 
-/mnt/c/Users/anna/desktop/tests/pa4.1/logwriter.c
+/mnt/c/Users/anna/desktop/tests/lab3/logwriter.c
 stdarg.h
 -
 stdio.h
 -
 logwriter.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/logwriter.h
+/mnt/c/Users/anna/desktop/tests/lab3/logwriter.h
 common.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/common.h
+/mnt/c/Users/anna/desktop/tests/lab3/common.h
 ipc.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/ipc.h
+/mnt/c/Users/anna/desktop/tests/lab3/ipc.h
 
-/mnt/c/Users/anna/desktop/tests/pa4.1/logwriter.h
+/mnt/c/Users/anna/desktop/tests/lab3/logwriter.h
 ipc.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/ipc.h
+/mnt/c/Users/anna/desktop/tests/lab3/ipc.h
 
-/mnt/c/Users/anna/desktop/tests/pa4.1/main.c
+/mnt/c/Users/anna/desktop/tests/lab3/main.c
 signal.h
 -
 unistd.h
@@ -120,31 +118,31 @@ sys/types.h
 sys/wait.h
 -
 common.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/common.h
+/mnt/c/Users/anna/desktop/tests/lab3/common.h
 ipc.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/ipc.h
+/mnt/c/Users/anna/desktop/tests/lab3/ipc.h
 var_lib.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/var_lib.h
+/mnt/c/Users/anna/desktop/tests/lab3/var_lib.h
 errno.h
 -
 stdbool.h
 -
 banking.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/banking.h
+/mnt/c/Users/anna/desktop/tests/lab3/banking.h
 child.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/child.h
+/mnt/c/Users/anna/desktop/tests/lab3/child.h
 parent.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/parent.h
+/mnt/c/Users/anna/desktop/tests/lab3/parent.h
 logwriter.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/logwriter.h
+/mnt/c/Users/anna/desktop/tests/lab3/logwriter.h
 
-/mnt/c/Users/anna/desktop/tests/pa4.1/pa2345.h
+/mnt/c/Users/anna/desktop/tests/lab3/pa2345.h
 common.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/common.h
+/mnt/c/Users/anna/desktop/tests/lab3/common.h
 ipc.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/ipc.h
+/mnt/c/Users/anna/desktop/tests/lab3/ipc.h
 
-/mnt/c/Users/anna/desktop/tests/pa4.1/parent.c
+/mnt/c/Users/anna/desktop/tests/lab3/parent.c
 unistd.h
 -
 sys/wait.h
@@ -166,27 +164,27 @@ stdio.h
 stdarg.h
 -
 ipc.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/ipc.h
+/mnt/c/Users/anna/desktop/tests/lab3/ipc.h
 banking.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/banking.h
+/mnt/c/Users/anna/desktop/tests/lab3/banking.h
 var_lib.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/var_lib.h
+/mnt/c/Users/anna/desktop/tests/lab3/var_lib.h
 parent.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/parent.h
+/mnt/c/Users/anna/desktop/tests/lab3/parent.h
 pa2345.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/pa2345.h
+/mnt/c/Users/anna/desktop/tests/lab3/pa2345.h
 logwriter.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/logwriter.h
+/mnt/c/Users/anna/desktop/tests/lab3/logwriter.h
 
-/mnt/c/Users/anna/desktop/tests/pa4.1/parent.h
+/mnt/c/Users/anna/desktop/tests/lab3/parent.h
 var_lib.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/var_lib.h
+/mnt/c/Users/anna/desktop/tests/lab3/var_lib.h
 
-/mnt/c/Users/anna/desktop/tests/pa4.1/var_lib.h
+/mnt/c/Users/anna/desktop/tests/lab3/var_lib.h
 fcntl.h
 -
 banking.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/banking.h
+/mnt/c/Users/anna/desktop/tests/lab3/banking.h
 ipc.h
-/mnt/c/Users/anna/desktop/tests/pa4.1/ipc.h
+/mnt/c/Users/anna/desktop/tests/lab3/ipc.h
 

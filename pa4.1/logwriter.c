@@ -5,7 +5,7 @@
 #include "ipc.h"
 
 static FILE *log;
-void both_writer(const char *message, ...){
+/*void both_writer(const char *message, ...){
     va_list list;
 
     //write to event log file
@@ -37,7 +37,7 @@ void both_writer_with_messages(Message *const message, const char *frmt, ...){
     message->s_header.s_payload_len = payload_lenght;
     va_end(list);
 
-}
+}*/
 void log_open(){
     log = fopen(events_log, "a");
 }

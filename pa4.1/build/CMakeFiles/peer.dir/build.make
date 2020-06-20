@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/anna/desktop/tests/pa4.1
+CMAKE_SOURCE_DIR = /mnt/c/Users/anna/desktop/tests/lab3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/anna/desktop/tests/pa4.1/build
+CMAKE_BINARY_DIR = /mnt/c/Users/anna/desktop/tests/lab3/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/peer.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/peer.dir/flags.make
 
 CMakeFiles/peer.dir/bank_robbery.c.o: CMakeFiles/peer.dir/flags.make
 CMakeFiles/peer.dir/bank_robbery.c.o: ../bank_robbery.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anna/desktop/tests/pa4.1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/peer.dir/bank_robbery.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/peer.dir/bank_robbery.c.o   -c /mnt/c/Users/anna/desktop/tests/pa4.1/bank_robbery.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anna/desktop/tests/lab3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/peer.dir/bank_robbery.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/peer.dir/bank_robbery.c.o   -c /mnt/c/Users/anna/desktop/tests/lab3/bank_robbery.c
 
 CMakeFiles/peer.dir/bank_robbery.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/peer.dir/bank_robbery.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anna/desktop/tests/pa4.1/bank_robbery.c > CMakeFiles/peer.dir/bank_robbery.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anna/desktop/tests/lab3/bank_robbery.c > CMakeFiles/peer.dir/bank_robbery.c.i
 
 CMakeFiles/peer.dir/bank_robbery.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/peer.dir/bank_robbery.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anna/desktop/tests/pa4.1/bank_robbery.c -o CMakeFiles/peer.dir/bank_robbery.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anna/desktop/tests/lab3/bank_robbery.c -o CMakeFiles/peer.dir/bank_robbery.c.s
 
 CMakeFiles/peer.dir/bank_robbery.c.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/peer.dir/bank_robbery.c.o.provides.build: CMakeFiles/peer.dir/bank_ro
 
 CMakeFiles/peer.dir/child.c.o: CMakeFiles/peer.dir/flags.make
 CMakeFiles/peer.dir/child.c.o: ../child.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anna/desktop/tests/pa4.1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/peer.dir/child.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/peer.dir/child.c.o   -c /mnt/c/Users/anna/desktop/tests/pa4.1/child.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anna/desktop/tests/lab3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/peer.dir/child.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/peer.dir/child.c.o   -c /mnt/c/Users/anna/desktop/tests/lab3/child.c
 
 CMakeFiles/peer.dir/child.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/peer.dir/child.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anna/desktop/tests/pa4.1/child.c > CMakeFiles/peer.dir/child.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anna/desktop/tests/lab3/child.c > CMakeFiles/peer.dir/child.c.i
 
 CMakeFiles/peer.dir/child.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/peer.dir/child.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anna/desktop/tests/pa4.1/child.c -o CMakeFiles/peer.dir/child.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anna/desktop/tests/lab3/child.c -o CMakeFiles/peer.dir/child.c.s
 
 CMakeFiles/peer.dir/child.c.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/peer.dir/child.c.o.provides.build: CMakeFiles/peer.dir/child.c.o
 
 CMakeFiles/peer.dir/ipc.c.o: CMakeFiles/peer.dir/flags.make
 CMakeFiles/peer.dir/ipc.c.o: ../ipc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anna/desktop/tests/pa4.1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/peer.dir/ipc.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/peer.dir/ipc.c.o   -c /mnt/c/Users/anna/desktop/tests/pa4.1/ipc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anna/desktop/tests/lab3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/peer.dir/ipc.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/peer.dir/ipc.c.o   -c /mnt/c/Users/anna/desktop/tests/lab3/ipc.c
 
 CMakeFiles/peer.dir/ipc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/peer.dir/ipc.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anna/desktop/tests/pa4.1/ipc.c > CMakeFiles/peer.dir/ipc.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anna/desktop/tests/lab3/ipc.c > CMakeFiles/peer.dir/ipc.c.i
 
 CMakeFiles/peer.dir/ipc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/peer.dir/ipc.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anna/desktop/tests/pa4.1/ipc.c -o CMakeFiles/peer.dir/ipc.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anna/desktop/tests/lab3/ipc.c -o CMakeFiles/peer.dir/ipc.c.s
 
 CMakeFiles/peer.dir/ipc.c.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/peer.dir/ipc.c.o.provides.build: CMakeFiles/peer.dir/ipc.c.o
 
 CMakeFiles/peer.dir/main.c.o: CMakeFiles/peer.dir/flags.make
 CMakeFiles/peer.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anna/desktop/tests/pa4.1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/peer.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/peer.dir/main.c.o   -c /mnt/c/Users/anna/desktop/tests/pa4.1/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anna/desktop/tests/lab3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/peer.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/peer.dir/main.c.o   -c /mnt/c/Users/anna/desktop/tests/lab3/main.c
 
 CMakeFiles/peer.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/peer.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anna/desktop/tests/pa4.1/main.c > CMakeFiles/peer.dir/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anna/desktop/tests/lab3/main.c > CMakeFiles/peer.dir/main.c.i
 
 CMakeFiles/peer.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/peer.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anna/desktop/tests/pa4.1/main.c -o CMakeFiles/peer.dir/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anna/desktop/tests/lab3/main.c -o CMakeFiles/peer.dir/main.c.s
 
 CMakeFiles/peer.dir/main.c.o.requires:
 
@@ -155,16 +155,16 @@ CMakeFiles/peer.dir/main.c.o.provides.build: CMakeFiles/peer.dir/main.c.o
 
 CMakeFiles/peer.dir/parent.c.o: CMakeFiles/peer.dir/flags.make
 CMakeFiles/peer.dir/parent.c.o: ../parent.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anna/desktop/tests/pa4.1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/peer.dir/parent.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/peer.dir/parent.c.o   -c /mnt/c/Users/anna/desktop/tests/pa4.1/parent.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anna/desktop/tests/lab3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/peer.dir/parent.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/peer.dir/parent.c.o   -c /mnt/c/Users/anna/desktop/tests/lab3/parent.c
 
 CMakeFiles/peer.dir/parent.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/peer.dir/parent.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anna/desktop/tests/pa4.1/parent.c > CMakeFiles/peer.dir/parent.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anna/desktop/tests/lab3/parent.c > CMakeFiles/peer.dir/parent.c.i
 
 CMakeFiles/peer.dir/parent.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/peer.dir/parent.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anna/desktop/tests/pa4.1/parent.c -o CMakeFiles/peer.dir/parent.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anna/desktop/tests/lab3/parent.c -o CMakeFiles/peer.dir/parent.c.s
 
 CMakeFiles/peer.dir/parent.c.o.requires:
 
@@ -179,16 +179,16 @@ CMakeFiles/peer.dir/parent.c.o.provides.build: CMakeFiles/peer.dir/parent.c.o
 
 CMakeFiles/peer.dir/logwriter.c.o: CMakeFiles/peer.dir/flags.make
 CMakeFiles/peer.dir/logwriter.c.o: ../logwriter.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anna/desktop/tests/pa4.1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/peer.dir/logwriter.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/peer.dir/logwriter.c.o   -c /mnt/c/Users/anna/desktop/tests/pa4.1/logwriter.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/anna/desktop/tests/lab3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/peer.dir/logwriter.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/peer.dir/logwriter.c.o   -c /mnt/c/Users/anna/desktop/tests/lab3/logwriter.c
 
 CMakeFiles/peer.dir/logwriter.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/peer.dir/logwriter.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anna/desktop/tests/pa4.1/logwriter.c > CMakeFiles/peer.dir/logwriter.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/anna/desktop/tests/lab3/logwriter.c > CMakeFiles/peer.dir/logwriter.c.i
 
 CMakeFiles/peer.dir/logwriter.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/peer.dir/logwriter.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anna/desktop/tests/pa4.1/logwriter.c -o CMakeFiles/peer.dir/logwriter.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/anna/desktop/tests/lab3/logwriter.c -o CMakeFiles/peer.dir/logwriter.c.s
 
 CMakeFiles/peer.dir/logwriter.c.o.requires:
 
@@ -221,7 +221,7 @@ peer: CMakeFiles/peer.dir/parent.c.o
 peer: CMakeFiles/peer.dir/logwriter.c.o
 peer: CMakeFiles/peer.dir/build.make
 peer: CMakeFiles/peer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/anna/desktop/tests/pa4.1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable peer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/anna/desktop/tests/lab3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable peer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/peer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -243,6 +243,6 @@ CMakeFiles/peer.dir/clean:
 .PHONY : CMakeFiles/peer.dir/clean
 
 CMakeFiles/peer.dir/depend:
-	cd /mnt/c/Users/anna/desktop/tests/pa4.1/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/anna/desktop/tests/pa4.1 /mnt/c/Users/anna/desktop/tests/pa4.1 /mnt/c/Users/anna/desktop/tests/pa4.1/build /mnt/c/Users/anna/desktop/tests/pa4.1/build /mnt/c/Users/anna/desktop/tests/pa4.1/build/CMakeFiles/peer.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/Users/anna/desktop/tests/lab3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/anna/desktop/tests/lab3 /mnt/c/Users/anna/desktop/tests/lab3 /mnt/c/Users/anna/desktop/tests/lab3/build /mnt/c/Users/anna/desktop/tests/lab3/build /mnt/c/Users/anna/desktop/tests/lab3/build/CMakeFiles/peer.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/peer.dir/depend
 

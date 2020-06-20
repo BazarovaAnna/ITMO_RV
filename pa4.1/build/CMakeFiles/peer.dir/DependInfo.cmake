@@ -4,12 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/mnt/c/Users/anna/desktop/tests/pa4.1/bank_robbery.c" "/mnt/c/Users/anna/desktop/tests/pa4.1/build/CMakeFiles/peer.dir/bank_robbery.c.o"
-  "/mnt/c/Users/anna/desktop/tests/pa4.1/child.c" "/mnt/c/Users/anna/desktop/tests/pa4.1/build/CMakeFiles/peer.dir/child.c.o"
-  "/mnt/c/Users/anna/desktop/tests/pa4.1/ipc.c" "/mnt/c/Users/anna/desktop/tests/pa4.1/build/CMakeFiles/peer.dir/ipc.c.o"
-  "/mnt/c/Users/anna/desktop/tests/pa4.1/logwriter.c" "/mnt/c/Users/anna/desktop/tests/pa4.1/build/CMakeFiles/peer.dir/logwriter.c.o"
-  "/mnt/c/Users/anna/desktop/tests/pa4.1/main.c" "/mnt/c/Users/anna/desktop/tests/pa4.1/build/CMakeFiles/peer.dir/main.c.o"
-  "/mnt/c/Users/anna/desktop/tests/pa4.1/parent.c" "/mnt/c/Users/anna/desktop/tests/pa4.1/build/CMakeFiles/peer.dir/parent.c.o"
+  "/mnt/c/Users/anna/desktop/tests/lab3/bank_robbery.c" "/mnt/c/Users/anna/desktop/tests/lab3/build/CMakeFiles/peer.dir/bank_robbery.c.o"
+  "/mnt/c/Users/anna/desktop/tests/lab3/child.c" "/mnt/c/Users/anna/desktop/tests/lab3/build/CMakeFiles/peer.dir/child.c.o"
+  "/mnt/c/Users/anna/desktop/tests/lab3/ipc.c" "/mnt/c/Users/anna/desktop/tests/lab3/build/CMakeFiles/peer.dir/ipc.c.o"
+  "/mnt/c/Users/anna/desktop/tests/lab3/logwriter.c" "/mnt/c/Users/anna/desktop/tests/lab3/build/CMakeFiles/peer.dir/logwriter.c.o"
+  "/mnt/c/Users/anna/desktop/tests/lab3/main.c" "/mnt/c/Users/anna/desktop/tests/lab3/build/CMakeFiles/peer.dir/main.c.o"
+  "/mnt/c/Users/anna/desktop/tests/lab3/parent.c" "/mnt/c/Users/anna/desktop/tests/lab3/build/CMakeFiles/peer.dir/parent.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
